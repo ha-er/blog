@@ -1,13 +1,34 @@
 module.exports = [
   {
-    text: '懵逼指南', link: '/guide/'
+    text: '学习记录',
+    items: [
+      {text: '2020', link: '/learning/notes2020/'},
+    ]
   },
   {
-    text: '面试宝典',
+    text: '学习总结',
     items: [
-      {text: '初级开发篇', link: '/baodian/zero/'},
-      {text: '中高级进阶篇', link: '/baodian/high/'},
+      {text: 'markdown语法', link: '/summarize/markdown/'},
+      {
+        text: '前端',
+        items: [
+          {text: 'vue', link: '/summarize/vue/',},
+          {text: 'css', link: '/summarize/css/',}
+        ]
+      },
+      {
+        text: '后端',
+        items: [
+          {text: 'java', link: '/summarize/java/'},
+        ]
+      },
     ]
+  },
+  {
+    text: '关于作者', link: '/oneself/'
+  },
+  {
+    text: '友链', link: '/friends/'
   },
   {
     text: '工具箱',

@@ -1,9 +1,9 @@
 module.exports = [
   {
-    title: '新手指南',
+    title: 'CSS基础',
     collapsable: true,
     children: [
-      '/baodian/zero/one'
+      '/summarize/css/base'
     ]
   }
 ]

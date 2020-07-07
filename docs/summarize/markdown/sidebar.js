@@ -1,9 +1,9 @@
 module.exports = [
   {
-    title: '新手指南',
+    title: 'markdown基础语法',
     collapsable: true,
     children: [
-      '/baodian/high/one'
+      '/summarize/markdown/base'
     ]
   }
 ]

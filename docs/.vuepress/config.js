@@ -11,29 +11,8 @@ module.exports = {
     lineNumbers: true
   },
   themeConfig: {
-    // nav: [{
-    //   text: '懵逼指南', link: '/guide/'
-    // }],
     nav: require("./nav"),
     sidebar: require("./sidebar"),
-    // sidebar: {
-    //   '/guide': [
-    //     {
-    //       title: '新手指南',
-    //       collapsable: true,
-    //       children: [
-    //         '/guide/notes/one'
-    //       ]
-    //     },
-    //     {
-    //       title: '芝麻学院',
-    //       collapsable: true,
-    //       children: [
-    //         '/guide/notes/two'
-    //       ]
-    //     }
-    //   ]
-    // },
     sidebarDepth: 2,
     lastUpdated: 'Last Updated',
     searchMaxSuggestoins: 10,
