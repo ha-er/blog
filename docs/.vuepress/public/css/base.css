@@ -1,0 +1,9 @@
+#app .navbar .home-link span:before {
+  display: inline-block;
+  content: '';
+  width: 3rem;
+  height: 2.4rem;
+  background: url("../img/logo.jpg") no-repeat;
+  background-size: 100% 100%;
+  vertical-align: middle;
+}
