@@ -2,7 +2,7 @@ module.exports = {
   title: '哈儿博客',
   description: '哈儿的学习博客',
   dest: '.dist',
-  port: '8080',
+  port: '0320',
   head: [
     ['link', {rel: 'icon', href: '/img/logo.jpg'}],
     ['link', {rel: 'stylesheet', href: '/css/base.css'}],

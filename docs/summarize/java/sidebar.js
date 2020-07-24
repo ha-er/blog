@@ -16,6 +16,9 @@ module.exports = [
       '/summarize/java/base/switchCase',
       '/summarize/java/base/numberMath',
       '/summarize/java/base/character',
+      '/summarize/java/base/string',
+      '/summarize/java/base/stringBuffer',
+      '/summarize/java/base/array',
     ]
   },
   {

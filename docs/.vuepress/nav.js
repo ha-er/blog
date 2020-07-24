@@ -2,7 +2,7 @@ module.exports = [
   {
     text: '学习记录',
     items: [
-      {text: '2020', link: '/learning/notes2020/'},
+      {text: 'flowable学习', link: '/learning/oa/'},
     ]
   },
   {
@@ -12,14 +12,15 @@ module.exports = [
       {
         text: '前端',
         items: [
-          {text: 'vue', link: '/summarize/vue/',},
-          {text: 'css', link: '/summarize/css/',}
+          {text: 'VUE', link: '/summarize/vue/',},
+          {text: 'CSS', link: '/summarize/css/',},
+          {text: 'JS', link: '/summarize/js/',},
         ]
       },
       {
         text: '后端',
         items: [
-          {text: 'java', link: '/summarize/java/'},
+          {text: 'JAVA', link: '/summarize/java/'},
         ]
       },
     ]
