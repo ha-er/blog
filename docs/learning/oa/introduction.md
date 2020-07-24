@@ -33,6 +33,10 @@ springBoot2.3.1与flowable6.5.0
 ### 整合flowable
 1、pom文件代码配置properties与dependencies
 
+flowable-spring-boot-starter-process: 这个会有46张表
+
+flowable-spring-boot-starter：这个会有78张表
+
 ```xml
     <properties>
         <java.version>1.8</java.version>
@@ -59,7 +63,7 @@ springBoot2.3.1与flowable6.5.0
         <!-- flowable依赖 -->
         <dependency>
             <groupId>org.flowable</groupId>
-            <artifactId>flowable-spring-boot-starter</artifactId>
+            <artifactId>flowable-spring-boot-starter-process</artifactId>
             <version>${flowable.version}</version>
         </dependency>
         <!-- mysql驱动-->
