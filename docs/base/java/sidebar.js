@@ -1,9 +1,9 @@
 module.exports = [
   {
-    title: 'OA流程flowable',
+      title: 'Java反射',
     collapsable: true,
     children: [
-      '/learning/oa/introduction',
+        '/base/java/reflect/reflect',
     ]
   }
-]
+];
