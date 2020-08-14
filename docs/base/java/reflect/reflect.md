@@ -136,7 +136,6 @@ false
     
     * 如果使用空参数构造方法创建对象，操作可以简化：Class对象的`newInstance()`方法
     
-    ```
   * 获取成员方法
   
     **方法**
@@ -162,4 +161,299 @@ false
     **方法**
     
     * `String` `getName()`获取全类名
+    
+**Person类**
+
+```java
+package com.haer.domain;
+
+public class Person {
+    public String a;
+    protected int b;
+    String c;
+    private String d;
+
+    public Person() {
+    }
+
+    public Person(String a, int b, String c, String d) {
+        this.a = a;
+        this.b = b;
+        this.c = c;
+        this.d = d;
+    }
+
+    private Person(int b) {
+        this.b = b;
+    }
+
+    public String getA() {
+        return a;
+    }
+
+    public void setA(String a) {
+        this.a = a;
+    }
+
+    public int getB() {
+        return b;
+    }
+
+    public void setB(int b) {
+        this.b = b;
+    }
+
+    public String getC() {
+        return c;
+    }
+
+    public void setC(String c) {
+        this.c = c;
+    }
+
+    public String getD() {
+        return d;
+    }
+
+    public void setD(String d) {
+        this.d = d;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "a='" + a + '\'' +
+                ", b=" + b +
+                ", c='" + c + '\'' +
+                ", d='" + d + '\'' +
+                '}';
+    }
+
+    public void eat(String a){
+        System.out.println("eat..."+a);
+    }
+
+    private void run(){
+        System.out.println("run...");
+    }
+}
+```
+
+**ReflectDemo02主方法类**
+
+```java
+package com.haer.test;
+
+import com.haer.domain.Person;
+
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+
+public class ReflectDemo02 {
+    public static void main(String[] args) throws Exception {
+        //获取Class对象
+        Class personClass = Class.forName("com.haer.domain.Person");
+
+        //获取成员变量
+        //Field[] getFields();
+        //Field getField(String name)这俩个方法只能获取public修饰的成员变量
+        //Field[] getDeclaredFields()
+        //Field getDeclaredField(String name)可以获取所有的成员变量
+        System.out.println("-------------getFields");
+        Field[] fields = personClass.getFields();
+        for (Field field : fields) {
+            System.out.println(field);
+        }
+        System.out.println("-------------getField");
+        //这里只能获取成员变量a，因为这里只有a是public修饰的，否则会报java.lang.NoSuchFieldException异常
+        Field field = personClass.getField("a");
+        Person person1 = new Person();
+        //设置成员变量a的值
+        field.set(person1, "哈儿");
+        //获取成员变量a的值
+        Object value = field.get(person1);
+        System.out.println(value);
+        System.out.println("-------------getDeclaredFields");
+
+        Field[] declaredFields = personClass.getDeclaredFields();
+        for (Field declaredField : declaredFields) {
+            System.out.println(declaredField);
+        }
+        System.out.println("-------------getDeclaredField");
+        //这里获取所有成员变量
+        Field declaredField = personClass.getDeclaredField("d");
+        Person person2 = new Person();
+        //暴力反射，可以忽略访问权限修饰符的安全检查，如果没有它，
+        // 在设置或者获取非public修饰的成员变量时，会报java.lang.IllegalAccessException异常
+        declaredField.setAccessible(true);
+        //设置成员变量a的值
+        declaredField.set(person2, "Declared哈儿");
+        //获取成员变量a的值
+        Object value2 = declaredField.get(person2);
+        System.out.println(value2);
+
+        //获取构造器（构造方法）
+        //Constructor<?>[] getConstructors()
+        //Constructor<T> getConstructor(类<?>... parameterTypes)获取public修饰的构造器
+        //Constructor<?>[] getConstructors()
+        //Constructor<T> getConstructor(类<?>... parameterTypes)获取全部
+        System.out.println("-------------getConstructors");
+        Constructor[] constructors = personClass.getConstructors();
+        for (Constructor constructor : constructors) {
+            System.out.println(constructor);
+        }
+        System.out.println("-------------getConstructor");
+        //传参数类型
+        Constructor constructor = personClass.getConstructor(String.class, int.class, String.class, String.class);
+        System.out.println(constructor);
+        //创建对象
+        Object person3 = constructor.newInstance("哈儿", 18, "c值", "d值");
+        System.out.println(person3);
+        System.out.println("-------------getConstructor获取无参构造");
+        //获取无参构造时
+        Constructor constructor1 = personClass.getConstructor();
+        System.out.println(constructor1);
+        //创建对象
+        Object person4 = constructor1.newInstance();
+        System.out.println(person4);
+        //获取无参构造时可以直接使用Class对象的newInstance()方法,是一样的
+        Object person5 = personClass.newInstance();
+        System.out.println(person5);
+        System.out.println("-------------getDeclaredConstructors");
+        Constructor[] declaredConstructors = personClass.getDeclaredConstructors();
+        for (Constructor declaredConstructor : declaredConstructors) {
+            System.out.println(declaredConstructor);
+        }
+        System.out.println("-------------getDeclaredConstructor");
+        //可以获取非public修饰的构造器
+        Constructor declaredConstructor = personClass.getDeclaredConstructor(int.class);
+        System.out.println(declaredConstructor);
+        //暴力反射
+        declaredConstructor.setAccessible(true);
+        Object person6 = declaredConstructor.newInstance(200);
+        System.out.println(person6);
+
+        // 获取成员方法
+        //Method[] getMethods()
+        //Method getMethod(String name, 类<?>... parameterTypes)获取public修饰的方法
+        //Method[] getDeclaredMethods()
+        //Method getDeclaredMethod(String name, 类<?>... parameterTypes)获取全部方法
+        System.out.println("-------------getMethods");
+        Method[] methods = personClass.getMethods();
+        //不仅仅有自己的方法，还有Object类的方法
+        for (Method method : methods) {
+            System.out.println(method);
+        }
+        System.out.println("-------------getMethods");
+        //获取方法，传入方法名和参数
+        Method method = personClass.getMethod("eat",String.class);
+        System.out.println(method);
+        Person person7 = new Person();
+        //执行方法
+        method.invoke(person7,"饭");
+        System.out.println("-------------getDeclaredMethods");
+        Method[] declaredMethods = personClass.getDeclaredMethods();
+        for (Method declaredMethod : declaredMethods) {
+            System.out.println(declaredMethod);
+            //获取方法名的方法
+            System.out.println(declaredMethod.getName());
+        }
+        System.out.println("-------------getDeclaredMethod");
+        Method declaredMethod = personClass.getDeclaredMethod("run");
+        System.out.println(declaredMethod);
+        //暴力反射
+        declaredMethod.setAccessible(true);
+        //执行方法
+        Person person8 = new Person();
+        declaredMethod.invoke(person8);
+        System.out.println("-------------获取类名（全类名）");
+        System.out.println(personClass.getName());
+    }
+}
+
+```
+
+**控制台**
+
+```
+-------------getFields
+public java.lang.String com.haer.domain.Person.a
+-------------getField
+哈儿
+-------------getDeclaredFields
+public java.lang.String com.haer.domain.Person.a
+protected int com.haer.domain.Person.b
+java.lang.String com.haer.domain.Person.c
+private java.lang.String com.haer.domain.Person.d
+-------------getDeclaredField
+Declared哈儿
+-------------getConstructors
+public com.haer.domain.Person(java.lang.String,int,java.lang.String,java.lang.String)
+public com.haer.domain.Person()
+-------------getConstructor
+public com.haer.domain.Person(java.lang.String,int,java.lang.String,java.lang.String)
+Person{a='哈儿', b=18, c='c值', d='d值'}
+-------------getConstructor获取无参构造
+public com.haer.domain.Person()
+Person{a='null', b=0, c='null', d='null'}
+Person{a='null', b=0, c='null', d='null'}
+-------------getDeclaredConstructors
+private com.haer.domain.Person(int)
+public com.haer.domain.Person(java.lang.String,int,java.lang.String,java.lang.String)
+public com.haer.domain.Person()
+-------------getDeclaredConstructor
+private com.haer.domain.Person(int)
+Person{a='null', b=200, c='null', d='null'}
+-------------getMethods
+public java.lang.String com.haer.domain.Person.toString()
+public java.lang.String com.haer.domain.Person.getC()
+public java.lang.String com.haer.domain.Person.getA()
+public void com.haer.domain.Person.eat(java.lang.String)
+public java.lang.String com.haer.domain.Person.getD()
+public void com.haer.domain.Person.setB(int)
+public void com.haer.domain.Person.setD(java.lang.String)
+public void com.haer.domain.Person.setC(java.lang.String)
+public int com.haer.domain.Person.getB()
+public void com.haer.domain.Person.setA(java.lang.String)
+public final void java.lang.Object.wait() throws java.lang.InterruptedException
+public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException
+public final native void java.lang.Object.wait(long) throws java.lang.InterruptedException
+public boolean java.lang.Object.equals(java.lang.Object)
+public native int java.lang.Object.hashCode()
+public final native java.lang.Class java.lang.Object.getClass()
+public final native void java.lang.Object.notify()
+public final native void java.lang.Object.notifyAll()
+-------------getMethods
+public void com.haer.domain.Person.eat(java.lang.String)
+eat...饭
+-------------getDeclaredMethods
+private void com.haer.domain.Person.run()
+run
+public java.lang.String com.haer.domain.Person.toString()
+toString
+public java.lang.String com.haer.domain.Person.getC()
+getC
+public java.lang.String com.haer.domain.Person.getA()
+getA
+public void com.haer.domain.Person.eat(java.lang.String)
+eat
+public java.lang.String com.haer.domain.Person.getD()
+getD
+public void com.haer.domain.Person.setB(int)
+setB
+public void com.haer.domain.Person.setD(java.lang.String)
+setD
+public void com.haer.domain.Person.setC(java.lang.String)
+setC
+public int com.haer.domain.Person.getB()
+getB
+public void com.haer.domain.Person.setA(java.lang.String)
+setA
+-------------getDeclaredMethod
+private void com.haer.domain.Person.run()
+run...
+-------------获取类名（全类名）
+com.haer.domain.Person
+```
       
