@@ -1,9 +1,9 @@
 module.exports = [
   {
-    title: 'OA流程flowable',
+      title: 'Flowable',
     collapsable: true,
     children: [
-      '/learning/oa/introduction',
+        '/learning/flowable/introduction',
     ]
   }
 ]
