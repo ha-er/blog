@@ -2,6 +2,8 @@
 
 ## 下载
 
+[百度网盘](https://pan.baidu.com/s/1MRx9BL3d3fezIQDwYHrLQQ) 提取码：`jcmz`
+
 [官网](https://www.mysql.com)
 
 ![](../../../.vuepress/public/img/tools/database/mysql/mysql5-7/1.png)
