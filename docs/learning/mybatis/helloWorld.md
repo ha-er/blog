@@ -113,7 +113,8 @@ public class MybatisUtils {
     // 你可以通过 SqlSession 实例来直接执行已映射的 SQL 语句
 
     public static SqlSession getSqlSession() {
-        return sqlSessionFactory.openSession();
+        //默认为false，设为true表示自动提交事务，后面学习时再开启
+        return sqlSessionFactory.openSession(false);
     }
 }
 

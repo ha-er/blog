@@ -140,6 +140,8 @@ public class User {
 
 这是 MyBatis 中极为重要的调整设置，它们会改变 MyBatis 的运行时行为。
 
+这里介绍三个后面可能需要使用的
+
 |设置名 |描述 | 有效值|默认值|
 |-|-|-|-|
 |logImpl	|指定 MyBatis 所用日志的具体实现，未指定时将自动查找。	|SLF4J \| LOG4J \| LOG4J2 \| JDK_LOGGING \| COMMONS_LOGGING \| STDOUT_LOGGING \| NO_LOGGING	|未设置|
@@ -205,9 +207,6 @@ MapperRegistry:注册绑定Mapper文件
 ![](../../.vuepress/public/img/learning/mybatis/1.png)
 
 这里面每一个Mapper，就代表一个具体业务
-
-
-
 
 
 

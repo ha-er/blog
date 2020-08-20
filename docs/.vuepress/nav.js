@@ -5,9 +5,9 @@ module.exports = [
             {
                 text: '后端',
                 items: [
-                    {text: 'flowable', link: '/learning/flowable/'},
-                    {text: 'mybatis', link: '/learning/mybatis/'},
-                    {text: 'Spring', link: '/learning/spring/'},
+                    {text: 'flowable', link: '/learning/flowable/introduction'},
+                    {text: 'mybatis', link: '/learning/mybatis/introduce'},
+                    {text: 'Spring', link: '/learning/spring/introduction'},
                 ]
             },
         ]
@@ -18,7 +18,7 @@ module.exports = [
             {
                 text: '后端',
                 items: [
-                    {text: 'JAVA', link: '/base/java/'},
+                    {text: 'JAVA', link: '/base/java/reflect/reflect'},
                 ]
             },
         ]
@@ -31,5 +31,16 @@ module.exports = [
     },
     {
         text: '工具安装', link: '/tools/'
+    },
+    {
+        text: '工具箱',
+        items: [
+            {
+                text: '通用',
+                items: [
+                    {text: '在线画图', link: 'https://www.processon.com/'},
+                ]
+            },
+        ]
     },
 ];
