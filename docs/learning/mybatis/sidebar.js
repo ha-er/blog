@@ -5,7 +5,7 @@ module.exports = [
         children: [
             '/learning/mybatis/introduce',
             '/learning/mybatis/helloWorld',
-            '/learning/mybatis/configure',
+            '/learning/mybatis/configuration',
             '/learning/mybatis/resultMap',
             '/learning/mybatis/log',
             '/learning/mybatis/paging',
