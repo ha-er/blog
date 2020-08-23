@@ -43,7 +43,7 @@
 
 ## 组成(了解)
 
-![](../../.vuepress/public/img/learning/Spring/1.png)
+![](../../.vuepress/public/img/learning/spring/1.png)
 
 * **核心容器（Spring Core）**
 
@@ -83,7 +83,7 @@
 
 在Spring的官网中介绍：现代化的Java开发即基于Spring开发
 
-![](../../.vuepress/public/img/learning/Spring/2.png)
+![](../../.vuepress/public/img/learning/spring/2.png)
 
 * SpringBoot
   * 一个快速开发的脚手架

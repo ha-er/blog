@@ -108,7 +108,7 @@ name=哈儿
 ```java
 public class Address {
     private String address;
-    //..get set方法
+    //..get set方法 toString方法
 }
 ```
 
@@ -128,6 +128,159 @@ public class Student {
 }
 ```
 
+beans.xml
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="address" class="com.haer.pojo.Address"/>
+
+    <bean id="student" class="com.haer.pojo.Student">
+        <!-- 普通方式注入，value -->
+        <property name="name" value="哈儿"/>
+<!--        bean注入，ref-->
+        <property name="address" ref="address"/>
+<!--        数组注入 -->
+        <property name="books">
+            <array>
+                <value>哈儿</value>
+                <value>思思</value>
+                <value>娇娇</value>
+            </array>
+        </property>
+<!--        list-->
+        <property name="hobbys">
+            <list>
+                <value>学习</value>
+                <value>减肥</value>
+                <value>敲代码</value>
+            </list>
+        </property>
+<!--        map-->
+        <property name="card">
+            <map>
+                <entry key="身份证" value="4444444"/>
+                <entry key="银行卡" value="2123213"/>
+            </map>
+        </property>
+<!--        set-->
+        <property name="games">
+            <set>
+                <value>LOL</value>
+                <value>王者</value>
+            </set>
+        </property>
+<!--        null-->
+        <property name="wife">
+            <null/>
+        </property>
+<!--        properties-->
+        <property name="properties">
+            <props>
+                <prop key="学号">20200823</prop>
+                <prop key="姓名">哈儿</prop>
+            </props>
+        </property>
+    </bean>
+
+</beans>
+```
+
+测试
+
+```java
+public class MyTest {
+    public static void main(String[] args) {
+        ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+        Student student = context.getBean("student", Student.class);
+        System.out.println(student.toString());
+
+    }
+}
+```
+
+控制台打印
+
+```
+Student{name='哈儿', address=Address{address='null'}, books=[哈儿, 思思, 娇娇], hobbys=[学习, 减肥, 敲代码], card={身份证=4444444, 银行卡=2123213}, games=[LOL, 王者], wife='null', properties={学号=20200823, 姓名=哈儿}}
+
+```
 
 
 ## 拓展方式注入
+
+* p命名空间
+
+在xml头中添加一行`xmlns:p="http://www.springframework.org/schema/p"`
+
+* c命名空间
+
+在xml头中添加一行`xmlns:c="http://www.springframework.org/schema/c"`
+
+User实体
+
+```java
+public class User {
+    private String name;
+    private int age;
+    //。get set方法，toString方法，无参构造，有参构造
+}
+```
+
+xml
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    p命名空间注入，可以直接注入属性的值：property-->
+    <bean id="user" class="com.haer.pojo.User" p:name="哈儿" p:age="20"/>
+
+<!--    c命名空间注入，通过构造器注入：construct-args-->
+    <bean id="user2" class="com.haer.pojo.User" c:age="22" c:name="思思"/>
+</beans>
+```
+
+测试
+
+```java
+public class MyTest {
+
+    @Test
+    public void UserTest(){
+        ApplicationContext context = new ClassPathXmlApplicationContext("userbeans.xml");
+//        User user = context.getBean("user", User.class);
+        User user = context.getBean("user2", User.class);
+        System.out.println(user);
+
+    }
+}
+```
+
+可以成功给属性注入值
+
+## Bean的作用域
+
+1.单例模式（Spring默认机制），使用同一个对象
+
+```xml
+<bean id="user" class="com.haer.pojo.User" p:name="哈儿" p:age="20" scope="singleton"/>
+```
+
+2.原型模式：每次从容器中get的时候，都会产生一个新的对象
+
+```xml
+<bean id="user" class="com.haer.pojo.User" p:name="哈儿" p:age="20" scope="prototype"/>
+```
+
+3.其余的request，session，application，这些只能在web开发使用
+

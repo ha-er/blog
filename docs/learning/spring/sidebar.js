@@ -8,6 +8,9 @@ module.exports = [
             '/learning/spring/helloSpring',
             '/learning/spring/configuration',
             '/learning/spring/di',
+            '/learning/spring/autoassemble',
+            '/learning/spring/annotations',
+            '/learning/spring/proxy',
         ]
     }
 ];
