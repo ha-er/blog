@@ -113,5 +113,117 @@ public class Client {
 
 * 一个真实角色就会产生一个代理角色，代码量翻倍
 
+## 动态代理
 
+* 动态代理和静态代理角色一样
+* 动态代理的代理类时动态生成的，不是我们直接写好的
+* 动态代理分为俩大类：基于接口的动态代理、基于类的动态代理
+  * 基于接口--JDK动态代理【我们在这里使用这个】
+  * 基于类：cglib
+  * java字节码：JAVAssist
+  
+了解俩个类：`Proxy` :代理`InvocationHandler`：调用代理处理程序
+
+UserService
+
+```java
+//抽象对象
+public interface UserService {
+
+    void add();
+
+    void delete();
+
+    void update();
+
+    void query();
+}
+```
+
+UserServiceImpl
+
+```java
+//真实对象
+public class UserServiceImpl implements UserService {
+    public void add() {
+        System.out.println("add");
+    }
+
+    public void delete() {
+        System.out.println("delete");
+    }
+
+    public void update() {
+        System.out.println("update");
+    }
+
+    public void query() {
+        System.out.println("query");
+    }
+}
+```
+
+ProxyInvacationHandler
+
+```java
+//会用这个类自动生成代理类
+public class ProxyInvacationHandler implements InvocationHandler {
+
+    //被代理的接口
+    private Object target;
+
+    public void setTarget(Object target) {
+        this.target = target;
+    }
+
+    public Object getProxy(){
+        return Proxy.newProxyInstance(this.getClass().getClassLoader(), target.getClass().getInterfaces(), this);
+
+    }
+
+    //处理代理实例，并返回结果
+    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+        //动态代理的本质，就是使用反射机制实现的
+        log(method.getName());
+        Object result = method.invoke(target, args);
+        return result;
+    }
+
+    public void log(String msg){
+        System.out.println("执行"+msg+"方法");
+    }
+}
+```
+
+测试
+
+```java
+public class Client {
+
+    @Test
+    public void test01(){
+        //真实角色
+        UserServiceImpl userService = new UserServiceImpl();
+
+        //代理角色不存在
+        ProxyInvacationHandler pih = new ProxyInvacationHandler();
+
+        //设置要代理的对象
+        pih.setTarget(userService);
+
+        //动态生成代理类
+        UserService proxy = (UserService) pih.getProxy();
+
+        proxy.add();
+    }
+}
+```
+
+
+动态代理的其他好处：
+
+* 一个动态代理类代理的是一个接口，一般角色对应的一类业务
+* 一个动态代理类可以代理多个类，只要是实现了同一个接口即可
+  
+  
 

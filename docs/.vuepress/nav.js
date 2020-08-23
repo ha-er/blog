@@ -5,8 +5,8 @@ module.exports = [
             {
                 text: '后端',
                 items: [
-                    {text: 'flowable', link: '/learning/flowable/introduction'},
-                    {text: 'mybatis', link: '/learning/mybatis/introduce'},
+                    {text: 'Flowable', link: '/learning/flowable/introduction'},
+                    {text: 'Mybatis', link: '/learning/mybatis/introduce'},
                     {text: 'Spring', link: '/learning/spring/introduction'},
                 ]
             },

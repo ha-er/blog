@@ -11,6 +11,9 @@ module.exports = [
             '/learning/spring/autoassemble',
             '/learning/spring/annotations',
             '/learning/spring/proxy',
+            '/learning/spring/aop',
+            '/learning/spring/mybatis',
+            '/learning/spring/transaction',
         ]
     }
 ];
