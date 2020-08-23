@@ -6,7 +6,7 @@
 
 分为**静态代理**和**动态代理**
 
-![](../../.vuepress/public/img/learning/spring/2.png)
+![](../../.vuepress/public/img/learning/spring/3.png)
 
 ## 静态代理
 
