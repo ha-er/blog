@@ -7,7 +7,7 @@ module.exports = [
                 items: [
                     {text: 'Mybatis', link: '/learning/mybatis/introduce'},
                     {text: 'Spring', link: '/learning/spring/introduction'},
-                    {text: 'SpringMVC', link: '/learning/springMVC/introduction'},
+                    {text: 'SpringMVC', link: '/learning/springMVC/review'},
                 ]
             },
         ]
