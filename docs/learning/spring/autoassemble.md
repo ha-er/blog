@@ -1,6 +1,6 @@
 # Bean的自动装配
 
-* 自动装配试Spring满足bean依赖一种方式
+* 自动装配Spring满足bean依赖一种方式
 * Spring会在上下文中自动寻找，并自动给bean装配属性
 
 在Spring中有三种装配方式
@@ -42,7 +42,7 @@ jdk1.5以上，spring2.5以上
 
 使用注解须知：
 
-1.导入约束，context约束
+1.导入约束，context约束,beans标签头加`xmlns:context`，在`xsi:schemaLocation`加配置
 
 2.配置注解支持，`<context:annotation-config/>`
 
@@ -77,11 +77,11 @@ public class Person {
 }
 ```
 
-使用Autowired我们可以不用编写set方法，前提试你这个自动装配的属性在IOC容器中存在，且符合名字byName
+使用Autowired我们可以不用编写set方法，前提是你这个自动装配的属性在IOC容器中存在，且符合名字byName
 
 * 拓展：
 
-//字段标记这个标注俩种注解的一种，标识这个字段或者对象可以为null，否则不能为空
+字段标记这个标注俩种注解的一种，标识这个字段或者对象可以为null，否则不能为空
 
 ```
 @Nullable 

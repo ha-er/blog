@@ -10,15 +10,17 @@
 
 ```java
 public class MybatisUtils {
+    //...
+    
     public static SqlSession getSqlSession() {
-        return 
+        return sqlSessionFactory.openSession(true); 
     }
 }
 ```
 
-舍去UserMapper.xml文件
+舍去`UserMapper.xml`文件
 
-Dao层
+Dao层`UserMapper`
 
 ```java
 public interface UserMapper {
@@ -44,7 +46,7 @@ public interface UserMapper {
 }
 ```
 
-mybatis-config.xml文件配置mapper，使用class
+`mybatis-config.xml`文件配置mapper，使用class
 
 ```xml
 <configuration>

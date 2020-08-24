@@ -1,11 +1,9 @@
 # 整合Mybatis
 
-## 回顾Mybatis
-
-导入相关依赖及资源排除
+导入相关依赖
 
 ```xml
-<dependencies>
+     <dependencies>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -32,11 +30,13 @@
             <artifactId>spring-jdbc</artifactId>
             <version>5.2.3.RELEASE</version>
         </dependency>
+<!--aop切面包        -->
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
             <version>1.9.6</version>
         </dependency>
+<!--整合spring和mybatis的包        -->
         <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis-spring</artifactId>
@@ -52,7 +52,7 @@
         </dependency>
 
     </dependencies>
-    
+    <!--    在build中配置resources，来防止资源导出失败的问题-->
     <build>
             <resources>
                 <resource>
@@ -75,7 +75,9 @@
      </build>
 ```
 
-User
+## 回顾Mybatis
+
+`User`
 
 ```java
 import lombok.Data;
@@ -88,7 +90,7 @@ public class User {
 }
 ```
 
-UserMapper接口
+`UserMapper`接口
 
 ```java
 public interface UserMapper {
@@ -96,7 +98,7 @@ public interface UserMapper {
 }
 ```
 
-UserMapper.xml
+`UserMapper.xml`
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -104,14 +106,13 @@ UserMapper.xml
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.haer.mapper.UserMapper">
-
     <select id="selectUser" resultType="User">
         select * from user
     </select>
 </mapper>
 ```
 
-mybatis-config.xml
+`mybatis-config.xml`
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -119,7 +120,6 @@ mybatis-config.xml
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-
     <properties resource="db.properties">
         <property name="username" value="root"/>
         <property name="password" value="111111"/>
@@ -147,7 +147,7 @@ mybatis-config.xml
 </configuration>
 ```
 
-db.properties
+`db.properties`
 
 ```properties
 driver=com.mysql.jdbc.Driver
@@ -156,7 +156,7 @@ username=root
 password=123456
 ```
 
-MyTest测试
+`MyTest`测试
 
 ```java
 public class MyTest {
@@ -183,7 +183,7 @@ public class MyTest {
 
 [mybatis-spirng官网](http://mybatis.org/spring/zh/index.html)
 
-添加UserMapperImpl实现
+添加`UserMapperImpl`实现
 
 ```java
 public class UserMapperImpl implements UserMapper {
@@ -201,7 +201,7 @@ public class UserMapperImpl implements UserMapper {
 }
 ```
 
-spring-dao.xml
+`spring-dao.xml`
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -238,7 +238,7 @@ spring-dao.xml
 </beans>
 ```
 
-mybatis-config.xml(可以完全被取代)
+`mybatis-config.xml`(可以完全被取代)
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -270,6 +270,8 @@ public class MyTest {
 
 方式二：
 
+`spring-dao.xml`
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
@@ -300,7 +302,7 @@ public class MyTest {
 </beans>
 ```
 
-UserMapperImpl2
+`UserMapperImpl2`
 
 ```java
 public class UserMapperImpl2 extends SqlSessionDaoSupport implements UserMapper{

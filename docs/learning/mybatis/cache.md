@@ -44,18 +44,20 @@
   * 一个会话查询一条数据，这个数据就会放到当前一级缓存
   * 会话关闭，一级缓存消失，数据被保存到二级缓存
   * 新的会话查询，会先从二级缓存中获取数据
-  * 不同的mapper查出的数据会放在自己对于的缓存（map）中
+  * 不同的mapper查出的数据会放在自己对应的缓存（map）中
 
 开启缓存
 
-mybatis-config.xml中
+`mybatis-config.xml`中
+
 ```xml
 <settings>
   <setting name="cacheEnabled" value="true"/>
 </settings>
 ```
 
-UserMapper.xml
+`UserMapper.xml`
+
 ```xml
 <mapper>
   <cache
@@ -66,21 +68,22 @@ UserMapper.xml
 </mapper>
 ```
 
-`useCache="false"`可以给每个方法单独设置缓存开启关闭
-
-`flushCache="false"`可以设置让增删改方法不刷新缓存
-
-```xml
-<select id="selectUserById" resultType="user" parameterType="int" useCache="false">
-        select * from mybatis.user where id = #{id}
-</select>
-```
 这个更高级的配置创建了一个 FIFO 缓存，每隔 60 秒刷新，最多可以存储结果对象或列表的 512 个引用，而且返回的对象被认为是只读的，因此对它们进行修改可能会在不同线程中的调用者产生冲突。
 
 * LRU – 最近最少使用：移除最长时间不被使用的对象。
 * FIFO – 先进先出：按对象进入缓存的顺序来移除它们。
 * SOFT – 软引用：基于垃圾回收器状态和软引用规则移除对象。
 * WEAK – 弱引用：更积极地基于垃圾收集器状态和弱引用规则移除对象。
+
+```xml
+<select id="selectUserById" resultType="user" parameterType="int" useCache="false">
+        select * from mybatis.user where id = #{id}
+</select>
+```
+
+`useCache="false"`可以给每个方法单独设置缓存开启关闭
+
+`flushCache="false"`可以设置让增删改方法不刷新缓存
 
 ## BUG
 
@@ -112,13 +115,13 @@ public class User implements Serializable {
 </dependency>
 ```
 
-UserMapper.xml
+`UserMapper.xml`
 
 ```xml
 <cache type="org.mybatis.caches.ehcache.EhcacheCache"/>
 ```
 
-新建ehcache.xml
+新建`ehcache.xml`
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>

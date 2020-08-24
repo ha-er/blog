@@ -55,18 +55,16 @@ mappers（映射器）
     </environments>
 ```
 
-* MyBatis 中有两种类型的事务管理器`type="[JDBC|MANAGED]"`默认JDBC，另一种几乎不用
-
-默认连接池POOLED
+* MyBatis中有两种类型的事务管理器`type="[JDBC|MANAGED]"`默认`JDBC`，默认连接池`POOLED`
 
 ## 属性（properties）
 
-我们可以通过properties属性来引用配置文件
+我们可以通过`properties`属性来引用配置文件
 
-这些属性可以在外部进行配置，并可以进行动态替换。你既可以在典型的 Java 属性文件中配置这些属性，
-也可以在 properties 元素的子元素中设置
+这些属性可以在外部进行配置，并可以进行动态替换。你既可以在典型的Java属性文件中配置这些属性，
+也可以在`properties`元素的子元素中设置
 
-db.properties
+`db.properties`
 
 ```properties
 driver=com.mysql.jdbc.Driver
@@ -75,9 +73,9 @@ username=root
 password=123456
 ```
 
-mybatis-config.xml
+`mybatis-config.xml`
 
-可以通过properties引入db.properties配置文件，也可以在内部使用property标签设置变量，配置文件优先级更大
+可以通过`properties`标签引入`db.properties`配置文件，也可以在内部使用`property`标签设置变量，配置文件优先级更大
 
 ```xml
 <configuration>
@@ -119,7 +117,7 @@ mybatis-config.xml
 
 也可以指定一个包名，Mybatis会在包名下面搜索需要的JavaBean，比如：
 
-扫描实体类的包，他的默认别名就是这个类的首字母小写
+扫描实体类的包，他的默认别名就是这个类类名的首字母小写
 
 ```xml
 <typeAliases>
@@ -127,7 +125,7 @@ mybatis-config.xml
 </typeAliases>
 ```
 
-设置包名后不能自定义别名，可以使用注解
+指定包名后不能自定义别名，可以使用注解
 
 ```java
 @Alias("user")
@@ -138,9 +136,7 @@ public class User {
 
 ## 设置（settings）
 
-这是 MyBatis 中极为重要的调整设置，它们会改变 MyBatis 的运行时行为。
-
-这里介绍三个后面可能需要使用的
+这是 MyBatis 中极为重要的调整设置，它们会改变 MyBatis 的运行时行为。这里介绍三个后面可能需要使用的
 
 |设置名 |描述 | 有效值|默认值|
 |-|-|-|-|
@@ -204,7 +200,7 @@ MapperRegistry:注册绑定Mapper文件
 * SqlSession 的实例不是线程安全的，因此是不能被共享的，所以它的最佳的作用域是请求或方法作用域
 * **用完后需要关闭**，否则占用资源
 
-![](../../.vuepress/public/img/learning/mybatis/1.png)
+![](../../.vuepress/public/img/learning/mybatis/2.png)
 
 这里面每一个Mapper，就代表一个具体业务
 

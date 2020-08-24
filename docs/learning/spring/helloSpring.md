@@ -9,7 +9,7 @@ public class Hello {
 }
 ```
 
-resources目录下，新建beans.xml
+resources目录下，新建`beans.xml`
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>

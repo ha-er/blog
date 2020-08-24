@@ -5,7 +5,6 @@ module.exports = [
             {
                 text: '后端',
                 items: [
-                    {text: 'Flowable', link: '/learning/flowable/introduction'},
                     {text: 'Mybatis', link: '/learning/mybatis/introduce'},
                     {text: 'Spring', link: '/learning/spring/introduction'},
                 ]
@@ -39,6 +38,12 @@ module.exports = [
                 text: '通用',
                 items: [
                     {text: '在线画图', link: 'https://www.processon.com/'},
+                ]
+            },
+            {
+                text: '学习',
+                items: [
+                    {text: '在线正则', link: 'https://regex101.com/'},
                 ]
             },
         ]

@@ -6,7 +6,7 @@
 
 ## 注册bean，赋值
 
-xml
+`beans.xml`
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -27,7 +27,7 @@ xml
 </beans>
 ```
 
-实体类
+实体类`User`
 
 ```java
 //等价于 <bean id="user" class="com.haer.pojo.User"/>
@@ -56,7 +56,7 @@ public class User {
 
 ## 自动装配
 
-上一节已经介绍过了
+[上一节已经介绍过了](./autoassemble.md)
 
 ## 作用域
 
@@ -77,14 +77,14 @@ public class User {
 
 xml与注解的区别
 
-* zml更加万能，适用于任何场合，维护简单
+* xml更加万能，适用于任何场合，维护简单
 * 注解不是自己类使用不了，维护复杂
 
 xml与注解最佳实践
 
 * xml用来管理bean
 * 注解只负责完成属性注入
-* 我们在使用过程，需要注意：必须人注解生效，那么就需要开启注解的支持
+* 我们在使用过程，需要注意：必须让注解生效，那么就需要开启注解的支持
 
 ```xml
 <!--    指定要扫描的包，这个包下的注解就会生效-->
@@ -125,8 +125,8 @@ public class User {
 ```java
 //相当于<beans></beans>
 @Configuration//也会被注册到容器中，本身也是@Component
-@ComponentScan("com.haer")//融合其他配置文件
-@Import(HaerConfig2.class)
+@ComponentScan("com.haer")//指定要扫描的包，这个包下的注解就会生效
+@Import(HaerConfig2.class)//融合其他配置文件
 public class HaerConfig {
 
     //注册一个bean就相当于，之前写的一个bean

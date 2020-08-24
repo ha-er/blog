@@ -15,7 +15,7 @@ name在这里也是别名，且可以配置多个
 ```xml
 <beans>
     <bean id="user" class="com.haer.pojo.User" name="haer,sisi">
-        <constructor-arg name="name" value="思思"/>
+        <constructor-arg name="name" value="哈儿"/>
     </bean>
 </beans>
 ```

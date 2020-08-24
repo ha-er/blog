@@ -17,8 +17,8 @@ CREATE TABLE `user`(
 
 INSERT INTO `user`(`id`,`name`,`pwd`) VALUES
 (1,'哈儿','123456'),
-(2,'张三','123456'),
-(3,'李四','123456')
+(2,'淼淼','123456'),
+(3,'娇娇','123456')
 ```
 
 ## 创建模块
@@ -48,7 +48,7 @@ INSERT INTO `user`(`id`,`name`,`pwd`) VALUES
       </dependencys>
 ```
 
-* 编写mybatis核心配置文件
+* 编写mybatis核心配置文件`mybatis-config.xml`
 
 **xml文件的注释最好删除，这里为了解释就没有删除，可能会出现报错**
 
@@ -79,7 +79,7 @@ INSERT INTO `user`(`id`,`name`,`pwd`) VALUES
 </configuration>
 ```
 
-* 编写mybatis工具类
+* 编写mybatis工具类`MybatisUtils`
 
 ```java
 package com.haer.utils;
@@ -122,7 +122,7 @@ public class MybatisUtils {
 
 ## 编写代码
 
-* 实体类
+* 实体类`User`
 
 ```java
 package com.haer.pojo;
@@ -131,53 +131,12 @@ public class User {
     private int id;
     private String name;
     private String pwd;
-
-    public User() {
-    }
-
-    public User(int id, String name, String pwd) {
-        this.id = id;
-        this.name = name;
-        this.pwd = pwd;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getPwd() {
-        return pwd;
-    }
-
-    public void setPwd(String pwd) {
-        this.pwd = pwd;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", pwd='" + pwd + '\'' +
-                '}';
-    }
+    //get set方法 无参构造、有参构造、toString方法
 }
 
 ```
 
-* Dao接口
+* Dao接口`UserDao`
 
 ```java
 package com.haer.dao;
@@ -192,7 +151,7 @@ public interface UserDao {
 
 ```
 
-* 接口实现类由原来的UserDaoImpl转为一个Mapper配置文件
+* 接口实现类由原来的UserDaoImpl转为一个Mapper配置文件`UserMapper.xml`
 
 **自己编写代码时将注释删除**
 
@@ -205,12 +164,12 @@ public interface UserDao {
 <mapper namespace="com.haer.dao.UserDao">
     <!--    查询语句-->
     <select id="selectUserList" resultType="com.haer.pojo.User">
-       select * from mybatis.user
+       select * from user
     </select>
 </mapper>
 ```
 
-* UserDaoTest测试
+* 测试`UserDaoTest`
 
 ```java
 package com.haer.dao;
@@ -281,7 +240,7 @@ public class UserDaoTest {
 
 * 一开始，在mybatis-config.xml文件中设置url时，`useSSL=true`，报异常**org.apache.ibatis.exceptions.PersistenceException**，该成`useSSL=false`
 
-但是我是看视频学习的，看见老师的却是设置的`useSSL=true`，且没有报错！此处暂时留这（思思），若有知道的朋友可以联系我！
+但是我是看视频学习的，看见老师的却是设置的`useSSL=true`，且没有报错！此处暂时留这，若有知道的朋友可以联系我！
 
 ```
 org.apache.ibatis.exceptions.PersistenceException: 
@@ -399,9 +358,9 @@ Caused by: java.security.cert.CertPathValidatorException: Path does not chain wi
 
 * 昨天是在家里开发的，以上就成功运行了，今天回到公司，拉取代码，发现一样的的代码，居然报错了，具体错误如下：
 
-试了各种方法，发现是mybatis-config.xml，UserMapper.xml文件中包含注释，导致乱码，删除注释成功运行
+试了各种方法，发现是`mybatis-config.xml`，`UserMapper.xml`文件中包含注释，导致乱码，删除注释成功运行
 
-环境良好的电脑不会出现此错误
+环境良好的电脑可能不会出现此错误
 
 ```
 org.apache.ibatis.exceptions.PersistenceException: 
@@ -486,7 +445,7 @@ java.lang.NullPointerException
 
 ## CRUD
 
-Dao层
+Dao层`UserDao`
 
 ```java
 package com.haer.dao;
@@ -509,7 +468,7 @@ public interface UserDao {
 
 ```
 
-UserMapper.xml
+`UserMapper.xml`
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -517,25 +476,30 @@ UserMapper.xml
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.haer.dao.UserDao">
+<!--  List查询-->
     <select id="selectUserList" resultType="com.haer.pojo.User">
-       select * from mybatis.user
+       select * from user
     </select>
+    <!--  ById查询-->
     <select id="selectUserById" resultType="com.haer.pojo.User" parameterType="int">
-        select * from mybatis.user where id = #{id}
+        select * from user where id = #{id}
     </select>
+    <!--  新增-->
     <insert id="insertUser" parameterType="com.haer.pojo.User">
-        insert into mybatis.user (id, name, pwd) values (#{id}, #{name}, #{pwd})
+        insert into user (id, name, pwd) values (#{id}, #{name}, #{pwd})
     </insert>
+    <!--  修改-->
     <update id="updateUser" parameterType="com.haer.pojo.User">
         update user set name = #{name}, pwd = #{pwd} where id = #{id}
     </update>
+    <!--  删除-->
     <delete id="deleteUser" parameterType="int">
         delete from user where id = #{id}
     </delete>
 </mapper>
 ```
 
-测试
+测试`UserDaoTest`
 
 ```java
 package com.haer.dao;
@@ -587,9 +551,9 @@ public class UserDaoTest {
         SqlSession sqlSession = MybatisUtils.getSqlSession();
         try {
             UserDao userDao = sqlSession.getMapper(UserDao.class);
-            User user = new User(4,"思思", "040404");
+            User user = new User(4,"淼淼", "000520");
             userDao.insertUser(user);
-            //开启事务,否则新增、修改、删除不会生效
+            //提交事务,否则新增、修改、删除不会生效
             sqlSession.commit();
         } finally {
             sqlSession.close();
@@ -603,7 +567,7 @@ public class UserDaoTest {
             UserDao userDao = sqlSession.getMapper(UserDao.class);
             User user = new User(4,"哈儿", "000320");
             userDao.updateUser(user);
-            //开启事务
+            //提交事务
             sqlSession.commit();
         } finally {
             sqlSession.close();
@@ -616,7 +580,7 @@ public class UserDaoTest {
         try {
             UserDao userDao = sqlSession.getMapper(UserDao.class);
             userDao.deleteUser(4);
-            //开启事务
+            //提交事务
             sqlSession.commit();
         } finally {
             sqlSession.close();
@@ -657,7 +621,7 @@ public class UserDaoTest {
             UserDao userDao = sqlSession.getMapper(UserDao.class);
             HashMap<String, Object> map = new HashMap<String, Object>();
             map.put("userId",520);
-            map.put("favorite","思思");
+            map.put("favorite","淼淼");
             userDao.insertMap(map);
             //开启事务,否则新增、修改、删除不会生效
             sqlSession.commit();
@@ -688,9 +652,9 @@ Map中传递参数，直接在sql中取出key即可
   
   `select * from mybatis.user where name like concat("%", #{name}, "%")`
   
-* 批量删除
+* 批量删除【这里用到动态sql】
 
-Dao层
+Dao层`UserDao`
 
 ```java
 public interface UserDao {
@@ -699,7 +663,7 @@ public interface UserDao {
 }
 ```
 
-UserMapper.xml
+`UserMapper.xml`
 
 ```xml
 <delete id="deleteUsers" parameterType="String">
@@ -710,7 +674,7 @@ UserMapper.xml
 </delete>
 ```
 
-测试
+测试`UserDaoTest`
 
 ```java
 public class UserDaoTest {

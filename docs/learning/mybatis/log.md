@@ -1,10 +1,10 @@
 # 日志
 
-在mybatis-config.xml配置
+在`mybatis-config.xm`l配置
 
 ## 使用标准日志
 
-配置如下：[参考](./configure.md#设置（settings）)
+配置如下：[参考](./configuration.md#设置（settings）)
 
 ```xml
 <configuration>
@@ -69,10 +69,6 @@ log4j.logger.java.PreparedStatement = DEBUG
 
 * 简单使用
 
-::: tip
-导包时导入`import org.apache.log4j.Logger;`
-:::
-
 ```java
 public class UserDaoTest {
 
@@ -87,7 +83,6 @@ public class UserDaoTest {
 }
 ```
 
-
-
-
-
+::: tip
+导包时导入`import org.apache.log4j.Logger;`
+:::

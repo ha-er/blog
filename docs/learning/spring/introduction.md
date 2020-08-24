@@ -25,7 +25,7 @@
     <artifactId>spring-webmvc</artifactId>
     <version>5.2.8.RELEASE</version>
   </dependency>
-
+<!-- 连接数据时使用的-->
   <dependency>
     <groupId>org.springframework</groupId>
     <artifactId>spring-jdbc</artifactId>

@@ -12,7 +12,7 @@ SELECT * FROM user limit startIndex,pageSize;
 SELECT * FROM user limit pageSize;#相当于[0,pageSize]
 ```
 
-接口：
+接口`UserMapper`
 
 ```java
 public interface UserMapper {
@@ -21,7 +21,7 @@ public interface UserMapper {
 }
 ```
 
-Mapper.xml
+`UserMapper.xml`
 
 ```xml
 <mapper namespace="com.haer.dao.UserMapper">
@@ -31,7 +31,7 @@ Mapper.xml
 </mapper>
 ```
 
-测试：
+测试`UserDaoTest`
 
 ```java
 public class UserDaoTest {
@@ -67,6 +67,8 @@ public class UserDaoTest {
 
 ## **使用RowBounds分页**
 
+`UserMapper`
+
 ```java
 public interface UserMapper {
     //查询全部
@@ -74,7 +76,7 @@ public interface UserMapper {
 }
 ```
 
-Mapper.xml
+`UserMapper.xml`
 
 ```xml
 <mapper namespace="com.haer.dao.UserMapper">
@@ -84,7 +86,7 @@ Mapper.xml
 </mapper>
 ```
 
-测试：
+测试`UserDaoTest`
 
 ```java
 public class UserDaoTest {
@@ -98,8 +100,8 @@ public class UserDaoTest {
                 //RowBounds实现
                 RowBounds rowBounds = new RowBounds(1, 2);
     
-                //方式二：
-                List<User> userList = sqlSession.selectList("com.haer.dao.UserMapper.selectUserByRowBounds",null,rowBounds);
+                //使用sqlSession.selectList()
+                List<User> userList = sqlSession.selectList("com.haer.dao.UserMapper.selectUserByRowBounds", null, rowBounds);
     
                 for (User user : userList) {
                     System.out.println(user);

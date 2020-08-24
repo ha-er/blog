@@ -10,7 +10,6 @@ module.exports = [
             '/learning/mybatis/log',
             '/learning/mybatis/paging',
             '/learning/mybatis/annotation',
-            '/learning/mybatis/lombok',
             '/learning/mybatis/dynamicSql',
             '/learning/mybatis/cache',
         ]

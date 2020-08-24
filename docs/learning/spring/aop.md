@@ -2,7 +2,7 @@
 
 ## 什么是AOP
 
-面向切面编程，通过预编译方式和运行期动态代理实现程序功能的统一维护的一种技术。AOP手机OOP的延续
+面向切面编程，通过预编译方式和运行期动态代理实现程序功能的统一维护的一种技术。AOP是OOP的延续
 ，是软件开发中的一个热点，也是Spring框架中的一个重要内容，是函数式编程的一种衍生范型，利用AOP
 可以对业务逻辑的各个部分进行隔离，从而使得业务逻辑各部分之间得耦合度降低，提高程序得可重用性，
 同时提供开发效率
@@ -57,7 +57,7 @@ SpringAOP中，通过Advice定义横切逻辑，Spring中支持五种类型的Ad
 
 * **方式一：使用Spring的API接口**【主要SpringAPI接口实现】
 
-UserService
+`UserService`
 
 ```java
 public interface UserService {
@@ -68,7 +68,7 @@ public interface UserService {
 }
 ```
 
-UserServiceImpl
+`UserServiceImpl`
 
 ```java
 public class UserServiceImpl implements UserService {
@@ -90,7 +90,7 @@ public class UserServiceImpl implements UserService {
 }
 ```
 
-Log前置通知
+`Log`前置通知
 
 ```java
 import org.springframework.aop.MethodBeforeAdvice;
@@ -212,7 +212,6 @@ beans.xml
 
 <!--    注册bean-->
     <bean id="userService" class="com.haer.service.UserServiceImpl"/>
-
     <bean id="diy" class="com.haer.diy.DiyPoincut"/>
     
     <aop:config>
@@ -240,7 +239,7 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 
-@Aspect//标注这个类是一个切面\
+@Aspect//标注这个类是一个切面
 public class AnnotationPointcut {
 
     @Before("execution(* com.haer.service.UserServiceImpl.*(..))")
@@ -260,7 +259,7 @@ public class AnnotationPointcut {
 
         Signature signature = joinPoint.getSignature();//获得签名
         System.out.println("signature"+signature);
-
+        //调用方法
         Object proceed = joinPoint.proceed();
 
         System.out.println("环绕后===");

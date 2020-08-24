@@ -12,9 +12,9 @@
 
 角色分析：
 
-* 抽象角色：一般使用接口会抽象类解决--租房
-* 真实角色：被代理的角色--房东和租房的人
-* 代理角色：代理真实对象，会在在这做一些附属操作
+* 抽象角色：一般使用接口会抽象类解决：**租房**
+* 真实角色：被代理的角色：**房东**
+* 代理角色：代理真实对象，会在在这做一些附属操作：**中介**
 * 客户：访问代理对象的人
 
 代码步骤：
@@ -24,7 +24,6 @@
 ```java
 //租房
 public interface Rent {
-
     void rent();
 }
 ```
@@ -84,12 +83,14 @@ public class Proxy implements Rent{
 ```java
 //客户
 public class Client {
+    //不使用代理
     @Test
     public void test1(){
         Host host = new Host();
         host.rent();
     }
 
+    //使用代理
     @Test
     public void test2(){
         //房东要出租房子
@@ -124,23 +125,19 @@ public class Client {
   
 了解俩个类：`Proxy` :代理`InvocationHandler`：调用代理处理程序
 
-UserService
+`UserService`
 
 ```java
 //抽象对象
 public interface UserService {
-
     void add();
-
     void delete();
-
     void update();
-
     void query();
 }
 ```
 
-UserServiceImpl
+`UserServiceImpl`
 
 ```java
 //真实对象
@@ -163,11 +160,11 @@ public class UserServiceImpl implements UserService {
 }
 ```
 
-ProxyInvacationHandler
+`ProxyInvocationHandler`
 
 ```java
 //会用这个类自动生成代理类
-public class ProxyInvacationHandler implements InvocationHandler {
+public class ProxyInvocationHandler implements InvocationHandler {
 
     //被代理的接口
     private Object target;

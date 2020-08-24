@@ -1,4 +1,7 @@
-# 入门 - springBoot与flowable整合
+# flowable
+
+入门 - springBoot与flowable整合
+
 ## 环境
 编码工具：IntelliJ IDEA 2019.1.3 x64
 
@@ -13,22 +16,22 @@ springBoot2.3.1与flowable6.5.0
 ### 创建springBoot项目
 1、打开idea新建一个项目
 
-![img](../../../docs/.vuepress/public/img/oa/introduction/1.png)
+![img](../../../.vuepress/public/img/oa/introduction/1.png)
 2、选择spring 初始化项目快速建立项目，选择jdk版本，这里选择的1.8，然后选择从官网拉去项目，这里需要有正常的网络连接
 
-![img](../../../docs/.vuepress/public/img/oa/introduction/2.png)
+![img](../../../.vuepress/public/img/oa/introduction/2.png)
 
 3、给项目命名，Java版本选择8
 
-![img](../../../docs/.vuepress/public/img/oa/introduction/3.png)
+![img](../../../.vuepress/public/img/oa/introduction/3.png)
 
 4、这里选择Spring Web就可以了
 
-![img](../../../docs/.vuepress/public/img/oa/introduction/4.png)
+![img](../../../.vuepress/public/img/oa/introduction/4.png)
 
 5、这里可以设置项目名称，点击完成，成功建立springBoot项目,恭喜你开始了第一步
 
-![img](../../../docs/.vuepress/public/img/oa/introduction/5.png)
+![img](../../../.vuepress/public/img/oa/introduction/5.png)
 
 ### 整合flowable
 1、pom文件代码配置properties与dependencies

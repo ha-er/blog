@@ -6,7 +6,7 @@
 
 ## 构造器注入
 
-User实体类
+`User`实体类
 
 ```java
 public class User {
@@ -36,7 +36,7 @@ public class User {
 
 * **无参构造创建对象**
 
-beans.xml
+`beans.xml`
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -77,7 +77,7 @@ name=哈儿
 
 ```xml
 <bean id="user" class="com.haer.pojo.User">
-    <constructor-arg index="0" value="思思"/>
+    <constructor-arg index="0" value="哈儿"/>
 </bean>
 ```
 
@@ -85,7 +85,7 @@ name=哈儿
 
 ```xml
 <bean id="user" class="com.haer.pojo.User">
-    <constructor-arg type="java.lang.String" value="思思"/>
+    <constructor-arg type="java.lang.String" value="哈儿"/>
 </bean>
 ```
 
@@ -93,7 +93,7 @@ name=哈儿
 
 ```xml
 <bean id="user" class="com.haer.pojo.User">
-    <constructor-arg name="name" value="思思"/>
+    <constructor-arg name="name" value="哈儿"/>
 </bean>
 ```
 
@@ -103,7 +103,7 @@ name=哈儿
 
 ## **Set方式注入**
 
-实体类Address
+实体类`Address`
 
 ```java
 public class Address {
@@ -112,7 +112,7 @@ public class Address {
 }
 ```
 
-实体类Student
+实体类`Studen`t
 
 ```java
 public class Student {
@@ -128,7 +128,7 @@ public class Student {
 }
 ```
 
-beans.xml
+`beans.xml`
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -148,7 +148,7 @@ beans.xml
         <property name="books">
             <array>
                 <value>哈儿</value>
-                <value>思思</value>
+                <value>淼淼</value>
                 <value>娇娇</value>
             </array>
         </property>
@@ -206,7 +206,7 @@ public class MyTest {
 控制台打印
 
 ```
-Student{name='哈儿', address=Address{address='null'}, books=[哈儿, 思思, 娇娇], hobbys=[学习, 减肥, 敲代码], card={身份证=4444444, 银行卡=2123213}, games=[LOL, 王者], wife='null', properties={学号=20200823, 姓名=哈儿}}
+Student{name='哈儿', address=Address{address='null'}, books=[哈儿, 淼淼, 娇娇], hobbys=[学习, 减肥, 敲代码], card={身份证=4444444, 银行卡=2123213}, games=[LOL, 王者], wife='null', properties={学号=20200823, 姓名=哈儿}}
 
 ```
 
@@ -221,7 +221,7 @@ Student{name='哈儿', address=Address{address='null'}, books=[哈儿, 思思, �
 
 在xml头中添加一行`xmlns:c="http://www.springframework.org/schema/c"`
 
-User实体
+`User`实体
 
 ```java
 public class User {
@@ -231,7 +231,7 @@ public class User {
 }
 ```
 
-xml
+`beans.xml`
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>

@@ -13,5 +13,13 @@ module.exports = [
             '/tools/database/mysql/mysqlUnload',
             '/tools/database/mysql/mysql5-7',
         ]
+    },
+    {
+        title: '插件或其他的使用',
+        collapsable: true,
+        children: [
+            '/tools/other/lombok',
+            '/tools/other/flowable/introduction',
+        ]
     }
 ];
