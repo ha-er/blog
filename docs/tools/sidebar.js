@@ -1,5 +1,12 @@
 module.exports = [
     {
+        title: 'IDE开发工具',
+        collapsable: true,
+        children: [
+            '/tools/ide/idea',
+        ]
+    },
+    {
         title: '代码管理工具',
         collapsable: true,
         children: [

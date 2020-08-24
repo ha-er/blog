@@ -17,7 +17,7 @@ module.exports = [
             {
                 text: '后端',
                 items: [
-                    {text: 'JAVA', link: '/base/java/reflect/reflect'},
+                    {text: 'JAVA', link: '/base/java/advance/reflect'},
                 ]
             },
         ]

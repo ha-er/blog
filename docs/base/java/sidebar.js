@@ -1,9 +1,18 @@
 module.exports = [
-  {
-      title: 'Java反射',
-    collapsable: true,
-    children: [
-        '/base/java/reflect/reflect',
-    ]
-  }
+    {
+        title: 'Java基础',
+        collapsable: true,
+        children: [
+            '/base/java/introduction/environment',
+            '/base/java/introduction/dataType',
+            '/base/java/introduction/variate',
+        ]
+    },
+    {
+        title: 'Java进阶',
+        collapsable: true,
+        children: [
+            '/base/java/advance/reflect',
+        ]
+    }
 ];
