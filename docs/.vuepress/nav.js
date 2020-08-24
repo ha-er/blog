@@ -7,6 +7,7 @@ module.exports = [
                 items: [
                     {text: 'Mybatis', link: '/learning/mybatis/introduce'},
                     {text: 'Spring', link: '/learning/spring/introduction'},
+                    {text: 'SpringMVC', link: '/learning/springMVC/introduction'},
                 ]
             },
         ]
@@ -17,7 +18,7 @@ module.exports = [
             {
                 text: '后端',
                 items: [
-                    {text: 'JAVA', link: '/base/java/advance/reflect'},
+                    {text: 'JAVA', link: '/base/java/introduction/dataType'},
                 ]
             },
         ]

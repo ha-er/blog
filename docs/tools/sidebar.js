@@ -1,5 +1,13 @@
 module.exports = [
     {
+        title: '环境搭建',
+        collapsable: true,
+        children: [
+            '/tools/environment/javaEnvironment',
+            '/tools/environment/tomcatEnvironment',
+        ]
+    },
+    {
         title: 'IDE开发工具',
         collapsable: true,
         children: [

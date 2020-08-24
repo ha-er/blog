@@ -1,5 +1,7 @@
 # 基本数据类型
 
+需要安装[环境变量](../../../tools/environment/javaEnvironment.md)
+
 * java是强类型语言
 
 要求变量的使用要严格符合规定，所有变量都必须先定义后使用，

@@ -3,7 +3,6 @@ module.exports = [
         title: 'Java基础',
         collapsable: true,
         children: [
-            '/base/java/introduction/environment',
             '/base/java/introduction/dataType',
             '/base/java/introduction/variate',
         ]
