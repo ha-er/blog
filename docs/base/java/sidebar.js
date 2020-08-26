@@ -17,6 +17,7 @@ module.exports = [
         children: [
             '/base/java/advance/oop',
             '/base/java/advance/exception',
+            '/base/java/advance/GUI',
             '/base/java/advance/reflect',
         ]
     }
