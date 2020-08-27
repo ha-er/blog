@@ -20,7 +20,7 @@
 
 最典型的MVC就是JSP + servlet + javabean的模式。
 
-![](../../.vuepress/public/img/learning/springMVC/1.png)
+![](../../.vuepress/public/img/learning/springmvc/1.png)
 
 ### Model1时代
 
@@ -28,7 +28,7 @@
 
 * Model1中，主要分为两层，视图层和模型层。
 
-![](../../.vuepress/public/img/learning/springMVC/2.png)
+![](../../.vuepress/public/img/learning/springmvc/2.png)
 
 Model1优点：架构简单，比较适合小型项目开发；
 
@@ -38,7 +38,7 @@ Model1缺点：JSP职责不单一，职责过重，不便于维护
 
 Model2把一个项目分成三部分，包括**视图、控制、模型**。
 
-![](../../.vuepress/public/img/learning/springMVC/3.png)
+![](../../.vuepress/public/img/learning/springmvc/3.png)
 
 1、用户发请求
 
@@ -112,7 +112,7 @@ Model2这样不仅提高的代码的复用率与项目的扩展性，且大大�
 
 2、右击项目选择Add Framework Support...，添加Web app支持
 
-![](../../.vuepress/public/img/learning/springMVC/4.png)
+![](../../.vuepress/public/img/learning/springmvc/4.png)
 
 3、编写一个Servlet类，用来处理用户的请求
 
@@ -193,7 +193,7 @@ ${msg}
 
 点击+号选择，到自己的项目，保存，然后启动Tomcat，测试
 
-![](../../.vuepress/public/img/learning/springMVC/5.png)
+![](../../.vuepress/public/img/learning/springmvc/5.png)
 
 * localhost:8080/hello?method=add
 
