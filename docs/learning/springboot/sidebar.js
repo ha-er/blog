@@ -4,6 +4,9 @@ module.exports = [
         collapsable: true,
         children: [
             '/learning/springboot/introduction',
+            '/learning/springboot/helloWorld',
+            '/learning/springboot/theory',
+            '/learning/springboot/yaml',
         ]
     }
 ];

@@ -20,5 +20,8 @@
   "homepage": "https://github.com/ha-er/blog#readme",
   "devDependencies": {
     "vuepress": "^1.5.2"
+  },
+  "dependencies": {
+    "vuepress-plugin-gotop-plus": "^1.0.4"
   }
 }
