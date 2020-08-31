@@ -449,3 +449,255 @@ class MyCalcListener implements ActionListener{
 
 ```
 
+**面向对象改造代码：**
+
+```java
+package com.haer.demo2;
+
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+//简易计算器
+public class TestCalc {
+    public static void main(String[] args) {
+        new Calculator().loadFrame();
+    }
+}
+
+//计算器类
+class Calculator extends Frame {
+
+    TextField num1, num2, num3;
+
+    public void loadFrame() {
+        //3个文本框
+        num1 = new TextField(10);//字符数
+        num2 = new TextField(10);//字符数
+        num3 = new TextField(20);//字符数
+
+        //一个按钮
+        Button button = new Button("=");
+
+        button.addActionListener(new MyCalcListener(this));
+
+        //一个标签
+        Label label = new Label("+");
+
+        //布局
+        setLayout(new FlowLayout());
+
+        add(num1);
+        add(label);
+        add(num2);
+        add(button);
+        add(num3);
+
+        pack();
+        setVisible(true);
+    }
+
+}
+
+//监听器类
+class MyCalcListener implements ActionListener {
+
+    //获取三个变量
+//    private TextField num1, num2, num3;
+    private Calculator calculator;
+
+    public MyCalcListener(Calculator calculator) {
+        this.calculator = calculator;
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        //获得加数和被加数
+        //将这个值+加起来放到第三个框
+        //清楚前面俩个框
+        int n1 = Integer.parseInt(calculator.num1.getText());
+        int n2 = Integer.parseInt(calculator.num2.getText());
+        calculator.num3.setText(""+(n1+n2));
+        calculator.num1.setText("");
+        calculator.num2.setText("");
+    }
+}
+
+```
+
+**内部类改造代码：**
+
+```java
+package com.haer.demo2;
+
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+//简易计算器
+public class TestCalc {
+    public static void main(String[] args) {
+        new Calculator().loadFrame();
+    }
+}
+
+//计算器类
+class Calculator extends Frame {
+
+    TextField num1, num2, num3;
+
+    public void loadFrame() {
+        //3个文本框
+        num1 = new TextField(10);//字符数
+        num2 = new TextField(10);//字符数
+        num3 = new TextField(20);//字符数
+
+        //一个按钮
+        Button button = new Button("=");
+
+        button.addActionListener(new MyCalcListener());
+
+        //一个标签
+        Label label = new Label("+");
+
+        //布局
+        setLayout(new FlowLayout());
+
+        add(num1);
+        add(label);
+        add(num2);
+        add(button);
+        add(num3);
+
+        pack();
+        setVisible(true);
+    }
+    //监听器类
+    //内部类：可以畅通无阻的访问外部类的属性和方法
+    private class MyCalcListener implements ActionListener {
+
+        public void actionPerformed(ActionEvent e) {
+            //获得加数和被加数
+            //将这个值+加起来放到第三个框
+            //清楚前面俩个框
+            int n1 = Integer.parseInt(num1.getText());
+            int n2 = Integer.parseInt(num2.getText());
+            num3.setText(""+(n1+n2));
+            num1.setText("");
+            num2.setText("");
+        }
+    }
+}
+
+```
+
+### 画笔Paint
+
+```java
+package com.haer.demo3;
+
+import java.awt.*;
+
+public class TestPaint {
+    public static void main(String[] args) {
+        new MyPaint().loadFrame();
+    }
+}
+
+class MyPaint extends Frame{
+
+    public void loadFrame(){
+        setBounds(200,200,600,500);
+        setVisible(true);
+    }
+
+    @Override
+    public void paint(Graphics g) {
+        //颜色
+        g.setColor(Color.red);
+        //画一个圆
+        g.drawOval(100,100,100,100);
+        //实心圆
+        g.fillOval(200,100,100,100);
+
+        g.setColor(Color.green);
+        //矩形
+        g.fillRect(150,200,200,200);
+
+        //画笔用完还原到最初的颜色
+        g.setColor(Color.black);
+    }
+}
+
+```
+
+### 鼠标监听
+
+实现点击鼠标画一次
+
+```java
+package com.haer.demo3;
+
+import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class TestMouseListener {
+    public static void main(String[] args) {
+        new MyFrame("画图");
+    }
+}
+
+class MyFrame extends Frame{
+    //存鼠标点击的点
+    ArrayList points;
+
+    public MyFrame(String title){
+        super(title);
+        setBounds(200,200,400,300);
+        //存鼠标点击的点
+        points = new ArrayList<>();
+        //鼠标监听器，正对窗口
+        this.addMouseListener(new MyMouseListener());
+        setVisible(true);
+    }
+
+    @Override
+    public void paint(Graphics g) {
+        //画画监听鼠标事件
+        Iterator iterator = points.iterator();
+        while (iterator.hasNext()){
+            Point point = (Point) iterator.next();
+            //点的颜色，大小
+            g.setColor(Color.blue);
+            g.fillOval(point.x,point.y,10,10);
+        }
+    }
+
+    //添加一个点到界面上
+    public void addPoint(Point point){
+        points.add(point);
+    }
+
+    //适配器模式
+    private class MyMouseListener extends MouseAdapter{
+        //鼠标，按下，弹起
+        @Override
+        public void mousePressed(MouseEvent e) {
+            MyFrame myFrame = (MyFrame) e.getSource();
+            //这里点击时在界面上画一个点
+            //这个点的位置就是鼠标的位置
+            myFrame.addPoint(new Point(e.getX(), e.getY()));
+
+            //每次点击鼠标需要重新画一遍
+            myFrame.repaint();
+        }
+    }
+}
+```
+
+### 窗口监听
+
+
+### 键盘监听
