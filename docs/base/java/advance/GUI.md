@@ -632,7 +632,7 @@ class MyPaint extends Frame{
 
 ### 鼠标监听
 
-实现点击鼠标画一次
+实现点击鼠标画一个点
 
 ```java
 package com.haer.demo3;
@@ -699,5 +699,488 @@ class MyFrame extends Frame{
 
 ### 窗口监听
 
+俩个常用的监听窗口事件
+
+```java
+package com.haer.demo3;
+
+import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
+public class TestWindow {
+    public static void main(String[] args) {
+        new WindowFrame();
+    }
+}
+
+class WindowFrame extends Frame{
+    public WindowFrame(){
+        setBackground(Color.CYAN);
+        setBounds(100,100,200,200);
+        setVisible(true);
+
+        addWindowListener(
+                //匿名内部类
+                new WindowAdapter() {
+                    //这里重写俩个使用较多的方法
+                    //关闭窗口,点击x时调用
+                    @Override
+                    public void windowClosing(WindowEvent e) {
+                        System.out.println("windowClosing");
+                        System.exit(0);//正常关闭程序
+                    }
+
+                    //激活窗口
+                    @Override
+                    public void windowActivated(WindowEvent e) {
+                        System.out.println("windowActivated");
+                    }
+                }
+        );
+    }
+}
+
+```
 
 ### 键盘监听
+
+监听按下的哪个按钮
+
+```java
+package com.haer.demo3;
+
+import java.awt.*;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+
+public class TestKeyListener {
+    public static void main(String[] args) {
+        
+    }
+}
+
+class KeyFrame extends Frame{
+    public KeyFrame(){
+        setBounds(100,100,200,200);
+        setVisible(true);
+        
+        this.addKeyListener(
+                new KeyAdapter() {
+                    //重写键盘按下方法
+                    @Override
+                    public void keyPressed(KeyEvent e) {
+                        //获得键盘的码
+                        int keyCode = e.getKeyCode();
+                        System.out.println(keyCode);
+                        //判断按下了上键
+                        if(keyCode == KeyEvent.VK_UP){
+                            System.out.println("按下了上键");
+                        }
+                    }
+                }
+        );
+    }
+}
+
+```
+
+## Swing
+
+### 窗体JFrame
+
+```java
+package com.haer.demo04;
+
+import javax.swing.*;
+import java.awt.*;
+
+public class JFrameDemo {
+    public static void main(String[] args) {
+        new MyJFrame();
+    }
+}
+
+class MyJFrame extends JFrame{
+    public MyJFrame(){
+        setVisible(true);
+        setBounds(100,100,200,200);
+        //这个是顶级窗口JFrame的颜色
+        setBackground(Color.CYAN);
+        JLabel label = new JLabel("喜欢偷懒的哈儿");
+        //设置文字
+        add(label);
+        //设置文字居中
+        label.setHorizontalAlignment(SwingConstants.CENTER);
+        //设置这个label的颜色，因为label完全覆盖在窗口JFrame上层了
+        getContentPane().setBackground(Color.red);
+        //关闭事件
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+    }
+}
+
+```
+
+### 弹窗JDialog
+
+用来被弹出，默认有关闭窗口事件
+
+```java
+package com.haer.demo04;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class DialogDemo {
+    public static void main(String[] args) {
+        new MyJFrame2();
+    }
+}
+
+class MyJFrame2 extends JFrame{
+    public MyJFrame2(){
+        setVisible(true);
+        setSize(700,500);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        //JFrame设置一个容器
+        Container contentPane = this.getContentPane();
+        //绝对布局
+        contentPane.setLayout(null);
+        //按钮
+        JButton button = new JButton("点击弹出");
+        button.setBounds(30,30,200,50);
+        //按钮监听事件，弹出一个弹出
+        button.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        //弹窗
+                        new MyDialogDemo();
+                    }
+                }
+        );
+        //把按钮添加到容器
+        contentPane.add(button);
+    }
+}
+
+//弹窗
+class MyDialogDemo extends JDialog{
+    public MyDialogDemo() {
+        this.setVisible(true);
+        this.setBounds(100,100,500,500);
+        //弹窗默认都有关闭窗口的功能所以不需要
+        //this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+
+        Container contentPane = this.getContentPane();
+        contentPane.setLayout(null);
+
+        contentPane.add(new Label("这是一个弹出窗口"));
+    }
+}
+```
+
+
+### 标签JLabel
+
+* 画一个图标Icon
+
+```java
+package com.haer.demo04;
+
+import javax.swing.*;
+import java.awt.*;
+
+public class IconDemo extends JFrame implements Icon {
+
+    private int width;
+    private int height;
+
+    public IconDemo() {
+    }
+
+    public IconDemo(int width, int height) {
+        this.width = width;
+        this.height = height;
+    }
+
+    public void init(){
+        IconDemo iconDemo = new IconDemo(15, 15);
+        //图片放在标签上，也可以放在按钮上
+        //标题，图标，居中
+        JLabel label = new JLabel("iconTest", iconDemo, SwingConstants.CENTER);
+        //放在容器中
+        Container contentPane = getContentPane();
+        contentPane.add(label);
+        //设置
+        this.setVisible(true);
+        this.setBounds(100,100,300,300);
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+    }
+
+    public static void main(String[] args) {
+        new IconDemo().init();
+    }
+
+    @Override
+    public void paintIcon(Component c, Graphics g, int x, int y) {
+        //画一个实心圆
+        g.fillOval(x,y,width,height);
+    }
+
+    @Override
+    public int getIconWidth() {
+        return this.width;
+    }
+
+    @Override
+    public int getIconHeight() {
+        return this.height;
+    }
+}
+
+```
+
+* 将图片画上去ImageIcon
+
+```java
+package com.haer.demo04;
+
+import javax.swing.*;
+import java.awt.*;
+import java.net.URL;
+
+public class ImageIconDemo extends JFrame {
+    public static void main(String[] args) {
+        new ImageIconDemo();
+    }
+
+    public ImageIconDemo(){
+        //图片标题
+        JLabel label = new JLabel("ImageIcon");
+        //获取当前目录下的test.png图片地址//必须保证target中同级目录下也有这个图片文件，否则一直找不到
+        URL url = ImageIconDemo.class.getResource("tx.jpg");
+
+        ImageIcon imageIcon = new ImageIcon(url);
+        label.setIcon(imageIcon);
+        label.setHorizontalAlignment(SwingConstants.CENTER);
+
+        Container contentPane = getContentPane();
+        contentPane.add(label);
+
+        setVisible(true);
+        setBounds(100,100,300,300);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+    }
+}
+```
+
+::: tip 
+idea中target目录没有显示
+
+File-->Settings-->Editor-->File Types-->右边Ignore files and folders一栏找到`target;`文件名去掉即可
+:::
+
+### 面板JPanel
+
+* 面板JPanel
+
+```java
+package com.haer.demo05;
+
+import javax.swing.*;
+import java.awt.*;
+
+public class JPanelDemo extends JFrame {
+    public static void main(String[] args) {
+        new JPanelDemo();
+    }
+
+    public JPanelDemo(){
+        Container contentPane = this.getContentPane();
+        //设置GridLayout表格布局，2行2列，后面俩个是间距
+        contentPane.setLayout(new GridLayout(2,2,10,10));
+
+        JPanel jPanel = new JPanel(new GridLayout(1, 3));
+        JPanel jPane2 = new JPanel(new GridLayout(1, 2));
+        JPanel jPane3 = new JPanel(new GridLayout(2, 1));
+        JPanel jPane4 = new JPanel(new GridLayout(3, 2));
+
+        jPanel.add(new JButton("1"));
+        jPanel.add(new JButton("1"));
+        jPanel.add(new JButton("1"));
+        jPane2.add(new JButton("2"));
+        jPane2.add(new JButton("2"));
+        jPane3.add(new JButton("3"));
+        jPane3.add(new JButton("3"));
+        jPane4.add(new JButton("4"));
+        jPane4.add(new JButton("4"));
+        jPane4.add(new JButton("4"));
+        jPane4.add(new JButton("4"));
+        jPane4.add(new JButton("4"));
+        jPane4.add(new JButton("4"));
+
+        contentPane.add(jPanel);
+        contentPane.add(jPane2);
+        contentPane.add(jPane3);
+        contentPane.add(jPane4);
+
+        this.setVisible(true);
+        this.setSize(500,500);
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+
+    }
+}
+```
+
+* 滚动条面板JScrollPane
+
+```java
+package com.haer.demo05;
+
+import javax.swing.*;
+import java.awt.*;
+
+public class JScrollDemo extends JFrame {
+    public static void main(String[] args) {
+        new JScrollDemo();
+    }
+
+    public JScrollDemo(){
+        Container contentPane = this.getContentPane();
+        //文本域
+        JTextArea jTextArea = new JTextArea(20, 50);
+        jTextArea.setText("哈儿");
+        //Scroll面板
+        JScrollPane jScrollPane = new JScrollPane(jTextArea);
+        contentPane.add(jScrollPane);
+
+        this.setVisible(true);
+        this.setBounds(100,200,300,400);
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+    }
+}
+
+```
+### 按钮
+
+* 图片按钮JButton
+
+```java
+package com.haer.demo05;
+
+import javax.swing.*;
+import java.awt.*;
+import java.net.URL;
+
+public class JButtonDemo01 extends JFrame {
+    public static void main(String[] args) {
+        new JButtonDemo01();
+    }
+
+    public JButtonDemo01(){
+        Container contentPane = this.getContentPane();
+        //将图片变成一个图标//必须保证target中同级目录下也有这个图片文件，否则一直找不到
+        URL url = JButtonDemo01.class.getResource("tx.jpg");
+        Icon icon = new ImageIcon(url);
+        //把图标放在按钮上
+        JButton button = new JButton();
+        button.setIcon(icon);
+        button.setToolTipText("图片按钮");
+
+        contentPane.add(button);
+
+        this.setVisible(true);
+        this.setSize(200,200);
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+    }
+}
+
+```
+
+* 单选框JRadioButton
+
+```java
+package com.haer.demo05;
+
+import javax.swing.*;
+import java.awt.*;
+import java.net.URL;
+
+public class JButtonDemo02 extends JFrame {
+    public static void main(String[] args) {
+        new JButtonDemo02();
+    }
+
+    public JButtonDemo02(){
+        Container contentPane = this.getContentPane();
+        //将图片变成一个图标//必须保证target中同级目录下也有这个图片文件，否则一直找不到
+        URL url = JButtonDemo02.class.getResource("tx.jpg");
+        Icon icon = new ImageIcon(url);
+        //单选框
+        JRadioButton radioButton01 = new JRadioButton("JRadioButton01");
+        JRadioButton radioButton02 = new JRadioButton("JRadioButton02");
+        JRadioButton radioButton03 = new JRadioButton("JRadioButton03");
+
+        //由于单选框只能选择一个，分租，一个组只能选择一个
+        ButtonGroup buttonGroup = new ButtonGroup();
+        buttonGroup.add(radioButton01);
+        buttonGroup.add(radioButton02);
+        buttonGroup.add(radioButton03);
+
+        contentPane.add(radioButton01,BorderLayout.CENTER);
+        contentPane.add(radioButton02,BorderLayout.NORTH);
+        contentPane.add(radioButton03,BorderLayout.SOUTH);
+
+
+        this.setVisible(true);
+        this.setSize(200,200);
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+    }
+}
+
+```
+
+* 多选框JCheckBox
+
+```java
+package com.haer.demo05;
+
+import javax.swing.*;
+import java.awt.*;
+import java.net.URL;
+
+public class JButtonDemo03 extends JFrame {
+    public static void main(String[] args) {
+        new JButtonDemo03();
+    }
+
+    public JButtonDemo03(){
+        Container contentPane = this.getContentPane();
+        //将图片变成一个图标//必须保证target中同级目录下也有这个图片文件，否则一直找不到
+        URL url = JButtonDemo03.class.getResource("tx.jpg");
+        Icon icon = new ImageIcon(url);
+        //多选框
+        JCheckBox checkBox01 = new JCheckBox("JCheckBox01");
+        JCheckBox checkBox02 = new JCheckBox("JCheckBox02");
+
+        contentPane.add(checkBox01,BorderLayout.NORTH);
+        contentPane.add(checkBox02,BorderLayout.SOUTH);
+
+        this.setVisible(true);
+        this.setSize(200,200);
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+    }
+}
+
+```
+
+### 列表
+
+* 下拉框
+
+* 列表框
+
+### 文本框
