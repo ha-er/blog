@@ -19,6 +19,7 @@ module.exports = [
             '/base/java/advance/oop',
             '/base/java/advance/exception',
             '/base/java/advance/GUI',
+            '/base/java/advance/networkProgramming',
             '/base/java/advance/reflect',
         ]
     }
