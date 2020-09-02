@@ -79,159 +79,143 @@ public class Springboot01Application {
 
 **注解**
 
-@SpringBootApplication：启动器注解介绍
-
-* @ComponentScan：扫描主启动类同级的包
-
-* @SpringBootConfiguration：SpringBoot的配置
-  
-   * @Configuration：Spring配置类
-     
-      * @Component：说明这也是一个Spring的组件
-    
-* @EnableAutoConfiguration：自动配置
-
-  * @AutoConfigurationPackage：自动配置包
-  
-     * @Import(AutoConfigurationPackages.Registrar.class)：自动配置包注册，将@ComponentScan扫描的包在这里注册
-     
-     ```java
-        static class Registrar implements ImportBeanDefinitionRegistrar, DeterminableImports {
-            //获得配置包元数据
-     		@Override
-     		public void registerBeanDefinitions(AnnotationMetadata metadata, BeanDefinitionRegistry registry) {
-     			register(registry, new PackageImports(metadata).getPackageNames().toArray(new String[0]));
-     		}
-     
-     		@Override
-     		public Set<Object> determineImports(AnnotationMetadata metadata) {
-     			return Collections.singleton(new PackageImports(metadata));
-     		}
-     
-     	}
-       ```
-            
-  * @Import(AutoConfigurationImportSelector.class)：自动配置导入选择
-  ```java
-  public class AutoConfigurationImportSelector implements DeferredImportSelector, BeanClassLoaderAware,
-  		ResourceLoaderAware, BeanFactoryAware, EnvironmentAware, Ordered {
-    //当前类加载器
-    private ClassLoader beanClassLoader;
-    //选择在pom.xml中配置的组件，加载元数据
-    @Override
-    public String[] selectImports(AnnotationMetadata annotationMetadata) {
-    		if (!isEnabled(annotationMetadata)) {
-    			return NO_IMPORTS;
-    		}
-    		AutoConfigurationEntry autoConfigurationEntry = getAutoConfigurationEntry(annotationMetadata);
-    		return StringUtils.toStringArray(autoConfigurationEntry.getConfigurations());
-    }
-    //获得自动配置实体
-    protected AutoConfigurationEntry getAutoConfigurationEntry(AnnotationMetadata annotationMetadata) {
-    		if (!isEnabled(annotationMetadata)) {
-    			return EMPTY_ENTRY;
-    		}
-    		AnnotationAttributes attributes = getAttributes(annotationMetadata);
-  		    //获得所有配置
-    		List<String> configurations = getCandidateConfigurations(annotationMetadata, attributes);
-    		configurations = removeDuplicates(configurations);
-    		Set<String> exclusions = getExclusions(annotationMetadata, attributes);
-    		checkExcludedClasses(configurations, exclusions);
-    		configurations.removeAll(exclusions);
-    		configurations = getConfigurationClassFilter().filter(configurations);
-    		fireAutoConfigurationImportEvents(configurations, exclusions);
-    		return new AutoConfigurationEntry(configurations, exclusions);
-    }
-    //调用了此方法，获取候选的配置
-    protected List<String> getCandidateConfigurations(AnnotationMetadata metadata, AnnotationAttributes attributes) {
-        //调用加载工厂名称方法loadFactoryNames()
-   		List<String> configurations = SpringFactoriesLoader.loadFactoryNames(getSpringFactoriesLoaderFactoryClass(),
-   				getBeanClassLoader());
- 		//判断configurations不为空，后面是为空时，的报错信息。我们可以猜测自动配置包，是从META-INF/spring.factories拿到的
-   		Assert.notEmpty(configurations, "No auto configuration classes found in META-INF/spring.factories. If you "
-   				+ "are using a custom packaging, make sure that file is correct.");
-   		return configurations;
-   	 }
- 	 
- 	 protected Class<?> getSpringFactoriesLoaderFactoryClass() {
-            //获得标注了这个类的所有包和配置，上面启动类进去第二个注解就是@EnableAutoConfiguration，
-            // 也就是获取了主启动类
-     		return EnableAutoConfiguration.class;
-     }
-     //获取当前类加载器
-     protected ClassLoader getBeanClassLoader() {
-     		return this.beanClassLoader;
-     }
-   }
-  ```
-  ```java
-  public final class SpringFactoriesLoader {
-     //前面猜测加载的是META-INF/spring.factories配置文件，确实是在这里加载了
-     public static final String FACTORIES_RESOURCE_LOCATION = "META-INF/spring.factories";
-     //获取所有的加载配置，factoryType：加载标注了@SpringBootApplication的启动类
-     public static List<String> loadFactoryNames(Class<?> factoryType, @Nullable ClassLoader classLoader) {
-       //获取类的名字
-       String factoryTypeName = factoryType.getName();
-       //Collections：获取默认的包名：判断不为空
-       return loadSpringFactories(classLoader).getOrDefault(factoryTypeName, Collections.emptyList());
-     }
-   
-     private static Map<String, List<String>> loadSpringFactories(@Nullable ClassLoader classLoader) {
-     		MultiValueMap<String, String> result = cache.get(classLoader);
-     		if (result != null) {
-     			return result;
-     		}
-     
-     		try {
-   		        //加载获取所有的项目资源和系统资源META-INF/spring.factories
-     			Enumeration<URL> urls = (classLoader != null ?
-     					classLoader.getResources(FACTORIES_RESOURCE_LOCATION) :
-     					ClassLoader.getSystemResources(FACTORIES_RESOURCE_LOCATION));
-     			result = new LinkedMultiValueMap<>();
-   			    //遍历了那些可以自动配置，hasMoreElements()：判断有没有更多的元素
-     			while (urls.hasMoreElements()) {
-   			        //有的话就放到URL里面
-     				URL url = urls.nextElement();
-     				UrlResource resource = new UrlResource(url);
-   				    //把URL（所有的资源）加载到Properties配置类中，供我们使用
-     				Properties properties = PropertiesLoaderUtils.loadProperties(resource);
-     				for (Map.Entry<?, ?> entry : properties.entrySet()) {
-     					String factoryTypeName = ((String) entry.getKey()).trim();
-     					for (String factoryImplementationName : StringUtils.commaDelimitedListToStringArray((String) entry.getValue())) {
-     						//循环放到result
-   					        result.add(factoryTypeName, factoryImplementationName.trim());
-     					}
-     				}
-     			}
-   			    //最后放到缓存中
-     			cache.put(classLoader, result);
-     			return result;
-     		}
-     		catch (IOException ex) {
-     			throw new IllegalArgumentException("Unable to load factories from location [" +
-     					FACTORIES_RESOURCE_LOCATION + "]", ex);
-     		}
-     	}
-  }
-  ```
-
-找到`META-INF/spring.factories`，配置文件中配置126个`XXXAutoConfiguration`，都是SpringBoot帮我们自动配置的
-对应的类都在org目录下，比如Web的配置也是在里面
-
-![](../../.vuepress/public/img/learning/springboot/8.png)
-
-那么导入了这么多的配置，为什么需要导入各种`starter-xxx`来实现配置呢！
-
-随意进入一个配置类，也是上面org目录的各种配置类,发现都带有`@ConditionalOnXXX`的注解，去判断该自动配置是否生效。所以只有当你去导入`starter-xxx`是，
-才会是自动配置生效
-
-```java
-@ConditionalOnProperty(prefix = "spring.application.admin", value = "enabled", havingValue = "true",
-		matchIfMissing = false)
-public class SpringApplicationAdminJmxAutoConfiguration {
-    //...
-}
-```
+> @SpringBootApplication：启动器注解介绍
+>> @ComponentScan：扫描主启动类同级的包
+>>> 
+>> @SpringBootConfiguration：SpringBoot的配置
+>>> @Configuration：Spring配置类  
+>>>> @Component：说明这也是一个Spring的组件
+>>
+>> @EnableAutoConfiguration：自动配置
+>>> @AutoConfigurationPackage：自动配置包
+>>>> @Import(AutoConfigurationPackages.Registrar.class)：自动配置包注册，将@ComponentScan扫描的包在这里注册 
+>>>> ```java
+>>>> static class Registrar implements ImportBeanDefinitionRegistrar, DeterminableImports {
+>>>>   //获得配置包元数据
+>>>>   @Override
+>>>>   public void registerBeanDefinitions(AnnotationMetadata metadata, BeanDefinitionRegistry registry) {
+>>>>     register(registry, new PackageImports(metadata).getPackageNames().toArray(new String[0]));
+>>>>   }
+>>>>      
+>>>>   @Override
+>>>>   public Set<Object> determineImports(AnnotationMetadata metadata) {
+>>>>     return Collections.singleton(new PackageImports(metadata));
+>>>>   } 
+>>>> }
+>>>> ```       
+>>> @Import(AutoConfigurationImportSelector.class)：自动配置导入选择
+>>> ```java
+>>> public class AutoConfigurationImportSelector implements DeferredImportSelector, BeanClassLoaderAware,
+>>> 	ResourceLoaderAware, BeanFactoryAware, EnvironmentAware, Ordered {
+>>>   //当前类加载器
+>>>   private ClassLoader beanClassLoader;
+>>>   //选择在pom.xml中配置的组件，加载元数据
+>>>   @Override
+>>>   public String[] selectImports(AnnotationMetadata annotationMetadata) {
+>>> 	if (!isEnabled(annotationMetadata)) {
+>>> 	  return NO_IMPORTS;
+>>> 	}
+>>> 	AutoConfigurationEntry autoConfigurationEntry = getAutoConfigurationEntry(annotationMetadata);
+>>> 	return StringUtils.toStringArray(autoConfigurationEntry.getConfigurations());
+>>>   }
+>>>   //获得自动配置实体
+>>>   protected AutoConfigurationEntry getAutoConfigurationEntry(AnnotationMetadata annotationMetadata) {
+>>> 	if (!isEnabled(annotationMetadata)) {
+>>> 	  return EMPTY_ENTRY;
+>>> 	}
+>>> 	AnnotationAttributes attributes = getAttributes(annotationMetadata);
+>>> 	//获得所有配置
+>>> 	List<String> configurations = getCandidateConfigurations(annotationMetadata, attributes);
+>>> 	configurations = removeDuplicates(configurations);
+>>> 	Set<String> exclusions = getExclusions(annotationMetadata, attributes);
+>>> 	checkExcludedClasses(configurations, exclusions);
+>>> 	configurations.removeAll(exclusions);
+>>> 	configurations = getConfigurationClassFilter().filter(configurations);
+>>> 	fireAutoConfigurationImportEvents(configurations, exclusions);
+>>> 	return new AutoConfigurationEntry(configurations, exclusions);
+>>>   }
+>>>   //调用了此方法，获取候选的配置
+>>>   protected List<String> getCandidateConfigurations(AnnotationMetadata metadata, AnnotationAttributes attributes) {
+>>>     //调用加载工厂名称方法loadFactoryNames()
+>>> 	List<String> configurations = SpringFactoriesLoader.loadFactoryNames(getSpringFactoriesLoaderFactoryClass(),
+>>> 				getBeanClassLoader());
+>>> 	//判断configurations不为空，后面是为空时，的报错信息。我们可以猜测自动配置包，是从META-INF/spring.factories拿到的
+>>> 	Assert.notEmpty(configurations, "No auto configuration classes found in META-INF/spring.factories. If you "
+>>> 			+ "are using a custom packaging, make sure that file is correct.");
+>>> 	return configurations;
+>>>   }
+>>>  
+>>>   protected Class<?> getSpringFactoriesLoaderFactoryClass() {
+>>>     //获得标注了这个类的所有包和配置，上面启动类进去第二个注解就是@EnableAutoConfiguration，
+>>>     // 也就是获取了主启动类
+>>>  	return EnableAutoConfiguration.class;
+>>>   }
+>>>   //获取当前类加载器
+>>>   protected ClassLoader getBeanClassLoader() {
+>>>  	return this.beanClassLoader;
+>>>   }
+>>> }
+>>> ```
+>>> ```java
+>>>  public final class SpringFactoriesLoader {
+>>>    //前面猜测加载的是META-INF/spring.factories配置文件，确实是在这里加载了
+>>>    public static final String FACTORIES_RESOURCE_LOCATION = "META-INF/spring.factories";
+>>>    //获取所有的加载配置，factoryType：加载标注了@SpringBootApplication的启动类
+>>>    public static List<String> loadFactoryNames(Class<?> factoryType, @Nullable ClassLoader classLoader) {
+>>>      //获取类的名字
+>>>      String factoryTypeName = factoryType.getName();
+>>>      //Collections：获取默认的包名：判断不为空
+>>>      return loadSpringFactories(classLoader).getOrDefault(factoryTypeName, Collections.emptyList());
+>>>    }
+>>> 
+>>>    private static Map<String, List<String>> loadSpringFactories(@Nullable ClassLoader classLoader) {
+>>>      MultiValueMap<String, String> result = cache.get(classLoader);
+>>>      if (result != null) {
+>>>      return result;
+>>>      }
+>>>      try {
+>>>        //加载获取所有的项目资源和系统资源META-INF/spring.factories
+>>>  	   Enumeration<URL> urls = (classLoader != null ?
+>>>  			classLoader.getResources(FACTORIES_RESOURCE_LOCATION) :
+>>>  			ClassLoader.getSystemResources(FACTORIES_RESOURCE_LOCATION));
+>>>  	   result = new LinkedMultiValueMap<>();
+>>>  	   //遍历了那些可以自动配置，hasMoreElements()：判断有没有更多的元素
+>>>  	   while (urls.hasMoreElements()) {
+>>>  	     //有的话就放到URL里面
+>>>  	     URL url = urls.nextElement();
+>>>  	     UrlResource resource = new UrlResource(url);
+>>>  	     //把URL（所有的资源）加载到Properties配置类中，供我们使用
+>>>  	     Properties properties = PropertiesLoaderUtils.loadProperties(resource);
+>>>  	     for (Map.Entry<?, ?> entry : properties.entrySet()) {
+>>>  	       String factoryTypeName = ((String) entry.getKey()).trim();
+>>>  	       for (String factoryImplementationName : 
+>>>                     StringUtils.commaDelimitedListToStringArray((String) entry.getValue())) {
+>>>  	         //循环放到result
+>>> 		     result.add(factoryTypeName, factoryImplementationName.trim());
+>>>  	       }
+>>>  	     }
+>>>        }
+>>>  	   //最后放到缓存中
+>>>  	   cache.put(classLoader, result);
+>>>  	   return result;
+>>>      }catch (IOException ex) {
+>>>        throw new IllegalArgumentException("Unable to load factories from location [" +
+>>>  				FACTORIES_RESOURCE_LOCATION + "]", ex);
+>>>      }
+>>>    }
+>>> }
+>>> ```
+>>> 找到`META-INF/spring.factories`，配置文件中配置126个`XXXAutoConfiguration`，都是SpringBoot帮我们自动配置的对应的类都在org目录下，比如Web的配置也是在里面
+>>> ![](../../.vuepress/public/img/learning/springboot/8.png)
+>>> 那么导入了这么多的配置，为什么需要导入各种`starter-xxx`来实现配置呢！
+>>> 随意进入一个配置类，也是上面org目录的各种配置类,发现都带有`@ConditionalOnXXX`的注解，去判断该自动配置是否生效。所以只有当你去导入`starter-xxx`是，才会是自动配置生效
+>>> ```java
+>>> @ConditionalOnProperty(prefix = "spring.application.admin", value = "enabled", havingValue = "true",
+>>> 	matchIfMissing = false)
+>>> public class SpringApplicationAdminJmxAutoConfiguration {
+>>> //...
+>>> }
+>>> ```
 
 ::: tip 总结
 SpringBoot所有自动配置都是在启动的时候扫描并加载`META-INF/spring.factories`配置文件，所有的配置类都在这里，但是不一定生效，
