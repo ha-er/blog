@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>完整卸载Mysql | 哈儿博客</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    <link rel="icon" href="/img/logo.jpg">
+    <link rel="stylesheet" href="/css/base.css">
+    <meta name="description" content="哈儿的学习博客">
+    <link rel="preload" href="/assets/css/0.styles.ddd314f9.css" as="style">
+    <link rel="preload" href="/assets/js/app.6dee105b.js" as="script">
+    <link rel="preload" href="/assets/js/2.aa41c1d8.js" as="script">
+    <link rel="preload" href="/assets/js/9.a5d9b8be.js" as="script">
+    <link rel="prefetch" href="/assets/js/10.bdf0e11c.js">
+    <link rel="prefetch" href="/assets/js/11.8861593f.js">
+    <link rel="prefetch" href="/assets/js/12.761ad3f4.js">
+    <link rel="prefetch" href="/assets/js/13.68f258e2.js">
+    <link rel="prefetch" href="/assets/js/14.f2896015.js">
+    <link rel="prefetch" href="/assets/js/15.99c10892.js">
+    <link rel="prefetch" href="/assets/js/16.d4582f36.js">
+    <link rel="prefetch" href="/assets/js/17.14810765.js">
+    <link rel="prefetch" href="/assets/js/18.2a18556d.js">
+    <link rel="prefetch" href="/assets/js/19.4de0eb66.js">
+    <link rel="prefetch" href="/assets/js/20.0086f86c.js">
+    <link rel="prefetch" href="/assets/js/21.f16c6da5.js">
+    <link rel="prefetch" href="/assets/js/22.fe645c57.js">
+    <link rel="prefetch" href="/assets/js/23.d409c523.js">
+    <link rel="prefetch" href="/assets/js/24.55a8afa8.js">
+    <link rel="prefetch" href="/assets/js/25.f09353df.js">
+    <link rel="prefetch" href="/assets/js/26.98288320.js">
+    <link rel="prefetch" href="/assets/js/27.7bfef96f.js">
+    <link rel="prefetch" href="/assets/js/28.f29988fb.js">
+    <link rel="prefetch" href="/assets/js/29.57882d5d.js">
+    <link rel="prefetch" href="/assets/js/3.bbc7260b.js">
+    <link rel="prefetch" href="/assets/js/30.dffa19f7.js">
+    <link rel="prefetch" href="/assets/js/31.586b847b.js">
+    <link rel="prefetch" href="/assets/js/32.8325d4cd.js">
+    <link rel="prefetch" href="/assets/js/33.3c035a03.js">
+    <link rel="prefetch" href="/assets/js/34.424f911e.js">
+    <link rel="prefetch" href="/assets/js/35.a37713e6.js">
+    <link rel="prefetch" href="/assets/js/36.f9f1329a.js">
+    <link rel="prefetch" href="/assets/js/37.5f4c6182.js">
+    <link rel="prefetch" href="/assets/js/38.2a8cf1cf.js">
+    <link rel="prefetch" href="/assets/js/39.8f45efd2.js">
+    <link rel="prefetch" href="/assets/js/4.3a3e52ab.js">
+    <link rel="prefetch" href="/assets/js/40.32ae9afb.js">
+    <link rel="prefetch" href="/assets/js/41.5334f6b8.js">
+    <link rel="prefetch" href="/assets/js/42.18be8ae3.js">
+    <link rel="prefetch" href="/assets/js/43.638ee813.js">
+    <link rel="prefetch" href="/assets/js/44.adca917e.js">
+    <link rel="prefetch" href="/assets/js/45.94bbb398.js">
+    <link rel="prefetch" href="/assets/js/46.3d6b1cb2.js">
+    <link rel="prefetch" href="/assets/js/47.40f07088.js">
+    <link rel="prefetch" href="/assets/js/48.60e0ddc1.js">
+    <link rel="prefetch" href="/assets/js/49.df81aa51.js">
+    <link rel="prefetch" href="/assets/js/5.9e53bb29.js">
+    <link rel="prefetch" href="/assets/js/50.32c50c13.js">
+    <link rel="prefetch" href="/assets/js/51.b9de2d64.js">
+    <link rel="prefetch" href="/assets/js/52.d9bc370b.js">
+    <link rel="prefetch" href="/assets/js/53.07251660.js">
+    <link rel="prefetch" href="/assets/js/54.6add7e0d.js">
+    <link rel="prefetch" href="/assets/js/6.92a93642.js">
+    <link rel="prefetch" href="/assets/js/7.1134561d.js">
+    <link rel="prefetch" href="/assets/js/8.e7adf247.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ddd314f9.css">
+</head>
+<body>
+<div id="app" data-server-rendered="true">
+    <div class="theme-container">
+        <header class="navbar">
+            <div class="sidebar-button">
+                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512"
+                     class="icon">
+                    <path fill="currentColor"
+                          d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path>
+                </svg>
+            </div>
+            <a href="/" class="home-link router-link-active"><!----> <span class="site-name">哈儿博客</span></a>
+            <div class="links">
+                <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value="">
+                    <!----></div>
+                <nav class="nav-links can-hide">
+                    <div class="nav-item">
+                        <div class="dropdown-wrapper">
+                            <button type="button" aria-label="框架学习" class="dropdown-title"><span
+                                    class="title">框架学习</span> <span class="arrow down"></span></button>
+                            <button type="button" aria-label="框架学习" class="mobile-dropdown-title"><span class="title">框架学习</span>
+                                <span class="arrow right"></span></button>
+                            <ul class="nav-dropdown" style="display:none;">
+                                <li class="dropdown-item"><h4>
+                                    后端
+                                </h4>
+                                    <ul class="dropdown-subitem-wrapper">
+                                        <li class="dropdown-subitem"><a href="/learning/mybatis/introduce.html"
+                                                                        class="nav-link">
+                                            Mybatis
+                                        </a></li>
+                                        <li class="dropdown-subitem"><a href="/learning/spring/introduction.html"
+                                                                        class="nav-link">
+                                            Spring
+                                        </a></li>
+                                        <li class="dropdown-subitem"><a href="/learning/springmvc/review.html"
+                                                                        class="nav-link">
+                                            SpringMVC
+                                        </a></li>
+                                        <li class="dropdown-subitem"><a href="/learning/springboot/introduction.html"
+                                                                        class="nav-link">
+                                            SpringBoot
+                                        </a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="nav-item">
+                        <div class="dropdown-wrapper">
+                            <button type="button" aria-label="基础学习" class="dropdown-title"><span
+                                    class="title">基础学习</span> <span class="arrow down"></span></button>
+                            <button type="button" aria-label="基础学习" class="mobile-dropdown-title"><span class="title">基础学习</span>
+                                <span class="arrow right"></span></button>
+                            <ul class="nav-dropdown" style="display:none;">
+                                <li class="dropdown-item"><h4>
+                                    后端
+                                </h4>
+                                    <ul class="dropdown-subitem-wrapper">
+                                        <li class="dropdown-subitem"><a href="/base/java/introduction/dataType.html"
+                                                                        class="nav-link">
+                                            JAVA
+                                        </a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="nav-item"><a href="/oneself/" class="nav-link">
+                        关于作者
+                    </a></div>
+                    <div class="nav-item"><a href="/friends/" class="nav-link">
+                        友链
+                    </a></div>
+                    <div class="nav-item"><a href="/tools/" class="nav-link router-link-active">
+                        工具安装
+                    </a></div>
+                    <div class="nav-item">
+                        <div class="dropdown-wrapper">
+                            <button type="button" aria-label="工具箱" class="dropdown-title"><span class="title">工具箱</span>
+                                <span class="arrow down"></span></button>
+                            <button type="button" aria-label="工具箱" class="mobile-dropdown-title"><span
+                                    class="title">工具箱</span> <span class="arrow right"></span></button>
+                            <ul class="nav-dropdown" style="display:none;">
+                                <li class="dropdown-item"><h4>
+                                    通用
+                                </h4>
+                                    <ul class="dropdown-subitem-wrapper">
+                                        <li class="dropdown-subitem"><a href="https://www.processon.com/"
+                                                                        target="_blank" rel="noopener noreferrer"
+                                                                        class="nav-link external">
+                                            在线画图
+                                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px"
+                                                 viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                                                <path fill="currentColor"
+                                                      d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path>
+                                                <polygon fill="currentColor"
+                                                         points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon>
+                                            </svg>
+                                        </a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-item"><h4>
+                                    学习
+                                </h4>
+                                    <ul class="dropdown-subitem-wrapper">
+                                        <li class="dropdown-subitem"><a href="https://regex101.com/" target="_blank"
+                                                                        rel="noopener noreferrer"
+                                                                        class="nav-link external">
+                                            在线正则
+                                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px"
+                                                 viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                                                <path fill="currentColor"
+                                                      d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path>
+                                                <polygon fill="currentColor"
+                                                         points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon>
+                                            </svg>
+                                        </a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div> <!----></nav>
+            </div>
+        </header>
+        <div class="sidebar-mask"></div>
+        <aside class="sidebar">
+            <nav class="nav-links">
+                <div class="nav-item">
+                    <div class="dropdown-wrapper">
+                        <button type="button" aria-label="框架学习" class="dropdown-title"><span class="title">框架学习</span>
+                            <span class="arrow down"></span></button>
+                        <button type="button" aria-label="框架学习" class="mobile-dropdown-title"><span
+                                class="title">框架学习</span> <span class="arrow right"></span></button>
+                        <ul class="nav-dropdown" style="display:none;">
+                            <li class="dropdown-item"><h4>
+                                后端
+                            </h4>
+                                <ul class="dropdown-subitem-wrapper">
+                                    <li class="dropdown-subitem"><a href="/learning/mybatis/introduce.html"
+                                                                    class="nav-link">
+                                        Mybatis
+                                    </a></li>
+                                    <li class="dropdown-subitem"><a href="/learning/spring/introduction.html"
+                                                                    class="nav-link">
+                                        Spring
+                                    </a></li>
+                                    <li class="dropdown-subitem"><a href="/learning/springmvc/review.html"
+                                                                    class="nav-link">
+                                        SpringMVC
+                                    </a></li>
+                                    <li class="dropdown-subitem"><a href="/learning/springboot/introduction.html"
+                                                                    class="nav-link">
+                                        SpringBoot
+                                    </a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <div class="dropdown-wrapper">
+                        <button type="button" aria-label="基础学习" class="dropdown-title"><span class="title">基础学习</span>
+                            <span class="arrow down"></span></button>
+                        <button type="button" aria-label="基础学习" class="mobile-dropdown-title"><span
+                                class="title">基础学习</span> <span class="arrow right"></span></button>
+                        <ul class="nav-dropdown" style="display:none;">
+                            <li class="dropdown-item"><h4>
+                                后端
+                            </h4>
+                                <ul class="dropdown-subitem-wrapper">
+                                    <li class="dropdown-subitem"><a href="/base/java/introduction/dataType.html"
+                                                                    class="nav-link">
+                                        JAVA
+                                    </a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="nav-item"><a href="/oneself/" class="nav-link">
+                    关于作者
+                </a></div>
+                <div class="nav-item"><a href="/friends/" class="nav-link">
+                    友链
+                </a></div>
+                <div class="nav-item"><a href="/tools/" class="nav-link router-link-active">
+                    工具安装
+                </a></div>
+                <div class="nav-item">
+                    <div class="dropdown-wrapper">
+                        <button type="button" aria-label="工具箱" class="dropdown-title"><span class="title">工具箱</span>
+                            <span class="arrow down"></span></button>
+                        <button type="button" aria-label="工具箱" class="mobile-dropdown-title"><span
+                                class="title">工具箱</span> <span class="arrow right"></span></button>
+                        <ul class="nav-dropdown" style="display:none;">
+                            <li class="dropdown-item"><h4>
+                                通用
+                            </h4>
+                                <ul class="dropdown-subitem-wrapper">
+                                    <li class="dropdown-subitem"><a href="https://www.processon.com/" target="_blank"
+                                                                    rel="noopener noreferrer" class="nav-link external">
+                                        在线画图
+                                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px"
+                                             viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                                            <path fill="currentColor"
+                                                  d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path>
+                                            <polygon fill="currentColor"
+                                                     points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon>
+                                        </svg>
+                                    </a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-item"><h4>
+                                学习
+                            </h4>
+                                <ul class="dropdown-subitem-wrapper">
+                                    <li class="dropdown-subitem"><a href="https://regex101.com/" target="_blank"
+                                                                    rel="noopener noreferrer" class="nav-link external">
+                                        在线正则
+                                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px"
+                                             viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                                            <path fill="currentColor"
+                                                  d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path>
+                                            <polygon fill="currentColor"
+                                                     points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon>
+                                        </svg>
+                                    </a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div> <!----></nav>
+            <ul class="sidebar-links">
+                <li>
+                    <section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>环境搭建</span>
+                        <span class="arrow right"></span></p> <!----></section>
+                </li>
+                <li>
+                    <section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>IDE开发工具</span>
+                        <span class="arrow right"></span></p> <!----></section>
+                </li>
+                <li>
+                    <section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>代码管理工具</span>
+                        <span class="arrow right"></span></p> <!----></section>
+                </li>
+                <li>
+                    <section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>数据库</span>
+                        <span class="arrow down"></span></p>
+                        <ul class="sidebar-links sidebar-group-items">
+                            <li><a href="/tools/database/mysql/mysqlUnload.html" aria-current="page"
+                                   class="active sidebar-link">完整卸载Mysql</a>
+                                <ul class="sidebar-sub-headers">
+                                    <li class="sidebar-sub-header"><a
+                                            href="/tools/database/mysql/mysqlUnload.html#停止mysql服务"
+                                            class="sidebar-link">停止Mysql服务</a></li>
+                                    <li class="sidebar-sub-header"><a
+                                            href="/tools/database/mysql/mysqlUnload.html#卸载mysql数据库"
+                                            class="sidebar-link">卸载mysql数据库</a></li>
+                                    <li class="sidebar-sub-header"><a
+                                            href="/tools/database/mysql/mysqlUnload.html#删除mysql数据库残留文件"
+                                            class="sidebar-link">删除mysql数据库残留文件</a></li>
+                                    <li class="sidebar-sub-header"><a
+                                            href="/tools/database/mysql/mysqlUnload.html#删除注册表信息" class="sidebar-link">删除注册表信息</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="/tools/database/mysql/mysql5-7.html" class="sidebar-link">Mysql5.7安装</a></li>
+                        </ul>
+                    </section>
+                </li>
+                <li>
+                    <section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>插件或其他的使用</span>
+                        <span class="arrow right"></span></p> <!----></section>
+                </li>
+            </ul>
+        </aside>
+        <main class="page">
+            <div class="theme-default-content content__default"><h1 id="完整卸载mysql"><a href="#完整卸载mysql"
+                                                                                      class="header-anchor">#</a>
+                完整卸载Mysql</h1>
+                <h2 id="停止mysql服务"><a href="#停止mysql服务" class="header-anchor">#</a> 停止Mysql服务</h2>
+                <p>手动停止MySQL服务，在win10搜索栏内输入服务，找到MySQL。点击右键，然后点击停止即可。</p>
+                <p><img src="/assets/img/1.5a3ce3bf.png" alt=""></p>
+                <p><img src="/assets/img/2.09413ec2.png" alt=""></p>
+                <h2 id="卸载mysql数据库"><a href="#卸载mysql数据库" class="header-anchor">#</a> 卸载mysql数据库</h2>
+                <p>Win+R 键入control，进入控制面板-&gt;程序与功能找到Mysql相关卸载</p>
+                <p>
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZ0AAADtCAYAAABkiqjXAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAACORSURBVHhe7Z3pdx3Vma/1P/Hlmi939UqTAOEmQBoIxtAhBDXJJUxphjQQNR0SMsCSk3SAZnBszGSDwUyyDWawMdhmNLaxsYVteZItj5pn6e16d9Wu2jWdQTqqkqznWetB59Swa9euqvdXdXRkmgYGhyTPRQt/jIiIWJeVqBo6l1x8ISIiYk0SOoiIWJiEDiIiFiahg4iIhUnoICJiYRI6iIhYmIQOIiIWJqGDiIiFSeggImJhznjo/OiKq+Ta638mN/7yV/LLh5+RN/f0yJr2Xlm1q0ee/uKsLP7krPzuo7PyX5u65Xcf98gjn/TKo1/0yhPb+mRRy98z27zk5hVyePOfgve/kJcOB71NsVkeia37J9lipunPLJLLIyLOb/fs3i2P/NnW27Q6T5fJmpfljIfODTfdLLfd93v5zV+fkSc3HZBHPzogDzz/tvzm2XVy7/K1cs8za+XuZd5PT33f4k1/8OWNXvB0yzX3/SWzTfWWlYdly8PZ8/J8ZLPUvQ4i4nxWQ2V0eCgzeCrNy3PGQ+f7l10pF1y+SL6z6DZ5dtspeW7TLln6yhpZuWdYHv2kR+5797T8/PUT0ry6S25Zc1puen63/PGFtfKw9wT0w2t/ltmmrz7h1P5kooFzeOUvMuchImK+WeEylcBRZzx0rlp0vVxz4y3yk98tkX98dlReblsvj6/fIS9+fFze/aJL3vFc93mXrPmsS+5eeUDuXPK+/OerW+ShDcfkwu9dkNmmq4ZJRTb/yTwV2cB5ZPNheenm7LYQETFbN2SmGjjqjIfO5VdeLf9yzfVy+z/el9+v3yfLli2TZTv6ZcUHh6VnZFJOD03KicEJOdQzJlf/zx757dOvynWrD8rCxW/KxRd+N7PNMGjC3+uo+nuayoFiw6diUMXaREREqw2bqQaOOuOhc/FlV8olV14n97y2T37z8ieyZPV6eWP/iCzZ1CUPvX5Q7lvVIbe9eEBufK5DLlpyUP7w9Aq5YvUpueDnD8n3L/peZpvG2JcJokDR15m/u9Hlc74o4K6LiIjZzonQufD6O+XiXy+T+9YelL+ufEcWr/9Gluwclr98PiAPbOqTW9/plutePy0/WHFCfvzUNrn5iTVy1Rt98t3Lr8lsLzQWOt5TzuEVcks4335LzVnW7A6hg4g4FW3g6E/3ddaylZz5J53/d6n88P7l8uD6DlnyzHPyjyVPy5Knnwp9+qknY161bJtcuuxbufC7/5zZXqgTOres3Bx+rBb76CyY7/8eJxFEjoQOImK+WSEz1eCZ8dC55OKL5PZnv5BHNx+Xe98+KHevOyS/WntYbmk7LD9/64jc+OZR+cnrR+Wa1zrlqtXH5Jo1/XJhy8rc3+eEhqET/5sb92O1+JcGCB1ExHqtFC5TCZ4CQudCueind8s/3/IX31ur6C1zwaVXV/99TtDB2sOC0EFErNc598ehVn1yqdWKgePpPsHU8pVpf71k6LhPSHyNGhGxCAsLHUREREIHERELk9BBRMTCJHQQEbEwCR1ERCxMQgcREQuT0EFExMIkdBARsTAJHURELExCBxERC3PaodPd3Y2IiFiTmhsnT53OtabQAQAAqIYNndOnz+RK6AAAQEOwoXO2uydXQgcAABqCDZ2e3r5cCR0AAGgINnT6+gdyJXQAAKAh2NDpHxjMldABAICGQOgAAEBh2NDJ+ljNSugAAEBDsKFTCUIHAAAaAqEDAACFQegAAEBhEDoAAFAYhA4AABQGoQMAAIVB6AAAQGEQOgAAUBiEDgAAFAahAwAAhUHoAABAYRA6AABQGIQOAAAUBqEDAACFQegAAEBhEDoAAFAYhA4AQL20NUtTc1vwBuqB0Cma9lZZ0LRAWtuD9/WgJ/qCVpnKqtOnXVoXxPvd3rpA8q+7NmkO++q9bmqSpqTuvui4BI21NWcsGxjbnq5j23BfV8TvS6rfOrbe9AV2B53+ROgYaD/yj5+OSW3FKD2e2dOSaP9rPH/Muab9bfbW8se1pq7VQHw/td/+NipS1/GqZSwCgmNXi9H+u33W19WWT1LtOGT1v8o+BcdrQWtbTn8qjHGptaE+CJ1pYgpk4sw0F2TiBAinmROrxospyWwKnZwLPRqKZOgkLxh3voeOS7ByW3P2+CSLpo6pDYnKBdUtKrbtRKFJruztXxhAHub4hevq/uRvz+1XLs7+hmRNi+FvN+xzQrtNv686zRlzc97VEAz1oOeA6a+OZfW2az9einu+VdjvRCPpcydxnoW4fc7uv/bXNh+NaWXD417H8U0fr6z+6BhE00zdSWw709LqRT6EznRJBYGeMHrA4ye/niRVC1E1Sgkde/Hbn8FFkrx4nL4lL4gFra3ZRSNz+WZprnBBRZt1L8xqRSnrIo72J45OT7ezwFs2Pi3oZ+bxyGs7QMcq1pYzrhnTFTsvo2bpzIynBnefs/dJnfY5aXC3lYe7TOXjlSqoyX2rEM61hE6q/ebWzP7rmNvNuK+rMoXj64+Je7yS/UmHTs39mWXMutBZ+XW3/G7jCXn441Py549Pyh83nZTff3hSHvjghNz9znG58+3j8qu3j8kd647J7WuPyW2O+v72jOlWbbvhmDvI9MmjBSk6KfQkSl4MU6CU0FF0n7y7VN2HVv8JwFxAwQ6aizjZr1hf4xeMjzfNXccpJHlPOjGc9vMKgk73i2qy6Gr7lY6JP8/sb7V+ZKL7620nryp4fY+Kve1HYjw87DiYsQ7mpcYmdU4k99WaLqpTLly6zVT7WTp9ret4mXf5x2eaoePjnpN5YxaNT7rPiXZ1/+wCdR3f9LZr+XjNHrtUgLpm7nf5lBI6fcMTcqJ/XI73jUtn77h8e2pUdneNyuZDQ/Lghi45eGZIDpwekmO9o3Kwe1TaTw/Ljq5h2Xp0UN7rGJQ39g3Ji7uHZMnOIXls+5D891fDnqPy9+1j8vSuMXlu77is2j8haw5NyAedk7Kla1I2HBP55TtnvHaGgl40Cv+kCU/I4OQzhcJONMEUnDDuaz1x9cL0Crk9UaKTVdH5lU6k5Pz4SRm15S8X62PQjulnxvppkkUguljCdh3atICEber2k21709x9yQsdnZ66eIJtm+leO04HokLqblOXd8cm+2I3apumL3r36/cjNkZOX9KFKMCcA9H6KTKKUrPXp2Rb6QKqRMfSFJzMDiju/ntFLGhI+2y2nTmuUyR2TkdE/a/3eCn+uKT338M5V8K27fGpZrDP0THVbWob6f67x9d/nTynov7FzoWpHF89Z7Q/yYVyiMZN8W4Cw3EKxqNRx3YGKO1JZ3R8UkY8h8cmZXB0UvpGJmTdt32yaucZeWVHl9z+5l65/qWdct3KnbJoxU65+sUdcuXz2+VHz22Xy57dLj9c/pX84BnfS5dvl8u9aVd4869+YYdc6y2v6/5s1ddy95q9snxbl6zYJ3Lrui7pHhwJetA4zAkcnAHhyeBe1KYIBWdI7AL1C0h8nj0R/XnRieW3HZ1M/vxYSJkT12/b7ZNO17t2u6y2Exae2IVeAdu3Nv2pF6tbEJIXrde3Zu9pT/uq6+lrs05C98Iw7fvTWnU/k8tavfkaaE22/WB1S/xitMT7F4WO3Yf4fB07/27Tn++/1wW9/dJtBkUlVmhC/IveTHePu4s5Tu5++dtJ9j07dPz+6HpZTYeE24i3Ee1L4zD9SXUmGl9/fj3HS/HHMWsfvAan+aTjtW36o8dc59vXcdzja1+7/Y1ex8+faOzj/a90fP2btGZzA+rehCaNrmFnP81TlF0muf+zj1JC5+zghOw5OSrbj4/I1sPDsmbvoBc2A9Ly3gn5qKNX7n+7XbZ19svk5GSmExMTmY6Pj6fceqhH7n17n/xt+6g8vKlL+vr6gl40EL0IzIkdXWj+iRidbOGFboqrPUG9kyV2kjjr64mbvFjcaVnzzfrBie1sxz9B7cXn9lG3X8uJ6q1jLlJvuQoXhNHbRpteOLGPE3Q7Xl/CcfJpN8v5fTbr+h13+qdv4+sobV5f/GLhtu+vYy/s2JibNp0+mmXd7ejrqGjouu6yepcavtdtemOfGzqx45LYF0uwvk98GbcwJQtovF9pY23GiqrfZx1f7bP9+CbV9ymh/c8bc3v+1Xe8ov3MGDtFz4nMzmeNt7tdn2gM7DH39yE5nqrdTHgsgnFU/Ha8icn+1H189UlUf+8ZjJPTVriNBLpu7LzM0+3XLKGU0OkempBPjwzLhwcGZN03PfLUx13y1/Udctfbx+XLIz3y7217pHdo3ARMR8+4LP58UFo/HZAHN/XJXe92y01vnZaFq07Kpc8fl0uWd8oPlh/1noCOysIXOuX6lZ3S/HKn/GrNCRM6j285Io9/elzu/ahfXvrqxJSeyqqjF5F3wiQKpH+CJS4EXWZGQ8e2Z1/biy54r08qmevpSer2JcIvrlltm9ke+t7uk9c17wIyH6OE2wnGR19pcfGKkP9Uo2NmFtCNBBeuv2yrt830ReRuM2rfvTCji1rbcfvr9M9c7FGfkvN9on2M2g+2GRQVf1z8pX20zaioGPQ4JS/8YH2f/LG0RckWYfdpNYXTpt9ft6hG+xrbl7yiXgfannsemvfOcYz2PBg771XUB+121vFSkuPikBs6yW0q0XYt/vnpHnP3dYT209+M2xdnG8GxjZYLqPP4+jdfbt/1dfLcV2072f21/bFEYzu7KCV0sth5Ykie+vy0vPa1F0AfH/YCY8KEzmv7hmVdx4hsPzkubbt6ZcVX3bLk07PeMmfkjxtOywPvnZb73z0t960/JS0f9krLlgG5aXWXvLSjV0bHxuTGV76R1d8OyC3rT8uW9uPS398fbLGxmAOsxTQ6u4KTIPGxQq2hE5x40Umj87wTL2zLn5/aXqIAmG9dBY3Y9+E6Xl+82hTgt58+Sb3pzfYizeurvk5eBF7/Yn2185PtBNhCoj+99fTjhmRfojtDJWg/sc+xC83OC9qMbTJ2gWb1X6f5F7sZQ3vhB9vUMUwWG9127HgEpKYH6/vkjEfGdHP8Mto3OG36TxZ2n/z9sP2MtWHHx3+X7mc1zLmc1XeP1JjXcbzMm7xx8bDnSgLdN7fo+rjnoYsdn+TriOj4um0k+5Wxbp3HN7xJSwWm34f0McnZJx2/6ECnz/lZwqwJHf1m2fr2bnnw3X3eE1B3+JHZ37cNyZcnxuTRNw/IH5Z/LX981vcPGf76sS/l/g09ctWzR2VoZEwOnx2UK1/YIa/sn5Tb1h6Xw0ePydBQo79IEKAHPBYSip5IXqFyJ5oL1Z5cOj95AjvvgzZ9ven60VbsRAraD02ctGZbTp/M+/gFoBd9uH688wnyLh4l48LTvoV9dfupy/nvY5sLCoktfKaAhOtY3e277UfEilhA+sJN7ovbf30d3160fnybUVEK1skdP39+2IfYcY22E0fHKD6m2WMSmd7H5DHx24gvZ9Hl845vBmYf8pc3fU2eqzUeL58K/QnOFZf09izZ2/XbzzrmcXUzpu28Y5vRl6kd3/TxVrKOV+4x1O1m9lPbzhvn4ikldPafGTPuPD4iGw8MyStfD8hd7xyXL472yq1v7JZD3SMmcPZ4y/zp00F5e2+//PYfO6RvdFJ6Ribl7PCknBmalFODE3LC8/jAhHT2T8jfXtkrVzxzUC5aekTGvKecl3d0ySMfHZHHd47Kwxs7paury0yHqZBVBPyT2VxYqQvbudhN2KUvKBN43pVgg8/8PU+wjl5Y6WvZ3b7Tvulb0I/M7SSmeRdn9QId7a+5yO1HgtqpsKj4821QVsbvo1kutn13XJ3xtNtyyC02SrV9CvucV3zc8ayCaSvneDr9j2+n9uOl+5me564TH2+zfG7f8/bLHZ/EWAX456DOi84Du/1cg/Oj/uOr87QP8f1M6fUz+aUHt1+Z50e7fk7ht5t7/hRIKaFzamBcjvaMma9Kt3tu6hiUlvePy/JPj8ida/ZJ/8i4CZ0XvxmWFXuG5bG1h+StLZ3S64TOaS90TnqB0+V5LAgdfdL57tKjcufakyZcfr22XX6y7oz84t1eWfnZITl79qz5yA4AAMqhlNBJ8truXnlkY5fcv/Zb+dtHx0zgjI1PyH9tHZIPj4zI7Ys/k86zI9LrBU63PuV4nhryn3K6vMDR0Nl1bEhu/u9tcv7jh+Tdb/ulb3BYvr90u9y4YVyuXX1SNuw8OGO/zwEAgNooJXSSTxu3vdElyz8/IVc/v0M+3N9nQmf7yVH565dDsuXYmDz+9mG567Ftcmvrp7lq4Fy3bL/8n793yOjoqLzXflq+t3SP3PDBuFzw1GE5dPiIDA8PB1sEAIAyKCV09KO1r7tGZafnlkPD8oNlR+SFzzvl31btlc6eEfNV52d3j8ir347IR51jsv7gqKzeNyzPfzMsT+wYktYvBuW3Wwfknk39cvP7fXLDO73y4zW9cuGKk/Kj5ztN6Dz0XodctvKoLFwzJHesPiQnTpzg9zkAACVTSuh8sH9Iln3RL09/1if3rjstd7xxTB56d7/c3XZIxrzAGRodNx+tbfaecjYeGZW1HSOyqn1Yntnl/7M3f/5sQFo298u/b+yXn7/XK/+6rleueKtH/mnZMfnNu6dkeGREfrR8h1y7bkguX3VWntzQwe9zAABmAaWETlf/uHxzYtQ87dzZdlIe+/iE/GTl1/LazrPmKeez46Ny/+Yh+Y+PBuWujQNyh/c080vvaeamNd3y0zfOyKJXT8mVL50wfxx68TOdcsGSI/J/nzgk5z96UL7qHJRdx3rkO0/tkhs3TsrFy4/Lx18f4vc5sw37DZ+cb0IBwLlJKaFjGZ+YlO89fVhe/KJLfvrSbtnTNWRCZ2xMHctUPzqr5pNbDsv3n+2Q69+fkMuWHZLOzs4Cf5/jfzUx+2upDrGvVQZoAa66ov8VyRoWmyK19D/na6hZ+5SHu2zW3zqcS6S+Mm6/HpuDWT74mq0J5cTXZl1r/ZozwCyhlNA52jMuXX1j8sG+frnhpU5Z/OFBufPNDhkYHs0MGmtWwLiOjIwY//+r38gVq8/Ij98akP9446CcPHnShFlxaFGx383Pxv2bk/D1rAgdpVr/o9CJ/Y2KGyS6L94yFf/xzqQ5BbS2v4OZ5TjBk/x7FtfwuNrg0T8Idg72zB97gJmllNCZmPT/4c6nPumWP7zXJU9u7ZLvPPmN/NMT2xqitnX9e2Ny6UtnZNmmDtO/mfp9TsU/5Epqi6oWlLDAOk8NWaFT7U7Xsf5iVOUP0ZKaP0yLT9MwMH+cphsPQid8X4msfc2h9tCp8Smz4dTxdKt/ZOosqPtm3sbOCYdgnMyYOuPuW/nGBmA2UkroWG5cdUxe/uq0vP/tWfNP4Kzd2yNv7umV1d/0ycu7++WFXQOy/OtBWbJzUP4n+P/mtH45In/+YkR+//moPPDpmNz3yZjcvXVc7tg8Ibd+PCG/+GhS/u3DSblho8iFSzvlyz0HZWBgINjizJF7BxoUYpdYUdaikiomvuF65i+KI1LbSsyfCvX031s4t0CmwyEdbGYZbSPcYOWPm86F0DFPN96YtXnHKpji7bNOW2D+pQN3XbOsneCETnwMdJuEDsw9Sg2d13f1yY0vHzN/RzMT/ratw/w+Rz9ym3FiRTQi/k+3KEGxMcsmCkdQYFJo26ZA+YU+CghbuLyCPd3iU3P/dZotlt52q4am7mMUKGHxdIIrXVDjxENH99nrk37sFNtOMBbWMBTj06N2bFDYMdTl89q2ZLWVt92IWP/D8YqHrBlTnR4cgzB4nNAJtxGaPjYAs51SQ0fRf4DzyJEjsnfvXtm/f790dHQ0xH379smBAwfMV6X1j01nnow7T6ewWkyBtR+xJAt9XugkiEKnkdTWf6+T/v+gzSua+r/kziqyBm9f/EKbEzrajlk3Pj+LdOh427UDoH0Mi68NEjPHQ5d198md77+OF/9KbVdvK9puFkHbueaMgRM60Rgous3E8QKYA5QeOvoLfv34S9totPo/bNMvGBRGrEgni5SP+WfMk2FjyQid8A64FvMCoFZq6b/XH/N0YJfTPmf1xTMKnbzpXnh6T1LxYpomHTrJ4m/fJ4p/Tt/cfsWHu0LbdbeVxBmzFLp++snHtOdtV7fBkw6cK2htLjV0zjnC4lShINjQqVCwjZlFSouX95QR/Y9wGkvF/nvF0fy/dSoV0ICgWCYLqnvH7hdSOy+/zWmFTsVCX2fo1NVWkvj+xZ9cdH03dKLthuFjid0YAMw9zonQmVX/0oATJLlFqI4nnThOUay67BSppf+JApqJ105UVF10H7TA6k/dTlBsKxTTKYdOsA13P6L/zUFWUFRqu962knjrO/sXDxNd3w0du6zbH33tLROMk34VPb5+tWMGMDsgdBqEFhFTrJ2r3k5LFd8phI7flluYPIKAiK+SLo61UFf/w6IYFbss7f+LPz5d9yHqo3na0baq7HttoRO0p9uxBV7H2tl+tImsoKjcdn5bGdvNw7ahT6vh2GQcV6/xcGzMpKAfQej4Yx9Ms2OXd14BzCLOidApk1ruMDMLYdYKGYXXFv5K7ccCo67/YZO/XN391+Jcrbh6+5K9/WSxr60Pcxo9rjp+xkTAGPwQtmOg461jZ4NG39vppg07UOF5NA/GEM4ZCB0AACgMQgcAAAqD0AEAgMIgdAAAoDAIHQAAKAxCBwAACoPQAQCAwiB0AACgMAgdAAAoDEIHAAAKg9ABAIDCIHQAAKAwCB0AACgMQgcAAAqD0AEAgMIgdAAAoDAIHQAAKAxCBwAACoPQAQCAwiB0AACgMAgdAAAoDEIHAAAKg9ABAIDCIHQAAKAwCB0AACgMQmeaNN2zGxFxXjoVCJ1pMtWBBwCYyxA6JUHoAMB8hNApCUIHAOYjhE5JEDoAMB8hdEqC0AGA+QihUxJzJ3TapLmp2fsvAMD0mYOh0y6tCxZIa3vwthJtzdLU1FSTzQVXVUIHAOYjczx0tCBmh0hTIkXampNB5a27oNVrLU1764L4+u2tsiDWfryttuYmWVBTCkYUEzrtsvj86QYqoQMAjWNOhY4W91iwJENDwyGnwtYcOtqGO908LSXWDUIo2lQdT18BhA4AzEfm+JNOggaEjgZb1IQW3JyibcLIKcb6vo7qnj3w/vZsqJ6/2PYuPj22XTPvfFm8OPoo0V8vsc75i719tSEUzDPTbBvOsqn2CR0AyGbr1q3BqzRZ887h0NHl3EJaRRNAibY1SLKehgxajJ1l3Sck8ySU08eA9MD7hT8KGkvG9FjgBYFh97t9sZyvIeR3JPGk479Ph0q19gkdAEjT09MjixYtklWrVgVTInSaztNlXOZo6NiwSBT2aT/pJApsxdDx+xFtzll3KqGj2wqfPBwyp7thotu1IaPovMqhExuimtondAAgm6zgyQscZU6FTvQ7nZyCnhs6WU9HGaHjPq0oVUPHbTNrG/lMP3RssMxU6LjtEzoAkI8bPJUCR5mjTzr1hk5W4cwIndRy+j5RpC1arFPL1l6c0wOf3FabLDZV35+e+vgrDAqdP43Qqal9QgcAKmODp1LgKPMidFJfgTZ4xTQzdOJtm3WzPsZLhpGZFhRn87ryU0/mwJvfx9inuXT4hb9/Ss3LCx1t8nx/HRMiWaGjVGuf0AGA6mjYVAoc5ZwPHRMamR+RecU0Y3r822sBQchERTlj+/p0YFecaugAAJzjzKnQ8Z86knfiGkJRILh/pJkfOEp26JjAyF0nj/p+n6MQOgAwH5mDTzozj/04Lnqyqezs/RcJAABmF4ROSRA6ADAfIXRKgtABgPkIoVMShA4AzEcInZIgdABgPkLolAShAwDzEUKnJHTgERHno1OB0AEAgMIgdAAAoDAIHQAAKAxCBwAACoPQAQCAwiB0AACgMAgdAAAoDEIHAAAKg9ABAIDCIHQAAKAwCB0AACgMQgcAAAqD0AEAgMIgdAAAoDAIHQAAKAxCBwAACoPQAQCAwiB0AACgMAgdAAAoDEIHAAAKg9ABAIDCIHQAAKAwCB0AACgMQgcAAAqD0AEAgMJoWOggIiLWIqGDiIiFSeggImJhEjqIiFiYhA4iIhYmoYOIiIVJ6CAiYmESOoiIWJiEDiIiFiahg4iIhUnoICJiYRI6iIhYmIQOIiIWJqGDiIiFSeggImJhEjqIiFiYhA4iIhYmoYOIiIVJ6CAiYmESOoiIWJiEDiIiFiahM09tumc3zoBZY+26atUqnAGzxjpp1no4fbPGupKEzjw1q2Di9M0aa1e9SA8ePIgNtNbCx9g3XkIHa9YWyawTCeuX0ClPQqc8CR2sWUKnsRI65UnolCehgzVL6DRWQqc8CZ3yJHSwZgmdxkrolCehU56EDtYsodNYCZ3yJHTKk9DBmiV0GiuhU56ETnkSOlizszF0li5skoVLs+fF3SAt59W6bDHOhdDR8W1qSnqetGzIXv7g0oXe/IWyNHh9XsuGYJ6OfzDdc0PLeaUei+JDZ6m0hGPhqeO0cKkz3zcal6Wy8LwW2RAsa8dR50djOjcldLBmywwdvdjcwmcuTFPg3GLohMqGFjkvMS/bCgV0hp0LoeOHRTRGflH0CmLFcdT5/vuoiDqho8fGFtSSLDx0dMw0wMOgcUM4GuPKoZM17m6bwXUSvE/dMDhjrvPKCi9CB2u2zNDxTRQu904xeedYY2FbupDQqWxW6LjFMb1MXHvMkj+zli3OwkPHmnGj1OSNx8IaQkfnndfS4gVPzvglzvlksJgQioVeOec+oYM1W3roeBfVQnvHZy7UxMUbOFc+fpg7oRMfX1MUw7tvXSYqkPl30LMjbKxFh07ezY0/PQqA3NBZ6KnvvWU32OByb7JMW/GPj5PHQtuOraPtJNooQkIHa7bs0DF3amHhc+7UnKce/27Qvyu0y1azrJCaO6ETFcywKLpPmu7rYBlTzHR6xnhb3QJZtEWHjv1oTM+1KAx0mn36S4ZOdcNxNu/jx0mNh47OT4y5Hh/nyagoCR2s2VJDJ7i704vGv6PzL6JkIVNzQyRRHMt27oROfHz9wqXT/SeX3EJZoajVU1xnwuJDxzUIiKX2fAzeJ0OnSmiHX9gw2gCz7+M3acbUsUivU4SEDtZseaHjFzj9RWw8dII7OydM9KJ1Qyd1ERM6deqMs/feHU//tX9s3MIVHoMqRXPehc7SpdE4OTdRFUMn93xNBIYumwiV+JOOp9mme6zix7YoCR2s2fJCx9cPm3qedBIXVVYRLOHjBevcCh3/46Fw3Ewx9KclnyztccoqhNZYcS3BMkInFSje2PnvawsdHdcoNJJPKemnllTomGXckEmvU4SEDtbsrAqdFqegORdneJet02N3k/HlZoOzP3TcYPeLU6woBuMb/2W0U8iCwhoGVcKwnRIsPnR0LG2BD0JGP15LhHJ+6Oi46rjZNoJx1mVMG8lAyQid5JOOOT7usQrWz3tt15umhA7W7GwIHVuwzvMu2vCC0gsjFTr2IvQvVjPNWW42OPtDJ60tivrTPiWa13ZcdYzdm4FEUU22k5xelIWHTjgWfpDbczcZDFnjYsY3PJed0FA1SIKxtzdldp57vfjmr2v6R+jgbHM2hI5/Ubl3jZ56YSxsCe/KdZnqF6BjSUE0V0Mna8xs8NifZnpYaIPlTAGz497YQlavRYeOjouGi/2ZnB+dn/64uOdrtLz75BkZnufJ8a5o8LRVwjEgdLBmyw6dc825GDrnikWHTlHa0E8GU1INtazwK0JCB2uW0GmshE55nquhMxckdLBmCZ3GSuiUJ6FTnoQO1iyh01gJnfIkdMqT0MGaJXQaK6FTnoROeRI6WLOETmMldMqT0ClPQgdrltBprIROeRI65UnoYM3aIomNNWusXSl8jZfQKU9CB2s2q2Di9M0aa1e9SLHxZo110qz1cPpmjXUlCR1ERCxMQgcREQuT0EFExMIkdBARsTAJHURELExCBxERC5PQQUTEwiR0EBGxMAkdREQsTEIHERELk9BBRMTCJHQQEbEwCR1ERCxMQgcREQuT0EFExMIkdBARsTAJHURELExCBxERC5PQQUTEwiR0EBGxMKcdOoiIiPVYiYqhg/PL/oFB6esfkJ7ePjnb3ROcIgAAjYPQwVBCBwBmGkIHQwkdAJhpCB0MJXQAYKYhdDCU0AGAmYbQwVBCBwBmGkIHQwkdAJhZRP4XA7VHIhoX5+UAAAAASUVORK5CYII="
+                         alt=""></p>
+                <p><img src="/assets/img/4.747d97b3.png" alt=""></p>
+                <h2 id="删除mysql数据库残留文件"><a href="#删除mysql数据库残留文件" class="header-anchor">#</a> 删除mysql数据库残留文件</h2>
+                <p>位置：删除 C盘-&gt;programData-&gt;mysql文件夹，programData文件夹为隐藏文件夹，这一步很重要</p>
+                <p><img src="/assets/img/5.f4ae912d.png" alt=""></p>
+                <h2 id="删除注册表信息"><a href="#删除注册表信息" class="header-anchor">#</a> 删除注册表信息</h2>
+                <p>Win+R 键入control，键入regedit，打开注册表</p>
+                <p><strong>删除下列信息：（有下列信息就删除，没有就说明已经删除了）</strong></p>
+                <p>删除HKEY_LOCAL_MACHIN-&gt;ControlSet001-&gt;SYSTEM-&gt; service-&gt;MySQL;</p>
+                <p>删除HKEY_LOCAL_MACHINE-&gt;ControlSet002-&gt; SYSTEM-&gt; services-&gt;MySQL;</p>
+                <p>删除HKEY_LOCAL_MACHINE-&gt;CurrentControlSet-&gt; SYSTEM-&gt; services-&gt;MySQL</p>
+                <div class="custom-block tip"><p class="custom-block-title">TIP</p>
+                    <p><a href="https://blog.csdn.net/websphere_zxf/article/details/81661110" target="_blank"
+                          rel="noopener noreferrer">原文链接
+                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100"
+                             width="15" height="15" class="icon outbound">
+                            <path fill="currentColor"
+                                  d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path>
+                            <polygon fill="currentColor"
+                                     points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon>
+                        </svg>
+                    </a></p>
+                </div>
+            </div>
+            <footer class="page-edit"><!---->
+                <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">8/16/2020, 7:05:53 PM</span>
+                </div>
+            </footer>
+            <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/tools/codeManagement/svn.html" class="prev">
+        SVN的安装及使用
+      </a></span> <span class="next"><a href="/tools/database/mysql/mysql5-7.html">
+        Mysql5.7安装
+      </a>
+      →
+    </span></p></div>
+        </main>
+    </div>
+    <div class="global-ui"><!----></div>
+</div>
+<script src="/assets/js/app.6dee105b.js" defer></script>
+<script src="/assets/js/2.aa41c1d8.js" defer></script>
+<script src="/assets/js/9.a5d9b8be.js" defer></script>
+</body>
+</html>

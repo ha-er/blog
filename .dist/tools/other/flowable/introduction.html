@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>flowable | 哈儿博客</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    <link rel="icon" href="/img/logo.jpg">
+    <link rel="stylesheet" href="/css/base.css">
+    <meta name="description" content="哈儿的学习博客">
+    <link rel="preload" href="/assets/css/0.styles.ddd314f9.css" as="style">
+    <link rel="preload" href="/assets/js/app.6dee105b.js" as="script">
+    <link rel="preload" href="/assets/js/2.aa41c1d8.js" as="script">
+    <link rel="preload" href="/assets/js/10.bdf0e11c.js" as="script">
+    <link rel="prefetch" href="/assets/js/11.8861593f.js">
+    <link rel="prefetch" href="/assets/js/12.761ad3f4.js">
+    <link rel="prefetch" href="/assets/js/13.68f258e2.js">
+    <link rel="prefetch" href="/assets/js/14.f2896015.js">
+    <link rel="prefetch" href="/assets/js/15.99c10892.js">
+    <link rel="prefetch" href="/assets/js/16.d4582f36.js">
+    <link rel="prefetch" href="/assets/js/17.14810765.js">
+    <link rel="prefetch" href="/assets/js/18.2a18556d.js">
+    <link rel="prefetch" href="/assets/js/19.4de0eb66.js">
+    <link rel="prefetch" href="/assets/js/20.0086f86c.js">
+    <link rel="prefetch" href="/assets/js/21.f16c6da5.js">
+    <link rel="prefetch" href="/assets/js/22.fe645c57.js">
+    <link rel="prefetch" href="/assets/js/23.d409c523.js">
+    <link rel="prefetch" href="/assets/js/24.55a8afa8.js">
+    <link rel="prefetch" href="/assets/js/25.f09353df.js">
+    <link rel="prefetch" href="/assets/js/26.98288320.js">
+    <link rel="prefetch" href="/assets/js/27.7bfef96f.js">
+    <link rel="prefetch" href="/assets/js/28.f29988fb.js">
+    <link rel="prefetch" href="/assets/js/29.57882d5d.js">
+    <link rel="prefetch" href="/assets/js/3.bbc7260b.js">
+    <link rel="prefetch" href="/assets/js/30.dffa19f7.js">
+    <link rel="prefetch" href="/assets/js/31.586b847b.js">
+    <link rel="prefetch" href="/assets/js/32.8325d4cd.js">
+    <link rel="prefetch" href="/assets/js/33.3c035a03.js">
+    <link rel="prefetch" href="/assets/js/34.424f911e.js">
+    <link rel="prefetch" href="/assets/js/35.a37713e6.js">
+    <link rel="prefetch" href="/assets/js/36.f9f1329a.js">
+    <link rel="prefetch" href="/assets/js/37.5f4c6182.js">
+    <link rel="prefetch" href="/assets/js/38.2a8cf1cf.js">
+    <link rel="prefetch" href="/assets/js/39.8f45efd2.js">
+    <link rel="prefetch" href="/assets/js/4.3a3e52ab.js">
+    <link rel="prefetch" href="/assets/js/40.32ae9afb.js">
+    <link rel="prefetch" href="/assets/js/41.5334f6b8.js">
+    <link rel="prefetch" href="/assets/js/42.18be8ae3.js">
+    <link rel="prefetch" href="/assets/js/43.638ee813.js">
+    <link rel="prefetch" href="/assets/js/44.adca917e.js">
+    <link rel="prefetch" href="/assets/js/45.94bbb398.js">
+    <link rel="prefetch" href="/assets/js/46.3d6b1cb2.js">
+    <link rel="prefetch" href="/assets/js/47.40f07088.js">
+    <link rel="prefetch" href="/assets/js/48.60e0ddc1.js">
+    <link rel="prefetch" href="/assets/js/49.df81aa51.js">
+    <link rel="prefetch" href="/assets/js/5.9e53bb29.js">
+    <link rel="prefetch" href="/assets/js/50.32c50c13.js">
+    <link rel="prefetch" href="/assets/js/51.b9de2d64.js">
+    <link rel="prefetch" href="/assets/js/52.d9bc370b.js">
+    <link rel="prefetch" href="/assets/js/53.07251660.js">
+    <link rel="prefetch" href="/assets/js/54.6add7e0d.js">
+    <link rel="prefetch" href="/assets/js/6.92a93642.js">
+    <link rel="prefetch" href="/assets/js/7.1134561d.js">
+    <link rel="prefetch" href="/assets/js/8.e7adf247.js">
+    <link rel="prefetch" href="/assets/js/9.a5d9b8be.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ddd314f9.css">
+</head>
+<body>
+<div id="app" data-server-rendered="true">
+    <div class="theme-container">
+        <header class="navbar">
+            <div class="sidebar-button">
+                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512"
+                     class="icon">
+                    <path fill="currentColor"
+                          d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path>
+                </svg>
+            </div>
+            <a href="/" class="home-link router-link-active"><!----> <span class="site-name">哈儿博客</span></a>
+            <div class="links">
+                <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value="">
+                    <!----></div>
+                <nav class="nav-links can-hide">
+                    <div class="nav-item">
+                        <div class="dropdown-wrapper">
+                            <button type="button" aria-label="框架学习" class="dropdown-title"><span
+                                    class="title">框架学习</span> <span class="arrow down"></span></button>
+                            <button type="button" aria-label="框架学习" class="mobile-dropdown-title"><span class="title">框架学习</span>
+                                <span class="arrow right"></span></button>
+                            <ul class="nav-dropdown" style="display:none;">
+                                <li class="dropdown-item"><h4>
+                                    后端
+                                </h4>
+                                    <ul class="dropdown-subitem-wrapper">
+                                        <li class="dropdown-subitem"><a href="/learning/mybatis/introduce.html"
+                                                                        class="nav-link">
+                                            Mybatis
+                                        </a></li>
+                                        <li class="dropdown-subitem"><a href="/learning/spring/introduction.html"
+                                                                        class="nav-link">
+                                            Spring
+                                        </a></li>
+                                        <li class="dropdown-subitem"><a href="/learning/springmvc/review.html"
+                                                                        class="nav-link">
+                                            SpringMVC
+                                        </a></li>
+                                        <li class="dropdown-subitem"><a href="/learning/springboot/introduction.html"
+                                                                        class="nav-link">
+                                            SpringBoot
+                                        </a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="nav-item">
+                        <div class="dropdown-wrapper">
+                            <button type="button" aria-label="基础学习" class="dropdown-title"><span
+                                    class="title">基础学习</span> <span class="arrow down"></span></button>
+                            <button type="button" aria-label="基础学习" class="mobile-dropdown-title"><span class="title">基础学习</span>
+                                <span class="arrow right"></span></button>
+                            <ul class="nav-dropdown" style="display:none;">
+                                <li class="dropdown-item"><h4>
+                                    后端
+                                </h4>
+                                    <ul class="dropdown-subitem-wrapper">
+                                        <li class="dropdown-subitem"><a href="/base/java/introduction/dataType.html"
+                                                                        class="nav-link">
+                                            JAVA
+                                        </a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="nav-item"><a href="/oneself/" class="nav-link">
+                        关于作者
+                    </a></div>
+                    <div class="nav-item"><a href="/friends/" class="nav-link">
+                        友链
+                    </a></div>
+                    <div class="nav-item"><a href="/tools/" class="nav-link router-link-active">
+                        工具安装
+                    </a></div>
+                    <div class="nav-item">
+                        <div class="dropdown-wrapper">
+                            <button type="button" aria-label="工具箱" class="dropdown-title"><span class="title">工具箱</span>
+                                <span class="arrow down"></span></button>
+                            <button type="button" aria-label="工具箱" class="mobile-dropdown-title"><span
+                                    class="title">工具箱</span> <span class="arrow right"></span></button>
+                            <ul class="nav-dropdown" style="display:none;">
+                                <li class="dropdown-item"><h4>
+                                    通用
+                                </h4>
+                                    <ul class="dropdown-subitem-wrapper">
+                                        <li class="dropdown-subitem"><a href="https://www.processon.com/"
+                                                                        target="_blank" rel="noopener noreferrer"
+                                                                        class="nav-link external">
+                                            在线画图
+                                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px"
+                                                 viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                                                <path fill="currentColor"
+                                                      d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path>
+                                                <polygon fill="currentColor"
+                                                         points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon>
+                                            </svg>
+                                        </a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-item"><h4>
+                                    学习
+                                </h4>
+                                    <ul class="dropdown-subitem-wrapper">
+                                        <li class="dropdown-subitem"><a href="https://regex101.com/" target="_blank"
+                                                                        rel="noopener noreferrer"
+                                                                        class="nav-link external">
+                                            在线正则
+                                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px"
+                                                 viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                                                <path fill="currentColor"
+                                                      d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path>
+                                                <polygon fill="currentColor"
+                                                         points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon>
+                                            </svg>
+                                        </a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div> <!----></nav>
+            </div>
+        </header>
+        <div class="sidebar-mask"></div>
+        <aside class="sidebar">
+            <nav class="nav-links">
+                <div class="nav-item">
+                    <div class="dropdown-wrapper">
+                        <button type="button" aria-label="框架学习" class="dropdown-title"><span class="title">框架学习</span>
+                            <span class="arrow down"></span></button>
+                        <button type="button" aria-label="框架学习" class="mobile-dropdown-title"><span
+                                class="title">框架学习</span> <span class="arrow right"></span></button>
+                        <ul class="nav-dropdown" style="display:none;">
+                            <li class="dropdown-item"><h4>
+                                后端
+                            </h4>
+                                <ul class="dropdown-subitem-wrapper">
+                                    <li class="dropdown-subitem"><a href="/learning/mybatis/introduce.html"
+                                                                    class="nav-link">
+                                        Mybatis
+                                    </a></li>
+                                    <li class="dropdown-subitem"><a href="/learning/spring/introduction.html"
+                                                                    class="nav-link">
+                                        Spring
+                                    </a></li>
+                                    <li class="dropdown-subitem"><a href="/learning/springmvc/review.html"
+                                                                    class="nav-link">
+                                        SpringMVC
+                                    </a></li>
+                                    <li class="dropdown-subitem"><a href="/learning/springboot/introduction.html"
+                                                                    class="nav-link">
+                                        SpringBoot
+                                    </a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <div class="dropdown-wrapper">
+                        <button type="button" aria-label="基础学习" class="dropdown-title"><span class="title">基础学习</span>
+                            <span class="arrow down"></span></button>
+                        <button type="button" aria-label="基础学习" class="mobile-dropdown-title"><span
+                                class="title">基础学习</span> <span class="arrow right"></span></button>
+                        <ul class="nav-dropdown" style="display:none;">
+                            <li class="dropdown-item"><h4>
+                                后端
+                            </h4>
+                                <ul class="dropdown-subitem-wrapper">
+                                    <li class="dropdown-subitem"><a href="/base/java/introduction/dataType.html"
+                                                                    class="nav-link">
+                                        JAVA
+                                    </a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="nav-item"><a href="/oneself/" class="nav-link">
+                    关于作者
+                </a></div>
+                <div class="nav-item"><a href="/friends/" class="nav-link">
+                    友链
+                </a></div>
+                <div class="nav-item"><a href="/tools/" class="nav-link router-link-active">
+                    工具安装
+                </a></div>
+                <div class="nav-item">
+                    <div class="dropdown-wrapper">
+                        <button type="button" aria-label="工具箱" class="dropdown-title"><span class="title">工具箱</span>
+                            <span class="arrow down"></span></button>
+                        <button type="button" aria-label="工具箱" class="mobile-dropdown-title"><span
+                                class="title">工具箱</span> <span class="arrow right"></span></button>
+                        <ul class="nav-dropdown" style="display:none;">
+                            <li class="dropdown-item"><h4>
+                                通用
+                            </h4>
+                                <ul class="dropdown-subitem-wrapper">
+                                    <li class="dropdown-subitem"><a href="https://www.processon.com/" target="_blank"
+                                                                    rel="noopener noreferrer" class="nav-link external">
+                                        在线画图
+                                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px"
+                                             viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                                            <path fill="currentColor"
+                                                  d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path>
+                                            <polygon fill="currentColor"
+                                                     points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon>
+                                        </svg>
+                                    </a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-item"><h4>
+                                学习
+                            </h4>
+                                <ul class="dropdown-subitem-wrapper">
+                                    <li class="dropdown-subitem"><a href="https://regex101.com/" target="_blank"
+                                                                    rel="noopener noreferrer" class="nav-link external">
+                                        在线正则
+                                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px"
+                                             viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                                            <path fill="currentColor"
+                                                  d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path>
+                                            <polygon fill="currentColor"
+                                                     points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon>
+                                        </svg>
+                                    </a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div> <!----></nav>
+            <ul class="sidebar-links">
+                <li>
+                    <section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>环境搭建</span>
+                        <span class="arrow right"></span></p> <!----></section>
+                </li>
+                <li>
+                    <section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>IDE开发工具</span>
+                        <span class="arrow right"></span></p> <!----></section>
+                </li>
+                <li>
+                    <section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>代码管理工具</span>
+                        <span class="arrow right"></span></p> <!----></section>
+                </li>
+                <li>
+                    <section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>数据库</span> <span
+                            class="arrow right"></span></p> <!----></section>
+                </li>
+                <li>
+                    <section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open">
+                        <span>插件或其他的使用</span> <span class="arrow down"></span></p>
+                        <ul class="sidebar-links sidebar-group-items">
+                            <li><a href="/tools/other/lombok.html" class="sidebar-link">Lombok</a></li>
+                            <li><a href="/tools/other/flowable/introduction.html" aria-current="page"
+                                   class="active sidebar-link">flowable</a>
+                                <ul class="sidebar-sub-headers">
+                                    <li class="sidebar-sub-header"><a href="/tools/other/flowable/introduction.html#环境"
+                                                                      class="sidebar-link">环境</a></li>
+                                    <li class="sidebar-sub-header"><a
+                                            href="/tools/other/flowable/introduction.html#创建新的springboot项目并整合flowable"
+                                            class="sidebar-link">创建新的springBoot项目并整合flowable</a>
+                                        <ul class="sidebar-sub-headers">
+                                            <li class="sidebar-sub-header"><a
+                                                    href="/tools/other/flowable/introduction.html#创建springboot项目"
+                                                    class="sidebar-link">创建springBoot项目</a></li>
+                                            <li class="sidebar-sub-header"><a
+                                                    href="/tools/other/flowable/introduction.html#整合flowable"
+                                                    class="sidebar-link">整合flowable</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                </li>
+            </ul>
+        </aside>
+        <main class="page">
+            <div class="theme-default-content content__default"><h1 id="flowable"><a href="#flowable"
+                                                                                     class="header-anchor">#</a>
+                flowable</h1>
+                <p>入门 - springBoot与flowable整合</p>
+                <h2 id="环境"><a href="#环境" class="header-anchor">#</a> 环境</h2>
+                <p>编码工具：IntelliJ IDEA 2019.1.3 x64</p>
+                <p>jdk环境：jdk1.8.0_151</p>
+                <p>maven环境：apache-maven-3.5.4</p>
+                <p>mysql：5.7</p>
+                <p>springBoot2.3.1与flowable6.5.0</p>
+                <h2 id="创建新的springboot项目并整合flowable"><a href="#创建新的springboot项目并整合flowable" class="header-anchor">#</a>
+                    创建新的springBoot项目并整合flowable</h2>
+                <h3 id="创建springboot项目"><a href="#创建springboot项目" class="header-anchor">#</a> 创建springBoot项目</h3>
+                <p>1、打开idea新建一个项目</p>
+                <p>
+                    <img src="data:image/png;base64,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"
+                         alt="img">
+                    2、选择spring 初始化项目快速建立项目，选择jdk版本，这里选择的1.8，然后选择从官网拉去项目，这里需要有正常的网络连接</p>
+                <p><img src="/assets/img/2.81ee752e.png" alt="img"></p>
+                <p>3、给项目命名，Java版本选择8</p>
+                <p><img src="/assets/img/3.1d4c9518.png" alt="img"></p>
+                <p>4、这里选择Spring Web就可以了</p>
+                <p><img src="/assets/img/4.75f9ab37.png" alt="img"></p>
+                <p>5、这里可以设置项目名称，点击完成，成功建立springBoot项目,恭喜你开始了第一步</p>
+                <p><img src="/assets/img/5.fba45ade.png" alt="img"></p>
+                <h3 id="整合flowable"><a href="#整合flowable" class="header-anchor">#</a> 整合flowable</h3>
+                <p>1、pom文件代码配置properties与dependencies</p>
+                <p>flowable-spring-boot-starter-process: 这个会有46张表</p>
+                <p>flowable-spring-boot-starter：这个会有78张表</p>
+                <div class="language-xml line-numbers-mode"><pre class="language-xml"><code>    <span class="token tag"><span
+                        class="token tag"><span class="token punctuation">&lt;</span>properties</span><span
+                        class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span
+                class="token punctuation">&lt;</span>java.version</span><span
+                class="token punctuation">&gt;</span></span>1.8<span class="token tag"><span class="token tag"><span
+                            class="token punctuation">&lt;/</span>java.version</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span
+                class="token punctuation">&lt;</span>flowable.version</span><span class="token punctuation">&gt;</span></span>6.5.0<span
+                            class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>flowable.version</span><span
+                            class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>properties</span><span
+            class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependencies</span><span
+            class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span
+                class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span
+                    class="token punctuation">&lt;</span>groupId</span><span
+                    class="token punctuation">&gt;</span></span>org.springframework.boot<span class="token tag"><span
+                            class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span
+                            class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span
+                    class="token punctuation">&gt;</span></span>spring-boot-starter-web<span class="token tag"><span
+                            class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span
+                            class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span
+                class="token punctuation">&lt;/</span>dependency</span><span
+                class="token punctuation">&gt;</span></span>
+
+        <span class="token tag"><span class="token tag"><span
+                class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span
+                    class="token punctuation">&lt;</span>groupId</span><span
+                    class="token punctuation">&gt;</span></span>org.springframework.boot<span class="token tag"><span
+                            class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span
+                            class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span
+                    class="token punctuation">&gt;</span></span>spring-boot-starter-test<span class="token tag"><span
+                            class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span
+                            class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>scope</span><span
+                    class="token punctuation">&gt;</span></span>test<span class="token tag"><span
+                            class="token tag"><span class="token punctuation">&lt;/</span>scope</span><span
+                            class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>exclusions</span><span
+                    class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span
+                        class="token punctuation">&lt;</span>exclusion</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span
+                            class="token punctuation">&lt;</span>groupId</span><span
+                            class="token punctuation">&gt;</span></span>org.junit.vintage<span class="token tag"><span
+                            class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span
+                            class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span
+                            class="token punctuation">&gt;</span></span>junit-vintage-engine<span
+                            class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span
+                            class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span
+                        class="token punctuation">&lt;/</span>exclusion</span><span
+                        class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span
+                    class="token punctuation">&lt;/</span>exclusions</span><span
+                    class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span
+                class="token punctuation">&lt;/</span>dependency</span><span
+                class="token punctuation">&gt;</span></span>
+        <span class="token comment">&lt;!-- flowable依赖 --&gt;</span>
+        <span class="token tag"><span class="token tag"><span
+                class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span
+                    class="token punctuation">&lt;</span>groupId</span><span
+                    class="token punctuation">&gt;</span></span>org.flowable<span class="token tag"><span
+                            class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span
+                            class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span
+                    class="token punctuation">&gt;</span></span>flowable-spring-boot-starter-process<span
+                            class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span
+                            class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span
+                    class="token punctuation">&lt;</span>version</span><span
+                    class="token punctuation">&gt;</span></span>${flowable.version}<span class="token tag"><span
+                            class="token tag"><span class="token punctuation">&lt;/</span>version</span><span
+                            class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span
+                class="token punctuation">&lt;/</span>dependency</span><span
+                class="token punctuation">&gt;</span></span>
+        <span class="token comment">&lt;!-- mysql驱动--&gt;</span>
+        <span class="token tag"><span class="token tag"><span
+                class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span
+                    class="token punctuation">&lt;</span>groupId</span><span
+                    class="token punctuation">&gt;</span></span>mysql<span class="token tag"><span
+                            class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span
+                            class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span
+                    class="token punctuation">&gt;</span></span>mysql-connector-java<span class="token tag"><span
+                            class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span
+                            class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>scope</span><span
+                    class="token punctuation">&gt;</span></span>runtime<span class="token tag"><span
+                            class="token tag"><span class="token punctuation">&lt;/</span>scope</span><span
+                            class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span
+                class="token punctuation">&lt;/</span>dependency</span><span
+                class="token punctuation">&gt;</span></span>
+        <span class="token comment">&lt;!--  阿里数据库连接池 --&gt;</span>
+        <span class="token tag"><span class="token tag"><span
+                class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span
+                    class="token punctuation">&lt;</span>groupId</span><span
+                    class="token punctuation">&gt;</span></span>com.alibaba<span class="token tag"><span
+                            class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span
+                            class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span
+                    class="token punctuation">&gt;</span></span>druid<span class="token tag"><span
+                            class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span
+                            class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span
+                    class="token punctuation">&lt;</span>version</span><span
+                    class="token punctuation">&gt;</span></span>1.1.21<span class="token tag"><span
+                            class="token tag"><span class="token punctuation">&lt;/</span>version</span><span
+                            class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span
+                class="token punctuation">&lt;/</span>dependency</span><span
+                class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependencies</span><span
+            class="token punctuation">&gt;</span></span>
+</code></pre>
+                    <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span
+                            class="line-number">2</span><br><span class="line-number">3</span><br><span
+                            class="line-number">4</span><br><span class="line-number">5</span><br><span
+                            class="line-number">6</span><br><span class="line-number">7</span><br><span
+                            class="line-number">8</span><br><span class="line-number">9</span><br><span
+                            class="line-number">10</span><br><span class="line-number">11</span><br><span
+                            class="line-number">12</span><br><span class="line-number">13</span><br><span
+                            class="line-number">14</span><br><span class="line-number">15</span><br><span
+                            class="line-number">16</span><br><span class="line-number">17</span><br><span
+                            class="line-number">18</span><br><span class="line-number">19</span><br><span
+                            class="line-number">20</span><br><span class="line-number">21</span><br><span
+                            class="line-number">22</span><br><span class="line-number">23</span><br><span
+                            class="line-number">24</span><br><span class="line-number">25</span><br><span
+                            class="line-number">26</span><br><span class="line-number">27</span><br><span
+                            class="line-number">28</span><br><span class="line-number">29</span><br><span
+                            class="line-number">30</span><br><span class="line-number">31</span><br><span
+                            class="line-number">32</span><br><span class="line-number">33</span><br><span
+                            class="line-number">34</span><br><span class="line-number">35</span><br><span
+                            class="line-number">36</span><br><span class="line-number">37</span><br><span
+                            class="line-number">38</span><br><span class="line-number">39</span><br><span
+                            class="line-number">40</span><br><span class="line-number">41</span><br></div>
+                </div>
+                <p>2、resources下创建application.yml文件，url后必须配置nullCatalogMeansCurrent=true，mysql根据自己的情况去配置</p>
+                <div class="language-yaml line-numbers-mode"><pre class="language-yaml"><code><span
+                        class="token key atrule">server</span><span class="token punctuation">:</span>
+  <span class="token key atrule">port</span><span class="token punctuation">:</span> <span
+                            class="token number">8088</span>
+
+<span class="token key atrule">flowable</span><span class="token punctuation">:</span>
+  <span class="token comment">#关闭定时任务JOB</span>
+  <span class="token key atrule">async-executor-activate</span><span class="token punctuation">:</span> <span
+                            class="token boolean important">false</span>
+  <span class="token comment">#  将databaseSchemaUpdate设置为true。当Flowable发现库与数据库表结构不一致时，会自动将数据库表结构升级至新版本。</span>
+  <span class="token key atrule">database-schema-update</span><span class="token punctuation">:</span> <span
+                            class="token boolean important">true</span>
+
+<span class="token key atrule">spring</span><span class="token punctuation">:</span>
+  <span class="token key atrule">jackson</span><span class="token punctuation">:</span>
+    <span class="token key atrule">date-format</span><span class="token punctuation">:</span> yyyy<span
+                            class="token punctuation">-</span>MM<span class="token punctuation">-</span>dd HH<span
+                            class="token punctuation">:</span>mm<span class="token punctuation">:</span>ss
+    <span class="token key atrule">time-zone</span><span class="token punctuation">:</span> GMT+8
+  <span class="token key atrule">datasource</span><span class="token punctuation">:</span>
+    <span class="token key atrule">driver-class-name</span><span class="token punctuation">:</span> com.mysql.cj.jdbc.Driver
+    <span class="token key atrule">type</span><span class="token punctuation">:</span> com.alibaba.druid.pool.DruidDataSource
+    <span class="token comment"># 如果不加这个参数，建表会失败：nullCatalogMeansCurrent=true</span>
+    <span class="token key atrule">url</span><span class="token punctuation">:</span> jdbc<span
+                            class="token punctuation">:</span>mysql<span
+                            class="token punctuation">:</span>//localhost<span class="token punctuation">:</span>3306/demo_flowable<span
+                            class="token punctuation">?</span>characterEncoding=UTF<span
+                            class="token punctuation">-</span>8<span class="token important">&amp;rewriteBatchedStatements=true&amp;useSSL=false&amp;allowPublicKeyRetrieval=true&amp;serverTimezone=Asia/Shanghai&amp;nullCatalogMeansCurrent=true</span>
+    <span class="token key atrule">username</span><span class="token punctuation">:</span> root
+    <span class="token key atrule">password</span><span class="token punctuation">:</span> <span class="token number">123456</span>
+    <span class="token key atrule">druid</span><span class="token punctuation">:</span>
+      <span class="token key atrule">initial-size</span><span class="token punctuation">:</span> <span
+                            class="token number">5</span>
+      <span class="token key atrule">max-active</span><span class="token punctuation">:</span> <span
+                            class="token number">20</span>
+      <span class="token key atrule">max-pool-prepared-statement-per-connection-size</span><span
+                            class="token punctuation">:</span> <span class="token number">20</span>
+      <span class="token key atrule">max-wait</span><span class="token punctuation">:</span> <span class="token number">60000</span>
+      <span class="token key atrule">min-evictable-idle-time-millis</span><span class="token punctuation">:</span> <span
+                            class="token number">300000</span>
+      <span class="token key atrule">min-idle</span><span class="token punctuation">:</span> <span class="token number">5</span>
+      <span class="token key atrule">pool-prepared-statements</span><span class="token punctuation">:</span> <span
+                            class="token boolean important">true</span>
+      <span class="token key atrule">test-on-borrow</span><span class="token punctuation">:</span> <span
+                            class="token boolean important">false</span>
+      <span class="token key atrule">test-on-return</span><span class="token punctuation">:</span> <span
+                            class="token boolean important">false</span>
+      <span class="token key atrule">test-while-idle</span><span class="token punctuation">:</span> <span
+                            class="token boolean important">true</span>
+      <span class="token key atrule">time-between-eviction-runs-millis</span><span
+                            class="token punctuation">:</span> <span class="token number">60000</span>
+      <span class="token key atrule">validation-query</span><span class="token punctuation">:</span> SELECT 1 FROM DUAL
+      <span class="token key atrule">max-idle</span><span class="token punctuation">:</span> <span class="token number">4</span>
+</code></pre>
+                    <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span
+                            class="line-number">2</span><br><span class="line-number">3</span><br><span
+                            class="line-number">4</span><br><span class="line-number">5</span><br><span
+                            class="line-number">6</span><br><span class="line-number">7</span><br><span
+                            class="line-number">8</span><br><span class="line-number">9</span><br><span
+                            class="line-number">10</span><br><span class="line-number">11</span><br><span
+                            class="line-number">12</span><br><span class="line-number">13</span><br><span
+                            class="line-number">14</span><br><span class="line-number">15</span><br><span
+                            class="line-number">16</span><br><span class="line-number">17</span><br><span
+                            class="line-number">18</span><br><span class="line-number">19</span><br><span
+                            class="line-number">20</span><br><span class="line-number">21</span><br><span
+                            class="line-number">22</span><br><span class="line-number">23</span><br><span
+                            class="line-number">24</span><br><span class="line-number">25</span><br><span
+                            class="line-number">26</span><br><span class="line-number">27</span><br><span
+                            class="line-number">28</span><br><span class="line-number">29</span><br><span
+                            class="line-number">30</span><br><span class="line-number">31</span><br><span
+                            class="line-number">32</span><br><span class="line-number">33</span><br><span
+                            class="line-number">34</span><br></div>
+                </div>
+                <p>3、建立config目录，然后再config下创建ProcessEngineConfig配置类，用来简单配置</p>
+                <div class="language-java line-numbers-mode"><pre class="language-java"><code><span
+                        class="token keyword">package</span> <span class="token namespace">com<span
+                        class="token punctuation">.</span>demo<span class="token punctuation">.</span>flowable<span
+                        class="token punctuation">.</span>config</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>flowable<span
+                            class="token punctuation">.</span>engine<span class="token punctuation">.</span></span><span
+                            class="token class-name">ProcessEngineConfiguration</span><span
+                            class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>flowable<span
+                            class="token punctuation">.</span>spring<span class="token punctuation">.</span></span><span
+                            class="token class-name">SpringProcessEngineConfiguration</span><span
+                            class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span
+                            class="token punctuation">.</span>context<span
+                            class="token punctuation">.</span>annotation<span
+                            class="token punctuation">.</span></span><span class="token class-name">Bean</span><span
+                            class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span
+                            class="token punctuation">.</span>context<span
+                            class="token punctuation">.</span>annotation<span
+                            class="token punctuation">.</span></span><span class="token class-name">Configuration</span><span
+                            class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span
+                            class="token punctuation">.</span>jdbc<span
+                            class="token punctuation">.</span>datasource<span
+                            class="token punctuation">.</span></span><span class="token class-name">DataSourceTransactionManager</span><span
+                            class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token namespace">javax<span class="token punctuation">.</span>sql<span
+                            class="token punctuation">.</span></span><span
+                            class="token class-name">DataSource</span><span class="token punctuation">;</span>
+
+<span class="token annotation punctuation">@Configuration</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ProcessEngineConfig</span> <span
+                            class="token punctuation">{</span>
+
+    <span class="token comment">/**
+     * ProcessEngine 配置，其中DataSourceTransactionManager和DataSource自动注入
+     * @param dataSourceTransactionManager
+     * @param dataSource
+     * @return
+     */</span>
+    <span class="token annotation punctuation">@Bean</span>
+    <span class="token keyword">public</span> <span
+                            class="token class-name">SpringProcessEngineConfiguration</span> <span
+                            class="token function">springProcessEngineConfiguration</span><span
+                            class="token punctuation">(</span><span class="token class-name">DataSourceTransactionManager</span> dataSourceTransactionManager<span
+                            class="token punctuation">,</span><span class="token class-name">DataSource</span> dataSource<span
+                            class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">SpringProcessEngineConfiguration</span> springProcessEngineConfiguration <span
+                            class="token operator">=</span> <span class="token keyword">new</span> <span
+                            class="token class-name">SpringProcessEngineConfiguration</span><span
+                            class="token punctuation">(</span><span class="token punctuation">)</span><span
+                            class="token punctuation">;</span>
+        springProcessEngineConfiguration<span class="token punctuation">.</span><span class="token function">setDataSource</span><span
+                            class="token punctuation">(</span>dataSource<span class="token punctuation">)</span><span
+                            class="token punctuation">;</span>
+        springProcessEngineConfiguration<span class="token punctuation">.</span><span class="token function">setTransactionManager</span><span
+                            class="token punctuation">(</span>dataSourceTransactionManager<span
+                            class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">//不添加此项配置，在没创建表时，会抛出FlowableWrongDbException异常</span>
+        springProcessEngineConfiguration<span class="token punctuation">.</span><span class="token function">setDatabaseSchemaUpdate</span><span
+                            class="token punctuation">(</span><span
+                            class="token class-name">ProcessEngineConfiguration</span><span
+                            class="token punctuation">.</span>DB_SCHEMA_UPDATE_TRUE<span
+                            class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> springProcessEngineConfiguration<span
+                            class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+                    <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span
+                            class="line-number">2</span><br><span class="line-number">3</span><br><span
+                            class="line-number">4</span><br><span class="line-number">5</span><br><span
+                            class="line-number">6</span><br><span class="line-number">7</span><br><span
+                            class="line-number">8</span><br><span class="line-number">9</span><br><span
+                            class="line-number">10</span><br><span class="line-number">11</span><br><span
+                            class="line-number">12</span><br><span class="line-number">13</span><br><span
+                            class="line-number">14</span><br><span class="line-number">15</span><br><span
+                            class="line-number">16</span><br><span class="line-number">17</span><br><span
+                            class="line-number">18</span><br><span class="line-number">19</span><br><span
+                            class="line-number">20</span><br><span class="line-number">21</span><br><span
+                            class="line-number">22</span><br><span class="line-number">23</span><br><span
+                            class="line-number">24</span><br><span class="line-number">25</span><br><span
+                            class="line-number">26</span><br><span class="line-number">27</span><br><span
+                            class="line-number">28</span><br><span class="line-number">29</span><br><span
+                            class="line-number">30</span><br></div>
+                </div>
+                <p>然后就可以成功启动项目了，如果数据库没有流程的表，会创建表，数量根据flowable版本变动，恭喜你成功整合了flowable</p></div>
+            <footer class="page-edit"><!---->
+                <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">8/24/2020, 5:54:17 PM</span>
+                </div>
+            </footer>
+            <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/tools/other/lombok.html" class="prev">
+        Lombok
+      </a></span> <!----></p></div>
+        </main>
+    </div>
+    <div class="global-ui"><!----></div>
+</div>
+<script src="/assets/js/app.6dee105b.js" defer></script>
+<script src="/assets/js/2.aa41c1d8.js" defer></script>
+<script src="/assets/js/10.bdf0e11c.js" defer></script>
+</body>
+</html>
