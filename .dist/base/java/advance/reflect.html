@@ -5,32 +5,128 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Java反射 | 哈儿博客</title>
     <meta name="generator" content="VuePress 1.5.4">
-    <link rel="icon" href="/blog/img/logo.jpg">
-    <link rel="stylesheet" href="/blog/css/base.css">
+      <link rel="icon" href="./img/logo.jpg">
+      <link rel="stylesheet" href="./css/base.css">
     <meta name="description" content="哈儿的学习博客">
-    <link rel="preload" href="/blog/assets/css/0.styles.3d629ca3.css" as="style"><link rel="preload" href="/blog/assets/js/app.9008dfc6.js" as="script"><link rel="preload" href="/blog/assets/js/2.aa41c1d8.js" as="script"><link rel="preload" href="/blog/assets/js/29.8c30562d.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.bdf0e11c.js"><link rel="prefetch" href="/blog/assets/js/11.bd919351.js"><link rel="prefetch" href="/blog/assets/js/12.d7a48bdb.js"><link rel="prefetch" href="/blog/assets/js/13.9ea92df7.js"><link rel="prefetch" href="/blog/assets/js/14.f2896015.js"><link rel="prefetch" href="/blog/assets/js/15.5b06556d.js"><link rel="prefetch" href="/blog/assets/js/16.d08f2416.js"><link rel="prefetch" href="/blog/assets/js/17.daa8ce37.js"><link rel="prefetch" href="/blog/assets/js/18.a2952e3a.js"><link rel="prefetch" href="/blog/assets/js/19.82d57f06.js"><link rel="prefetch" href="/blog/assets/js/20.ed1ba0b1.js"><link rel="prefetch" href="/blog/assets/js/21.3064d07a.js"><link rel="prefetch" href="/blog/assets/js/22.13a6594b.js"><link rel="prefetch" href="/blog/assets/js/23.dce63254.js"><link rel="prefetch" href="/blog/assets/js/24.55a8afa8.js"><link rel="prefetch" href="/blog/assets/js/25.f09353df.js"><link rel="prefetch" href="/blog/assets/js/26.1be39f1a.js"><link rel="prefetch" href="/blog/assets/js/27.554b1153.js"><link rel="prefetch" href="/blog/assets/js/28.8ac13a41.js"><link rel="prefetch" href="/blog/assets/js/3.ef39fcfc.js"><link rel="prefetch" href="/blog/assets/js/30.0aa36030.js"><link rel="prefetch" href="/blog/assets/js/31.586b847b.js"><link rel="prefetch" href="/blog/assets/js/32.4074a7e1.js"><link rel="prefetch" href="/blog/assets/js/33.5866b58d.js"><link rel="prefetch" href="/blog/assets/js/34.424f911e.js"><link rel="prefetch" href="/blog/assets/js/35.776e4117.js"><link rel="prefetch" href="/blog/assets/js/36.06152a9b.js"><link rel="prefetch" href="/blog/assets/js/37.200d632f.js"><link rel="prefetch" href="/blog/assets/js/38.8bde3b53.js"><link rel="prefetch" href="/blog/assets/js/39.0cd294cb.js"><link rel="prefetch" href="/blog/assets/js/4.0bd42677.js"><link rel="prefetch" href="/blog/assets/js/40.464dc49c.js"><link rel="prefetch" href="/blog/assets/js/41.8995e9f9.js"><link rel="prefetch" href="/blog/assets/js/42.c9c620a9.js"><link rel="prefetch" href="/blog/assets/js/43.f65ade38.js"><link rel="prefetch" href="/blog/assets/js/44.491371ac.js"><link rel="prefetch" href="/blog/assets/js/45.bf1c5c0b.js"><link rel="prefetch" href="/blog/assets/js/46.8e0d18c7.js"><link rel="prefetch" href="/blog/assets/js/47.108449e9.js"><link rel="prefetch" href="/blog/assets/js/48.4132d66c.js"><link rel="prefetch" href="/blog/assets/js/49.4fe466ae.js"><link rel="prefetch" href="/blog/assets/js/5.3ab9cd8c.js"><link rel="prefetch" href="/blog/assets/js/50.32c50c13.js"><link rel="prefetch" href="/blog/assets/js/51.9cdaa827.js"><link rel="prefetch" href="/blog/assets/js/52.7ef136d9.js"><link rel="prefetch" href="/blog/assets/js/53.3d3e04c3.js"><link rel="prefetch" href="/blog/assets/js/54.6add7e0d.js"><link rel="prefetch" href="/blog/assets/js/6.bd50e40a.js"><link rel="prefetch" href="/blog/assets/js/7.1134561d.js"><link rel="prefetch" href="/blog/assets/js/8.02bb2c2e.js"><link rel="prefetch" href="/blog/assets/js/9.6f4d6ede.js">
-    <link rel="stylesheet" href="/blog/assets/css/0.styles.3d629ca3.css">
+      <link rel="preload" href="./assets/css/0.styles.78b23dbf.css" as="style">
+      <link rel="preload" href="./assets/js/app.93a86269.js" as="script">
+      <link rel="preload" href="./assets/js/2.aa41c1d8.js" as="script">
+      <link rel="preload" href="./assets/js/29.29431b3c.js" as="script">
+      <link rel="prefetch" href="./assets/js/10.e30f2df0.js">
+      <link rel="prefetch" href="./assets/js/11.bd919351.js">
+      <link rel="prefetch" href="./assets/js/12.692c5d8f.js">
+      <link rel="prefetch" href="./assets/js/13.d28d9f39.js">
+      <link rel="prefetch" href="./assets/js/14.f2896015.js">
+      <link rel="prefetch" href="./assets/js/15.114458f5.js">
+      <link rel="prefetch" href="./assets/js/16.d08f2416.js">
+      <link rel="prefetch" href="./assets/js/17.daa8ce37.js">
+      <link rel="prefetch" href="./assets/js/18.a2952e3a.js">
+      <link rel="prefetch" href="./assets/js/19.82d57f06.js">
+      <link rel="prefetch" href="./assets/js/20.854ff771.js">
+      <link rel="prefetch" href="./assets/js/21.e30f2a85.js">
+      <link rel="prefetch" href="./assets/js/22.201413d6.js">
+      <link rel="prefetch" href="./assets/js/23.dce63254.js">
+      <link rel="prefetch" href="./assets/js/24.55a8afa8.js">
+      <link rel="prefetch" href="./assets/js/25.f09353df.js">
+      <link rel="prefetch" href="./assets/js/26.1be39f1a.js">
+      <link rel="prefetch" href="./assets/js/27.554b1153.js">
+      <link rel="prefetch" href="./assets/js/28.8ac13a41.js">
+      <link rel="prefetch" href="./assets/js/3.ef39fcfc.js">
+      <link rel="prefetch" href="./assets/js/30.0aa36030.js">
+      <link rel="prefetch" href="./assets/js/31.586b847b.js">
+      <link rel="prefetch" href="./assets/js/32.4074a7e1.js">
+      <link rel="prefetch" href="./assets/js/33.f47f0cf7.js">
+      <link rel="prefetch" href="./assets/js/34.fef276d8.js">
+      <link rel="prefetch" href="./assets/js/35.116ca4dc.js">
+      <link rel="prefetch" href="./assets/js/36.3552fab5.js">
+      <link rel="prefetch" href="./assets/js/37.5f4c6182.js">
+      <link rel="prefetch" href="./assets/js/38.6df175d1.js">
+      <link rel="prefetch" href="./assets/js/39.c0474669.js">
+      <link rel="prefetch" href="./assets/js/4.0bd42677.js">
+      <link rel="prefetch" href="./assets/js/40.aa8c9654.js">
+      <link rel="prefetch" href="./assets/js/41.42a3b8b4.js">
+      <link rel="prefetch" href="./assets/js/42.c9c620a9.js">
+      <link rel="prefetch" href="./assets/js/43.638ee813.js">
+      <link rel="prefetch" href="./assets/js/44.491371ac.js">
+      <link rel="prefetch" href="./assets/js/45.bf1c5c0b.js">
+      <link rel="prefetch" href="./assets/js/46.8e0d18c7.js">
+      <link rel="prefetch" href="./assets/js/47.108449e9.js">
+      <link rel="prefetch" href="./assets/js/48.4132d66c.js">
+      <link rel="prefetch" href="./assets/js/49.4fe466ae.js">
+      <link rel="prefetch" href="./assets/js/5.54d59d83.js">
+      <link rel="prefetch" href="./assets/js/50.32c50c13.js">
+      <link rel="prefetch" href="./assets/js/51.9cdaa827.js">
+      <link rel="prefetch" href="./assets/js/52.7ef136d9.js">
+      <link rel="prefetch" href="./assets/js/53.3d3e04c3.js">
+      <link rel="prefetch" href="./assets/js/54.6add7e0d.js">
+      <link rel="prefetch" href="./assets/js/6.bd50e40a.js">
+      <link rel="prefetch" href="./assets/js/7.1134561d.js">
+      <link rel="prefetch" href="./assets/js/8.02bb2c2e.js">
+      <link rel="prefetch" href="./assets/js/9.6f4d6ede.js">
+      <link rel="stylesheet" href="./assets/css/0.styles.78b23dbf.css">
   </head>
   <body>
-    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">哈儿博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="框架学习" class="dropdown-title"><span class="title">框架学习</span> <span class="arrow down"></span></button> <button type="button" aria-label="框架学习" class="mobile-dropdown-title"><span class="title">框架学习</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+  <div id="app" data-server-rendered="true">
+      <div class="theme-container">
+          <header class="navbar">
+              <div class="sidebar-button">
+                  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512"
+                       class="icon">
+                      <path fill="currentColor"
+                            d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path>
+                  </svg>
+              </div>
+              <a href="/./" class="home-link router-link-active"><!----> <span class="site-name">哈儿博客</span></a>
+              <div class="links">
+                  <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value="">
+                      <!----></div>
+                  <nav class="nav-links can-hide">
+                      <div class="nav-item">
+                          <div class="dropdown-wrapper">
+                              <button type="button" aria-label="框架学习" class="dropdown-title"><span
+                                      class="title">框架学习</span> <span class="arrow down"></span></button>
+                              <button type="button" aria-label="框架学习" class="mobile-dropdown-title"><span class="title">框架学习</span>
+                                  <span class="arrow right"></span></button>
+                              <ul class="nav-dropdown" style="display:none;">
+                                  <li class="dropdown-item"><h4>
           后端
-        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/blog/learning/mybatis/introduce.html" class="nav-link">
+                                  </h4>
+                                      <ul class="dropdown-subitem-wrapper">
+                                          <li class="dropdown-subitem"><a href="/./learning/mybatis/introduce.html"
+                                                                          class="nav-link">
   Mybatis
-</a></li><li class="dropdown-subitem"><a href="/blog/learning/spring/introduction.html" class="nav-link">
+                                          </a></li>
+                                          <li class="dropdown-subitem"><a href="/./learning/spring/introduction.html"
+                                                                          class="nav-link">
   Spring
-</a></li><li class="dropdown-subitem"><a href="/blog/learning/springmvc/review.html" class="nav-link">
+                                          </a></li>
+                                          <li class="dropdown-subitem"><a href="/./learning/springmvc/review.html"
+                                                                          class="nav-link">
   SpringMVC
-</a></li><li class="dropdown-subitem"><a href="/blog/learning/springboot/introduction.html" class="nav-link">
+                                          </a></li>
+                                          <li class="dropdown-subitem"><a
+                                                  href="/./learning/springboot/introduction.html" class="nav-link">
   SpringBoot
 </a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基础学习" class="dropdown-title"><span class="title">基础学习</span> <span class="arrow down"></span></button> <button type="button" aria-label="基础学习" class="mobile-dropdown-title"><span class="title">基础学习</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
           后端
-        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/blog/base/java/introduction/dataType.html" class="nav-link">
+                  </h4>
+                      <ul class="dropdown-subitem-wrapper">
+                          <li class="dropdown-subitem"><a href="/./base/java/introduction/dataType.html"
+                                                          class="nav-link">
   JAVA
-</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/blog/oneself/" class="nav-link">
+                          </a></li>
+                      </ul>
+                  </li>
+                  </ul>
+                  </div>
+                  </div>
+                      <div class="nav-item"><a href="/./oneself/" class="nav-link">
   关于作者
-</a></div><div class="nav-item"><a href="/blog/friends/" class="nav-link">
+                      </a></div>
+                      <div class="nav-item"><a href="/./friends/" class="nav-link">
   友链
-</a></div><div class="nav-item"><a href="/blog/tools/" class="nav-link">
+                      </a></div>
+                      <div class="nav-item"><a href="/./tools/" class="nav-link">
   工具安装
 </a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工具箱" class="dropdown-title"><span class="title">工具箱</span> <span class="arrow down"></span></button> <button type="button" aria-label="工具箱" class="mobile-dropdown-title"><span class="title">工具箱</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
           通用
@@ -42,23 +138,38 @@
   在线正则
   <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="框架学习" class="dropdown-title"><span class="title">框架学习</span> <span class="arrow down"></span></button> <button type="button" aria-label="框架学习" class="mobile-dropdown-title"><span class="title">框架学习</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
           后端
-        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/blog/learning/mybatis/introduce.html" class="nav-link">
+      </h4>
+          <ul class="dropdown-subitem-wrapper">
+              <li class="dropdown-subitem"><a href="/./learning/mybatis/introduce.html" class="nav-link">
   Mybatis
-</a></li><li class="dropdown-subitem"><a href="/blog/learning/spring/introduction.html" class="nav-link">
+              </a></li>
+              <li class="dropdown-subitem"><a href="/./learning/spring/introduction.html" class="nav-link">
   Spring
-</a></li><li class="dropdown-subitem"><a href="/blog/learning/springmvc/review.html" class="nav-link">
+              </a></li>
+              <li class="dropdown-subitem"><a href="/./learning/springmvc/review.html" class="nav-link">
   SpringMVC
-</a></li><li class="dropdown-subitem"><a href="/blog/learning/springboot/introduction.html" class="nav-link">
+              </a></li>
+              <li class="dropdown-subitem"><a href="/./learning/springboot/introduction.html" class="nav-link">
   SpringBoot
 </a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基础学习" class="dropdown-title"><span class="title">基础学习</span> <span class="arrow down"></span></button> <button type="button" aria-label="基础学习" class="mobile-dropdown-title"><span class="title">基础学习</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
           后端
-        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/blog/base/java/introduction/dataType.html" class="nav-link">
+      </h4>
+          <ul class="dropdown-subitem-wrapper">
+              <li class="dropdown-subitem"><a href="/./base/java/introduction/dataType.html" class="nav-link">
   JAVA
-</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/blog/oneself/" class="nav-link">
+              </a></li>
+          </ul>
+      </li>
+      </ul>
+      </div>
+      </div>
+          <div class="nav-item"><a href="/./oneself/" class="nav-link">
   关于作者
-</a></div><div class="nav-item"><a href="/blog/friends/" class="nav-link">
+          </a></div>
+          <div class="nav-item"><a href="/./friends/" class="nav-link">
   友链
-</a></div><div class="nav-item"><a href="/blog/tools/" class="nav-link">
+          </a></div>
+          <div class="nav-item"><a href="/./tools/" class="nav-link">
   工具安装
 </a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工具箱" class="dropdown-title"><span class="title">工具箱</span> <span class="arrow down"></span></button> <button type="button" aria-label="工具箱" class="mobile-dropdown-title"><span class="title">工具箱</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
           通用
@@ -68,7 +179,81 @@
           学习
         </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://regex101.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
   在线正则
-  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Java基础</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Java进阶</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/base/java/advance/commonClass.html" class="sidebar-link">常用类</a></li><li><a href="/blog/base/java/advance/arithmetic.html" class="sidebar-link">算法</a></li><li><a href="/blog/base/java/advance/oop.html" class="sidebar-link">面向对象</a></li><li><a href="/blog/base/java/advance/exception.html" class="sidebar-link">异常</a></li><li><a href="/blog/base/java/advance/GUI.html" class="sidebar-link">GUI</a></li><li><a href="/blog/base/java/advance/networkProgramming.html" class="sidebar-link">网络编程</a></li><li><a href="/blog/base/java/advance/reflect.html" aria-current="page" class="active sidebar-link">Java反射</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/base/java/advance/reflect.html#反射-框架设计的灵魂" class="sidebar-link">反射：框架设计的灵魂</a></li><li class="sidebar-sub-header"><a href="/blog/base/java/advance/reflect.html#获取class对象的方式" class="sidebar-link">获取Class对象的方式：</a></li><li class="sidebar-sub-header"><a href="/blog/base/java/advance/reflect.html#class对象的功能" class="sidebar-link">Class对象的功能</a></li><li class="sidebar-sub-header"><a href="/blog/base/java/advance/reflect.html#写一个-框架-案例" class="sidebar-link">写一个“框架”案例</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="java反射"><a href="#java反射" class="header-anchor">#</a> Java反射</h1> <h2 id="反射-框架设计的灵魂"><a href="#反射-框架设计的灵魂" class="header-anchor">#</a> 反射：框架设计的灵魂</h2> <ul><li>框架：半成品软件。可以在框架的基础上开发，简化编码</li> <li>反射：将类的各个组成部分封装为其他对象，这就是反射机制</li></ul> <p><strong>好处：</strong></p> <ul><li><p>可以在程序运行过程中，操作这些对象。</p></li> <li><p>可以解耦，提高程序的可扩展性</p></li></ul> <h2 id="获取class对象的方式"><a href="#获取class对象的方式" class="header-anchor">#</a> 获取Class对象的方式：</h2> <ul><li><p><code>Class.forName(&quot;全类名&quot;)</code>:将字节码文件加载进内存，返回class对象</p> <p>多用于配置文件，将类名定义在配置文件中。读取文件，加载类</p></li> <li><p><code>类名.class</code>：通过类名的属性class获取</p> <p>多用于参数的传递</p></li> <li><p><code>对象.getClass()</code>:getClass()方法在Object类中定义</p> <p>多用于对象的获取字节码的方式</p></li></ul> <p><strong>Person类</strong></p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>haer<span class="token punctuation">.</span>domain</span><span class="token punctuation">;</span>
+              <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100"
+                   width="15" height="15" class="icon outbound">
+                  <path fill="currentColor"
+                        d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path>
+                  <polygon fill="currentColor"
+                           points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon>
+              </svg>
+          </a></li>
+          </ul>
+          </li>
+          </ul>
+          </div>
+          </div> <!----></nav>
+          <ul class="sidebar-links">
+              <li>
+                  <section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Java基础</span>
+                      <span class="arrow right"></span></p> <!----></section>
+              </li>
+              <li>
+                  <section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Java进阶</span>
+                      <span class="arrow down"></span></p>
+                      <ul class="sidebar-links sidebar-group-items">
+                          <li><a href="/./base/java/advance/commonClass.html" class="sidebar-link">常用类</a></li>
+                          <li><a href="/./base/java/advance/arithmetic.html" class="sidebar-link">算法</a></li>
+                          <li><a href="/./base/java/advance/oop.html" class="sidebar-link">面向对象</a></li>
+                          <li><a href="/./base/java/advance/exception.html" class="sidebar-link">异常</a></li>
+                          <li><a href="/./base/java/advance/GUI.html" class="sidebar-link">GUI</a></li>
+                          <li><a href="/./base/java/advance/networkProgramming.html" class="sidebar-link">网络编程</a></li>
+                          <li><a href="/./base/java/advance/reflect.html" aria-current="page"
+                                 class="active sidebar-link">Java反射</a>
+                              <ul class="sidebar-sub-headers">
+                                  <li class="sidebar-sub-header"><a href="/./base/java/advance/reflect.html#反射-框架设计的灵魂"
+                                                                    class="sidebar-link">反射：框架设计的灵魂</a></li>
+                                  <li class="sidebar-sub-header"><a
+                                          href="/./base/java/advance/reflect.html#获取class对象的方式" class="sidebar-link">获取Class对象的方式：</a>
+                                  </li>
+                                  <li class="sidebar-sub-header"><a href="/./base/java/advance/reflect.html#class对象的功能"
+                                                                    class="sidebar-link">Class对象的功能</a></li>
+                                  <li class="sidebar-sub-header"><a href="/./base/java/advance/reflect.html#写一个-框架-案例"
+                                                                    class="sidebar-link">写一个“框架”案例</a></li>
+                              </ul>
+                          </li>
+                      </ul>
+                  </section>
+              </li>
+          </ul>
+      </aside>
+          <main class="page">
+              <div class="theme-default-content content__default"><h1 id="java反射"><a href="#java反射"
+                                                                                     class="header-anchor">#</a> Java反射
+              </h1>
+                  <h2 id="反射-框架设计的灵魂"><a href="#反射-框架设计的灵魂" class="header-anchor">#</a> 反射：框架设计的灵魂</h2>
+                  <ul>
+                      <li>框架：半成品软件。可以在框架的基础上开发，简化编码</li>
+                      <li>反射：将类的各个组成部分封装为其他对象，这就是反射机制</li>
+                  </ul>
+                  <p><strong>好处：</strong></p>
+                  <ul>
+                      <li><p>可以在程序运行过程中，操作这些对象。</p></li>
+                      <li><p>可以解耦，提高程序的可扩展性</p></li>
+                  </ul>
+                  <h2 id="获取class对象的方式"><a href="#获取class对象的方式" class="header-anchor">#</a> 获取Class对象的方式：</h2>
+                  <ul>
+                      <li><p><code>Class.forName(&quot;全类名&quot;)</code>:将字节码文件加载进内存，返回class对象</p>
+                          <p>多用于配置文件，将类名定义在配置文件中。读取文件，加载类</p></li>
+                      <li><p><code>类名.class</code>：通过类名的属性class获取</p>
+                          <p>多用于参数的传递</p></li>
+                      <li><p><code>对象.getClass()</code>:getClass()方法在Object类中定义</p>
+                          <p>多用于对象的获取字节码的方式</p></li>
+                  </ul>
+                  <p><strong>Person类</strong></p>
+                  <div class="language-java line-numbers-mode"><pre class="language-java"><code><span
+                          class="token keyword">package</span> <span class="token namespace">com<span
+                          class="token punctuation">.</span>haer<span
+                          class="token punctuation">.</span>domain</span><span class="token punctuation">;</span>
 
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
     <span class="token keyword">private</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>
@@ -450,9 +635,11 @@ com.haer.domain.Person
 </code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br></div></div><div class="custom-block tip"><p class="custom-block-title">注意</p> <p>这时我们发现只需要更改配置文件即可创建任意对象和方法，但是不能获取全部方法，是因为我们使用的是<code>getMethod()</code>方法，
 使用<code>getDeclaredMethod()</code>方法即可，但是要注意开启暴力反射<code>setAccessible(true)</code>方法</p></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">8/24/2020, 3:30:22 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
       ←
-      <a href="/blog/base/java/advance/networkProgramming.html" class="prev">
+      <a href="/./base/java/advance/networkProgramming.html" class="prev">
         网络编程
       </a></span> <!----></p></div> </main></div><div class="global-ui"><!----></div></div>
-    <script src="/blog/assets/js/app.9008dfc6.js" defer></script><script src="/blog/assets/js/2.aa41c1d8.js" defer></script><script src="/blog/assets/js/29.8c30562d.js" defer></script>
+  <script src="./assets/js/app.93a86269.js" defer></script>
+  <script src="./assets/js/2.aa41c1d8.js" defer></script>
+  <script src="./assets/js/29.29431b3c.js" defer></script>
   </body>
 </html>
