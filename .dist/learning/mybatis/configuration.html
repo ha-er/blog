@@ -1,355 +1,74 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>配置解析 | 哈儿博客</title>
     <meta name="generator" content="VuePress 1.5.4">
-    <link rel="icon" href="/img/logo.jpg">
-    <link rel="stylesheet" href="/css/base.css">
+    <link rel="icon" href="/blog/img/logo.jpg">
+    <link rel="stylesheet" href="/blog/css/base.css">
     <meta name="description" content="哈儿的学习博客">
-    <link rel="preload" href="/assets/css/0.styles.ddd314f9.css" as="style">
-    <link rel="preload" href="/assets/js/app.6dee105b.js" as="script">
-    <link rel="preload" href="/assets/js/2.aa41c1d8.js" as="script">
-    <link rel="preload" href="/assets/js/15.99c10892.js" as="script">
-    <link rel="prefetch" href="/assets/js/10.bdf0e11c.js">
-    <link rel="prefetch" href="/assets/js/11.8861593f.js">
-    <link rel="prefetch" href="/assets/js/12.761ad3f4.js">
-    <link rel="prefetch" href="/assets/js/13.68f258e2.js">
-    <link rel="prefetch" href="/assets/js/14.f2896015.js">
-    <link rel="prefetch" href="/assets/js/16.d4582f36.js">
-    <link rel="prefetch" href="/assets/js/17.14810765.js">
-    <link rel="prefetch" href="/assets/js/18.2a18556d.js">
-    <link rel="prefetch" href="/assets/js/19.4de0eb66.js">
-    <link rel="prefetch" href="/assets/js/20.0086f86c.js">
-    <link rel="prefetch" href="/assets/js/21.f16c6da5.js">
-    <link rel="prefetch" href="/assets/js/22.fe645c57.js">
-    <link rel="prefetch" href="/assets/js/23.d409c523.js">
-    <link rel="prefetch" href="/assets/js/24.55a8afa8.js">
-    <link rel="prefetch" href="/assets/js/25.f09353df.js">
-    <link rel="prefetch" href="/assets/js/26.98288320.js">
-    <link rel="prefetch" href="/assets/js/27.7bfef96f.js">
-    <link rel="prefetch" href="/assets/js/28.f29988fb.js">
-    <link rel="prefetch" href="/assets/js/29.57882d5d.js">
-    <link rel="prefetch" href="/assets/js/3.bbc7260b.js">
-    <link rel="prefetch" href="/assets/js/30.dffa19f7.js">
-    <link rel="prefetch" href="/assets/js/31.586b847b.js">
-    <link rel="prefetch" href="/assets/js/32.8325d4cd.js">
-    <link rel="prefetch" href="/assets/js/33.3c035a03.js">
-    <link rel="prefetch" href="/assets/js/34.424f911e.js">
-    <link rel="prefetch" href="/assets/js/35.a37713e6.js">
-    <link rel="prefetch" href="/assets/js/36.f9f1329a.js">
-    <link rel="prefetch" href="/assets/js/37.5f4c6182.js">
-    <link rel="prefetch" href="/assets/js/38.2a8cf1cf.js">
-    <link rel="prefetch" href="/assets/js/39.8f45efd2.js">
-    <link rel="prefetch" href="/assets/js/4.3a3e52ab.js">
-    <link rel="prefetch" href="/assets/js/40.32ae9afb.js">
-    <link rel="prefetch" href="/assets/js/41.5334f6b8.js">
-    <link rel="prefetch" href="/assets/js/42.18be8ae3.js">
-    <link rel="prefetch" href="/assets/js/43.638ee813.js">
-    <link rel="prefetch" href="/assets/js/44.adca917e.js">
-    <link rel="prefetch" href="/assets/js/45.94bbb398.js">
-    <link rel="prefetch" href="/assets/js/46.3d6b1cb2.js">
-    <link rel="prefetch" href="/assets/js/47.40f07088.js">
-    <link rel="prefetch" href="/assets/js/48.60e0ddc1.js">
-    <link rel="prefetch" href="/assets/js/49.df81aa51.js">
-    <link rel="prefetch" href="/assets/js/5.9e53bb29.js">
-    <link rel="prefetch" href="/assets/js/50.32c50c13.js">
-    <link rel="prefetch" href="/assets/js/51.b9de2d64.js">
-    <link rel="prefetch" href="/assets/js/52.d9bc370b.js">
-    <link rel="prefetch" href="/assets/js/53.07251660.js">
-    <link rel="prefetch" href="/assets/js/54.6add7e0d.js">
-    <link rel="prefetch" href="/assets/js/6.92a93642.js">
-    <link rel="prefetch" href="/assets/js/7.1134561d.js">
-    <link rel="prefetch" href="/assets/js/8.e7adf247.js">
-    <link rel="prefetch" href="/assets/js/9.a5d9b8be.js">
-    <link rel="stylesheet" href="/assets/css/0.styles.ddd314f9.css">
-</head>
-<body>
-<div id="app" data-server-rendered="true">
-    <div class="theme-container">
-        <header class="navbar">
-            <div class="sidebar-button">
-                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512"
-                     class="icon">
-                    <path fill="currentColor"
-                          d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path>
-                </svg>
-            </div>
-            <a href="/" class="home-link router-link-active"><!----> <span class="site-name">哈儿博客</span></a>
-            <div class="links">
-                <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value="">
-                    <!----></div>
-                <nav class="nav-links can-hide">
-                    <div class="nav-item">
-                        <div class="dropdown-wrapper">
-                            <button type="button" aria-label="框架学习" class="dropdown-title"><span
-                                    class="title">框架学习</span> <span class="arrow down"></span></button>
-                            <button type="button" aria-label="框架学习" class="mobile-dropdown-title"><span class="title">框架学习</span>
-                                <span class="arrow right"></span></button>
-                            <ul class="nav-dropdown" style="display:none;">
-                                <li class="dropdown-item"><h4>
-                                    后端
-                                </h4>
-                                    <ul class="dropdown-subitem-wrapper">
-                                        <li class="dropdown-subitem"><a href="/learning/mybatis/introduce.html"
-                                                                        class="nav-link">
-                                            Mybatis
-                                        </a></li>
-                                        <li class="dropdown-subitem"><a href="/learning/spring/introduction.html"
-                                                                        class="nav-link">
-                                            Spring
-                                        </a></li>
-                                        <li class="dropdown-subitem"><a href="/learning/springmvc/review.html"
-                                                                        class="nav-link">
-                                            SpringMVC
-                                        </a></li>
-                                        <li class="dropdown-subitem"><a href="/learning/springboot/introduction.html"
-                                                                        class="nav-link">
-                                            SpringBoot
-                                        </a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="nav-item">
-                        <div class="dropdown-wrapper">
-                            <button type="button" aria-label="基础学习" class="dropdown-title"><span
-                                    class="title">基础学习</span> <span class="arrow down"></span></button>
-                            <button type="button" aria-label="基础学习" class="mobile-dropdown-title"><span class="title">基础学习</span>
-                                <span class="arrow right"></span></button>
-                            <ul class="nav-dropdown" style="display:none;">
-                                <li class="dropdown-item"><h4>
-                                    后端
-                                </h4>
-                                    <ul class="dropdown-subitem-wrapper">
-                                        <li class="dropdown-subitem"><a href="/base/java/introduction/dataType.html"
-                                                                        class="nav-link">
-                                            JAVA
-                                        </a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="nav-item"><a href="/oneself/" class="nav-link">
-                        关于作者
-                    </a></div>
-                    <div class="nav-item"><a href="/friends/" class="nav-link">
-                        友链
-                    </a></div>
-                    <div class="nav-item"><a href="/tools/" class="nav-link">
-                        工具安装
-                    </a></div>
-                    <div class="nav-item">
-                        <div class="dropdown-wrapper">
-                            <button type="button" aria-label="工具箱" class="dropdown-title"><span class="title">工具箱</span>
-                                <span class="arrow down"></span></button>
-                            <button type="button" aria-label="工具箱" class="mobile-dropdown-title"><span
-                                    class="title">工具箱</span> <span class="arrow right"></span></button>
-                            <ul class="nav-dropdown" style="display:none;">
-                                <li class="dropdown-item"><h4>
-                                    通用
-                                </h4>
-                                    <ul class="dropdown-subitem-wrapper">
-                                        <li class="dropdown-subitem"><a href="https://www.processon.com/"
-                                                                        target="_blank" rel="noopener noreferrer"
-                                                                        class="nav-link external">
-                                            在线画图
-                                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px"
-                                                 viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
-                                                <path fill="currentColor"
-                                                      d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path>
-                                                <polygon fill="currentColor"
-                                                         points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon>
-                                            </svg>
-                                        </a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown-item"><h4>
-                                    学习
-                                </h4>
-                                    <ul class="dropdown-subitem-wrapper">
-                                        <li class="dropdown-subitem"><a href="https://regex101.com/" target="_blank"
-                                                                        rel="noopener noreferrer"
-                                                                        class="nav-link external">
-                                            在线正则
-                                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px"
-                                                 viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
-                                                <path fill="currentColor"
-                                                      d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path>
-                                                <polygon fill="currentColor"
-                                                         points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon>
-                                            </svg>
-                                        </a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </div> <!----></nav>
-            </div>
-        </header>
-        <div class="sidebar-mask"></div>
-        <aside class="sidebar">
-            <nav class="nav-links">
-                <div class="nav-item">
-                    <div class="dropdown-wrapper">
-                        <button type="button" aria-label="框架学习" class="dropdown-title"><span class="title">框架学习</span>
-                            <span class="arrow down"></span></button>
-                        <button type="button" aria-label="框架学习" class="mobile-dropdown-title"><span
-                                class="title">框架学习</span> <span class="arrow right"></span></button>
-                        <ul class="nav-dropdown" style="display:none;">
-                            <li class="dropdown-item"><h4>
-                                后端
-                            </h4>
-                                <ul class="dropdown-subitem-wrapper">
-                                    <li class="dropdown-subitem"><a href="/learning/mybatis/introduce.html"
-                                                                    class="nav-link">
-                                        Mybatis
-                                    </a></li>
-                                    <li class="dropdown-subitem"><a href="/learning/spring/introduction.html"
-                                                                    class="nav-link">
-                                        Spring
-                                    </a></li>
-                                    <li class="dropdown-subitem"><a href="/learning/springmvc/review.html"
-                                                                    class="nav-link">
-                                        SpringMVC
-                                    </a></li>
-                                    <li class="dropdown-subitem"><a href="/learning/springboot/introduction.html"
-                                                                    class="nav-link">
-                                        SpringBoot
-                                    </a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="nav-item">
-                    <div class="dropdown-wrapper">
-                        <button type="button" aria-label="基础学习" class="dropdown-title"><span class="title">基础学习</span>
-                            <span class="arrow down"></span></button>
-                        <button type="button" aria-label="基础学习" class="mobile-dropdown-title"><span
-                                class="title">基础学习</span> <span class="arrow right"></span></button>
-                        <ul class="nav-dropdown" style="display:none;">
-                            <li class="dropdown-item"><h4>
-                                后端
-                            </h4>
-                                <ul class="dropdown-subitem-wrapper">
-                                    <li class="dropdown-subitem"><a href="/base/java/introduction/dataType.html"
-                                                                    class="nav-link">
-                                        JAVA
-                                    </a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="nav-item"><a href="/oneself/" class="nav-link">
-                    关于作者
-                </a></div>
-                <div class="nav-item"><a href="/friends/" class="nav-link">
-                    友链
-                </a></div>
-                <div class="nav-item"><a href="/tools/" class="nav-link">
-                    工具安装
-                </a></div>
-                <div class="nav-item">
-                    <div class="dropdown-wrapper">
-                        <button type="button" aria-label="工具箱" class="dropdown-title"><span class="title">工具箱</span>
-                            <span class="arrow down"></span></button>
-                        <button type="button" aria-label="工具箱" class="mobile-dropdown-title"><span
-                                class="title">工具箱</span> <span class="arrow right"></span></button>
-                        <ul class="nav-dropdown" style="display:none;">
-                            <li class="dropdown-item"><h4>
-                                通用
-                            </h4>
-                                <ul class="dropdown-subitem-wrapper">
-                                    <li class="dropdown-subitem"><a href="https://www.processon.com/" target="_blank"
-                                                                    rel="noopener noreferrer" class="nav-link external">
-                                        在线画图
-                                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px"
-                                             viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
-                                            <path fill="currentColor"
-                                                  d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path>
-                                            <polygon fill="currentColor"
-                                                     points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon>
-                                        </svg>
-                                    </a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown-item"><h4>
-                                学习
-                            </h4>
-                                <ul class="dropdown-subitem-wrapper">
-                                    <li class="dropdown-subitem"><a href="https://regex101.com/" target="_blank"
-                                                                    rel="noopener noreferrer" class="nav-link external">
-                                        在线正则
-                                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px"
-                                             viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
-                                            <path fill="currentColor"
-                                                  d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path>
-                                            <polygon fill="currentColor"
-                                                     points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon>
-                                        </svg>
-                                    </a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div> <!----></nav>
-            <ul class="sidebar-links">
-                <li>
-                    <section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open">
-                        <span>Mybatis</span> <span class="arrow down"></span></p>
-                        <ul class="sidebar-links sidebar-group-items">
-                            <li><a href="/learning/mybatis/introduce.html" class="sidebar-link">简介</a></li>
-                            <li><a href="/learning/mybatis/helloWorld.html" class="sidebar-link">HelloWorld</a></li>
-                            <li><a href="/learning/mybatis/configuration.html" aria-current="page"
-                                   class="active sidebar-link">配置解析</a>
-                                <ul class="sidebar-sub-headers">
-                                    <li class="sidebar-sub-header"><a href="/learning/mybatis/configuration.html#核心配置文件"
-                                                                      class="sidebar-link">核心配置文件</a></li>
-                                    <li class="sidebar-sub-header"><a
-                                            href="/learning/mybatis/configuration.html#环境变量-environments"
-                                            class="sidebar-link">环境变量（environments）</a></li>
-                                    <li class="sidebar-sub-header"><a
-                                            href="/learning/mybatis/configuration.html#属性-properties"
-                                            class="sidebar-link">属性（properties）</a></li>
-                                    <li class="sidebar-sub-header"><a
-                                            href="/learning/mybatis/configuration.html#类型别名-typealiases"
-                                            class="sidebar-link">类型别名（typeAliases）</a></li>
-                                    <li class="sidebar-sub-header"><a
-                                            href="/learning/mybatis/configuration.html#设置-settings"
-                                            class="sidebar-link">设置（settings）</a></li>
-                                    <li class="sidebar-sub-header"><a
-                                            href="/learning/mybatis/configuration.html#映射器-mappers"
-                                            class="sidebar-link">映射器（mappers）</a></li>
-                                    <li class="sidebar-sub-header"><a
-                                            href="/learning/mybatis/configuration.html#作用域-scope-和生命周期"
-                                            class="sidebar-link">作用域（Scope）和生命周期</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="/learning/mybatis/resultMap.html" class="sidebar-link">ResultMap映射</a></li>
-                            <li><a href="/learning/mybatis/log.html" class="sidebar-link">日志</a></li>
-                            <li><a href="/learning/mybatis/paging.html" class="sidebar-link">分页</a></li>
-                            <li><a href="/learning/mybatis/annotation.html" class="sidebar-link">注解开发</a></li>
-                            <li><a href="/learning/mybatis/dynamicSql.html" class="sidebar-link">动态Sql</a></li>
-                            <li><a href="/learning/mybatis/cache.html" class="sidebar-link">缓存</a></li>
-                        </ul>
-                    </section>
-                </li>
-            </ul>
-        </aside>
-        <main class="page">
-            <div class="theme-default-content content__default"><h1 id="配置解析"><a href="#配置解析"
-                                                                                 class="header-anchor">#</a> 配置解析</h1>
-                <h2 id="核心配置文件"><a href="#核心配置文件" class="header-anchor">#</a> 核心配置文件</h2>
-                <ul>
-                    <li><p>mybatis-config.xml（名字可以自定义）</p></li>
-                    <li><p>MyBatis 的配置文件包含了会深深影响 MyBatis 行为的设置和属性信息</p></li>
-                </ul>
-                <div class="language- line-numbers-mode"><pre class="language-text"><code>configuration（配置）
+    <link rel="preload" href="/blog/assets/css/0.styles.3d629ca3.css" as="style"><link rel="preload" href="/blog/assets/js/app.9008dfc6.js" as="script"><link rel="preload" href="/blog/assets/js/2.aa41c1d8.js" as="script"><link rel="preload" href="/blog/assets/js/15.5b06556d.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.bdf0e11c.js"><link rel="prefetch" href="/blog/assets/js/11.bd919351.js"><link rel="prefetch" href="/blog/assets/js/12.d7a48bdb.js"><link rel="prefetch" href="/blog/assets/js/13.9ea92df7.js"><link rel="prefetch" href="/blog/assets/js/14.f2896015.js"><link rel="prefetch" href="/blog/assets/js/16.d08f2416.js"><link rel="prefetch" href="/blog/assets/js/17.daa8ce37.js"><link rel="prefetch" href="/blog/assets/js/18.a2952e3a.js"><link rel="prefetch" href="/blog/assets/js/19.82d57f06.js"><link rel="prefetch" href="/blog/assets/js/20.ed1ba0b1.js"><link rel="prefetch" href="/blog/assets/js/21.3064d07a.js"><link rel="prefetch" href="/blog/assets/js/22.13a6594b.js"><link rel="prefetch" href="/blog/assets/js/23.dce63254.js"><link rel="prefetch" href="/blog/assets/js/24.55a8afa8.js"><link rel="prefetch" href="/blog/assets/js/25.f09353df.js"><link rel="prefetch" href="/blog/assets/js/26.1be39f1a.js"><link rel="prefetch" href="/blog/assets/js/27.554b1153.js"><link rel="prefetch" href="/blog/assets/js/28.8ac13a41.js"><link rel="prefetch" href="/blog/assets/js/29.8c30562d.js"><link rel="prefetch" href="/blog/assets/js/3.ef39fcfc.js"><link rel="prefetch" href="/blog/assets/js/30.0aa36030.js"><link rel="prefetch" href="/blog/assets/js/31.586b847b.js"><link rel="prefetch" href="/blog/assets/js/32.4074a7e1.js"><link rel="prefetch" href="/blog/assets/js/33.5866b58d.js"><link rel="prefetch" href="/blog/assets/js/34.424f911e.js"><link rel="prefetch" href="/blog/assets/js/35.776e4117.js"><link rel="prefetch" href="/blog/assets/js/36.06152a9b.js"><link rel="prefetch" href="/blog/assets/js/37.200d632f.js"><link rel="prefetch" href="/blog/assets/js/38.8bde3b53.js"><link rel="prefetch" href="/blog/assets/js/39.0cd294cb.js"><link rel="prefetch" href="/blog/assets/js/4.0bd42677.js"><link rel="prefetch" href="/blog/assets/js/40.464dc49c.js"><link rel="prefetch" href="/blog/assets/js/41.8995e9f9.js"><link rel="prefetch" href="/blog/assets/js/42.c9c620a9.js"><link rel="prefetch" href="/blog/assets/js/43.f65ade38.js"><link rel="prefetch" href="/blog/assets/js/44.491371ac.js"><link rel="prefetch" href="/blog/assets/js/45.bf1c5c0b.js"><link rel="prefetch" href="/blog/assets/js/46.8e0d18c7.js"><link rel="prefetch" href="/blog/assets/js/47.108449e9.js"><link rel="prefetch" href="/blog/assets/js/48.4132d66c.js"><link rel="prefetch" href="/blog/assets/js/49.4fe466ae.js"><link rel="prefetch" href="/blog/assets/js/5.3ab9cd8c.js"><link rel="prefetch" href="/blog/assets/js/50.32c50c13.js"><link rel="prefetch" href="/blog/assets/js/51.9cdaa827.js"><link rel="prefetch" href="/blog/assets/js/52.7ef136d9.js"><link rel="prefetch" href="/blog/assets/js/53.3d3e04c3.js"><link rel="prefetch" href="/blog/assets/js/54.6add7e0d.js"><link rel="prefetch" href="/blog/assets/js/6.bd50e40a.js"><link rel="prefetch" href="/blog/assets/js/7.1134561d.js"><link rel="prefetch" href="/blog/assets/js/8.02bb2c2e.js"><link rel="prefetch" href="/blog/assets/js/9.6f4d6ede.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.3d629ca3.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">哈儿博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="框架学习" class="dropdown-title"><span class="title">框架学习</span> <span class="arrow down"></span></button> <button type="button" aria-label="框架学习" class="mobile-dropdown-title"><span class="title">框架学习</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          后端
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/blog/learning/mybatis/introduce.html" class="nav-link">
+  Mybatis
+</a></li><li class="dropdown-subitem"><a href="/blog/learning/spring/introduction.html" class="nav-link">
+  Spring
+</a></li><li class="dropdown-subitem"><a href="/blog/learning/springmvc/review.html" class="nav-link">
+  SpringMVC
+</a></li><li class="dropdown-subitem"><a href="/blog/learning/springboot/introduction.html" class="nav-link">
+  SpringBoot
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基础学习" class="dropdown-title"><span class="title">基础学习</span> <span class="arrow down"></span></button> <button type="button" aria-label="基础学习" class="mobile-dropdown-title"><span class="title">基础学习</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          后端
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/blog/base/java/introduction/dataType.html" class="nav-link">
+  JAVA
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/blog/oneself/" class="nav-link">
+  关于作者
+</a></div><div class="nav-item"><a href="/blog/friends/" class="nav-link">
+  友链
+</a></div><div class="nav-item"><a href="/blog/tools/" class="nav-link">
+  工具安装
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工具箱" class="dropdown-title"><span class="title">工具箱</span> <span class="arrow down"></span></button> <button type="button" aria-label="工具箱" class="mobile-dropdown-title"><span class="title">工具箱</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          通用
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://www.processon.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  在线画图
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></li><li class="dropdown-item"><h4>
+          学习
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://regex101.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  在线正则
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="框架学习" class="dropdown-title"><span class="title">框架学习</span> <span class="arrow down"></span></button> <button type="button" aria-label="框架学习" class="mobile-dropdown-title"><span class="title">框架学习</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          后端
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/blog/learning/mybatis/introduce.html" class="nav-link">
+  Mybatis
+</a></li><li class="dropdown-subitem"><a href="/blog/learning/spring/introduction.html" class="nav-link">
+  Spring
+</a></li><li class="dropdown-subitem"><a href="/blog/learning/springmvc/review.html" class="nav-link">
+  SpringMVC
+</a></li><li class="dropdown-subitem"><a href="/blog/learning/springboot/introduction.html" class="nav-link">
+  SpringBoot
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基础学习" class="dropdown-title"><span class="title">基础学习</span> <span class="arrow down"></span></button> <button type="button" aria-label="基础学习" class="mobile-dropdown-title"><span class="title">基础学习</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          后端
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/blog/base/java/introduction/dataType.html" class="nav-link">
+  JAVA
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/blog/oneself/" class="nav-link">
+  关于作者
+</a></div><div class="nav-item"><a href="/blog/friends/" class="nav-link">
+  友链
+</a></div><div class="nav-item"><a href="/blog/tools/" class="nav-link">
+  工具安装
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工具箱" class="dropdown-title"><span class="title">工具箱</span> <span class="arrow down"></span></button> <button type="button" aria-label="工具箱" class="mobile-dropdown-title"><span class="title">工具箱</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          通用
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://www.processon.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  在线画图
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></li><li class="dropdown-item"><h4>
+          学习
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://regex101.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  在线正则
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Mybatis</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/learning/mybatis/introduce.html" class="sidebar-link">简介</a></li><li><a href="/blog/learning/mybatis/helloWorld.html" class="sidebar-link">HelloWorld</a></li><li><a href="/blog/learning/mybatis/configuration.html" aria-current="page" class="active sidebar-link">配置解析</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/learning/mybatis/configuration.html#核心配置文件" class="sidebar-link">核心配置文件</a></li><li class="sidebar-sub-header"><a href="/blog/learning/mybatis/configuration.html#环境变量-environments" class="sidebar-link">环境变量（environments）</a></li><li class="sidebar-sub-header"><a href="/blog/learning/mybatis/configuration.html#属性-properties" class="sidebar-link">属性（properties）</a></li><li class="sidebar-sub-header"><a href="/blog/learning/mybatis/configuration.html#类型别名-typealiases" class="sidebar-link">类型别名（typeAliases）</a></li><li class="sidebar-sub-header"><a href="/blog/learning/mybatis/configuration.html#设置-settings" class="sidebar-link">设置（settings）</a></li><li class="sidebar-sub-header"><a href="/blog/learning/mybatis/configuration.html#映射器-mappers" class="sidebar-link">映射器（mappers）</a></li><li class="sidebar-sub-header"><a href="/blog/learning/mybatis/configuration.html#作用域-scope-和生命周期" class="sidebar-link">作用域（Scope）和生命周期</a></li></ul></li><li><a href="/blog/learning/mybatis/resultMap.html" class="sidebar-link">ResultMap映射</a></li><li><a href="/blog/learning/mybatis/log.html" class="sidebar-link">日志</a></li><li><a href="/blog/learning/mybatis/paging.html" class="sidebar-link">分页</a></li><li><a href="/blog/learning/mybatis/annotation.html" class="sidebar-link">注解开发</a></li><li><a href="/blog/learning/mybatis/dynamicSql.html" class="sidebar-link">动态Sql</a></li><li><a href="/blog/learning/mybatis/cache.html" class="sidebar-link">缓存</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="配置解析"><a href="#配置解析" class="header-anchor">#</a> 配置解析</h1> <h2 id="核心配置文件"><a href="#核心配置文件" class="header-anchor">#</a> 核心配置文件</h2> <ul><li><p>mybatis-config.xml（名字可以自定义）</p></li> <li><p>MyBatis 的配置文件包含了会深深影响 MyBatis 行为的设置和属性信息</p></li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>configuration（配置）
 properties（属性）
 settings（设置）
 typeAliases（类型别名）
@@ -362,465 +81,84 @@ transactionManager（事务管理器）
 dataSource（数据源）
 databaseIdProvider（数据库厂商标识）
 mappers（映射器）
-</code></pre>
-                    <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span
-                            class="line-number">2</span><br><span class="line-number">3</span><br><span
-                            class="line-number">4</span><br><span class="line-number">5</span><br><span
-                            class="line-number">6</span><br><span class="line-number">7</span><br><span
-                            class="line-number">8</span><br><span class="line-number">9</span><br><span
-                            class="line-number">10</span><br><span class="line-number">11</span><br><span
-                            class="line-number">12</span><br><span class="line-number">13</span><br></div>
-                </div>
-                <h2 id="环境变量-environments"><a href="#环境变量-environments" class="header-anchor">#</a> 环境变量（environments）
-                </h2>
-                <ul>
-                    <li>MyBatis 可以配置成适应多种环境</li>
-                </ul>
-                <p>尽管可以配置多个环境，但每个 SqlSessionFactory 实例只能选择一种环境。</p>
-                <p><code>default=&quot;development&quot;</code>指定使用development环境</p>
-                <div class="language-xml line-numbers-mode"><pre class="language-xml"><code><span
-                        class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>environments</span> <span
-                        class="token attr-name">default</span><span class="token attr-value"><span
-                        class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>development<span
-                        class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
-        <span class="token tag"><span class="token tag"><span
-                class="token punctuation">&lt;</span>environment</span> <span class="token attr-name">id</span><span
-                class="token attr-value"><span class="token punctuation attr-equals">=</span><span
-                class="token punctuation">&quot;</span>development<span
-                class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>transactionManager</span> <span
-                    class="token attr-name">type</span><span class="token attr-value"><span
-                    class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>JDBC<span
-                    class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dataSource</span> <span
-                    class="token attr-name">type</span><span class="token attr-value"><span
-                    class="token punctuation attr-equals">=</span><span
-                    class="token punctuation">&quot;</span>POOLED<span
-                    class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
-                <span class="token tag"><span class="token tag"><span
-                        class="token punctuation">&lt;</span>property</span> <span
-                        class="token attr-name">name</span><span class="token attr-value"><span
-                        class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>driver<span
-                        class="token punctuation">&quot;</span></span> <span class="token attr-name">value</span><span
-                        class="token attr-value"><span class="token punctuation attr-equals">=</span><span
-                        class="token punctuation">&quot;</span>com.mysql.jdbc.Driver<span class="token punctuation">&quot;</span></span><span
-                        class="token punctuation">/&gt;</span></span>
-                <span class="token tag"><span class="token tag"><span
-                        class="token punctuation">&lt;</span>property</span> <span
-                        class="token attr-name">name</span><span class="token attr-value"><span
-                        class="token punctuation attr-equals">=</span><span
-                        class="token punctuation">&quot;</span>url<span class="token punctuation">&quot;</span></span>
-                          <span class="token attr-name">value</span><span class="token attr-value"><span
-                            class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>jdbc:mysql://localhost:3306/mybatis?useSSL=false<span
-                            class="token entity named-entity" title="&amp;">&amp;amp;</span>useUnicode=true<span
-                            class="token entity named-entity" title="&amp;">&amp;amp;</span>characterEncoding=utf-8<span
-                            class="token punctuation">&quot;</span></span><span
-                            class="token punctuation">/&gt;</span></span>
-                <span class="token tag"><span class="token tag"><span
-                        class="token punctuation">&lt;</span>property</span> <span
-                        class="token attr-name">name</span><span class="token attr-value"><span
-                        class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>username<span
-                        class="token punctuation">&quot;</span></span> <span class="token attr-name">value</span><span
-                        class="token attr-value"><span class="token punctuation attr-equals">=</span><span
-                        class="token punctuation">&quot;</span>root<span
-                        class="token punctuation">&quot;</span></span><span
-                        class="token punctuation">/&gt;</span></span>
-                <span class="token tag"><span class="token tag"><span
-                        class="token punctuation">&lt;</span>property</span> <span
-                        class="token attr-name">name</span><span class="token attr-value"><span
-                        class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>password<span
-                        class="token punctuation">&quot;</span></span> <span class="token attr-name">value</span><span
-                        class="token attr-value"><span class="token punctuation attr-equals">=</span><span
-                        class="token punctuation">&quot;</span>123456<span
-                        class="token punctuation">&quot;</span></span><span
-                        class="token punctuation">/&gt;</span></span>
-            <span class="token tag"><span class="token tag"><span
-                    class="token punctuation">&lt;/</span>dataSource</span><span
-                    class="token punctuation">&gt;</span></span>
-        <span class="token tag"><span class="token tag"><span
-                class="token punctuation">&lt;/</span>environment</span><span
-                class="token punctuation">&gt;</span></span>
-        <span class="token tag"><span class="token tag"><span
-                class="token punctuation">&lt;</span>environment</span> <span class="token attr-name">id</span><span
-                class="token attr-value"><span class="token punctuation attr-equals">=</span><span
-                class="token punctuation">&quot;</span>test<span class="token punctuation">&quot;</span></span><span
-                class="token punctuation">&gt;</span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>transactionManager</span> <span
-                    class="token attr-name">type</span><span class="token attr-value"><span
-                    class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>JDBC<span
-                    class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dataSource</span> <span
-                    class="token attr-name">type</span><span class="token attr-value"><span
-                    class="token punctuation attr-equals">=</span><span
-                    class="token punctuation">&quot;</span>POOLED<span
-                    class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
-                <span class="token tag"><span class="token tag"><span
-                        class="token punctuation">&lt;</span>property</span> <span
-                        class="token attr-name">name</span><span class="token attr-value"><span
-                        class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>driver<span
-                        class="token punctuation">&quot;</span></span> <span class="token attr-name">value</span><span
-                        class="token attr-value"><span class="token punctuation attr-equals">=</span><span
-                        class="token punctuation">&quot;</span>com.mysql.jdbc.Driver<span class="token punctuation">&quot;</span></span><span
-                        class="token punctuation">/&gt;</span></span>
-                <span class="token tag"><span class="token tag"><span
-                        class="token punctuation">&lt;</span>property</span> <span
-                        class="token attr-name">name</span><span class="token attr-value"><span
-                        class="token punctuation attr-equals">=</span><span
-                        class="token punctuation">&quot;</span>url<span class="token punctuation">&quot;</span></span>
-                          <span class="token attr-name">value</span><span class="token attr-value"><span
-                            class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>jdbc:mysql://localhost:3306/mybatis?useSSL=false<span
-                            class="token entity named-entity" title="&amp;">&amp;amp;</span>useUnicode=true<span
-                            class="token entity named-entity" title="&amp;">&amp;amp;</span>characterEncoding=utf-8<span
-                            class="token punctuation">&quot;</span></span><span
-                            class="token punctuation">/&gt;</span></span>
-                <span class="token tag"><span class="token tag"><span
-                        class="token punctuation">&lt;</span>property</span> <span
-                        class="token attr-name">name</span><span class="token attr-value"><span
-                        class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>username<span
-                        class="token punctuation">&quot;</span></span> <span class="token attr-name">value</span><span
-                        class="token attr-value"><span class="token punctuation attr-equals">=</span><span
-                        class="token punctuation">&quot;</span>root<span
-                        class="token punctuation">&quot;</span></span><span
-                        class="token punctuation">/&gt;</span></span>
-                <span class="token tag"><span class="token tag"><span
-                        class="token punctuation">&lt;</span>property</span> <span
-                        class="token attr-name">name</span><span class="token attr-value"><span
-                        class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>password<span
-                        class="token punctuation">&quot;</span></span> <span class="token attr-name">value</span><span
-                        class="token attr-value"><span class="token punctuation attr-equals">=</span><span
-                        class="token punctuation">&quot;</span>123456<span
-                        class="token punctuation">&quot;</span></span><span
-                        class="token punctuation">/&gt;</span></span>
-            <span class="token tag"><span class="token tag"><span
-                    class="token punctuation">&lt;/</span>dataSource</span><span
-                    class="token punctuation">&gt;</span></span>
-        <span class="token tag"><span class="token tag"><span
-                class="token punctuation">&lt;/</span>environment</span><span
-                class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>environments</span><span
-            class="token punctuation">&gt;</span></span>
-</code></pre>
-                    <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span
-                            class="line-number">2</span><br><span class="line-number">3</span><br><span
-                            class="line-number">4</span><br><span class="line-number">5</span><br><span
-                            class="line-number">6</span><br><span class="line-number">7</span><br><span
-                            class="line-number">8</span><br><span class="line-number">9</span><br><span
-                            class="line-number">10</span><br><span class="line-number">11</span><br><span
-                            class="line-number">12</span><br><span class="line-number">13</span><br><span
-                            class="line-number">14</span><br><span class="line-number">15</span><br><span
-                            class="line-number">16</span><br><span class="line-number">17</span><br><span
-                            class="line-number">18</span><br><span class="line-number">19</span><br><span
-                            class="line-number">20</span><br><span class="line-number">21</span><br><span
-                            class="line-number">22</span><br></div>
-                </div>
-                <ul>
-                    <li>MyBatis中有两种类型的事务管理器<code>type=&quot;[JDBC|MANAGED]&quot;</code>默认<code>JDBC</code>，默认连接池<code>POOLED</code>
-                    </li>
-                </ul>
-                <h2 id="属性-properties"><a href="#属性-properties" class="header-anchor">#</a> 属性（properties）</h2>
-                <p>我们可以通过<code>properties</code>属性来引用配置文件</p>
-                <p>这些属性可以在外部进行配置，并可以进行动态替换。你既可以在典型的Java属性文件中配置这些属性，
-                    也可以在<code>properties</code>元素的子元素中设置</p>
-                <p><code>db.properties</code></p>
-                <div class="language-properties line-numbers-mode"><pre class="language-properties"><code><span
-                        class="token attr-name">driver</span><span class="token punctuation">=</span><span
-                        class="token attr-value">com.mysql.jdbc.Driver</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><h2 id="环境变量-environments"><a href="#环境变量-environments" class="header-anchor">#</a> 环境变量（environments）</h2> <ul><li>MyBatis 可以配置成适应多种环境</li></ul> <p>尽管可以配置多个环境，但每个 SqlSessionFactory 实例只能选择一种环境。</p> <p><code>default=&quot;development&quot;</code>指定使用development环境</p> <div class="language-xml line-numbers-mode"><pre class="language-xml"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>environments</span> <span class="token attr-name">default</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>development<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>environment</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>development<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>transactionManager</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>JDBC<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dataSource</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>POOLED<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>driver<span class="token punctuation">&quot;</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>com.mysql.jdbc.Driver<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>url<span class="token punctuation">&quot;</span></span>
+                          <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>jdbc:mysql://localhost:3306/mybatis?useSSL=false<span class="token entity named-entity" title="&amp;">&amp;amp;</span>useUnicode=true<span class="token entity named-entity" title="&amp;">&amp;amp;</span>characterEncoding=utf-8<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>username<span class="token punctuation">&quot;</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>root<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>password<span class="token punctuation">&quot;</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>123456<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dataSource</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>environment</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>environment</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>test<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>transactionManager</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>JDBC<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dataSource</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>POOLED<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>driver<span class="token punctuation">&quot;</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>com.mysql.jdbc.Driver<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>url<span class="token punctuation">&quot;</span></span>
+                          <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>jdbc:mysql://localhost:3306/mybatis?useSSL=false<span class="token entity named-entity" title="&amp;">&amp;amp;</span>useUnicode=true<span class="token entity named-entity" title="&amp;">&amp;amp;</span>characterEncoding=utf-8<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>username<span class="token punctuation">&quot;</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>root<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>password<span class="token punctuation">&quot;</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>123456<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dataSource</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>environment</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>environments</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div><ul><li>MyBatis中有两种类型的事务管理器<code>type=&quot;[JDBC|MANAGED]&quot;</code>默认<code>JDBC</code>，默认连接池<code>POOLED</code></li></ul> <h2 id="属性-properties"><a href="#属性-properties" class="header-anchor">#</a> 属性（properties）</h2> <p>我们可以通过<code>properties</code>属性来引用配置文件</p> <p>这些属性可以在外部进行配置，并可以进行动态替换。你既可以在典型的Java属性文件中配置这些属性，
+也可以在<code>properties</code>元素的子元素中设置</p> <p><code>db.properties</code></p> <div class="language-properties line-numbers-mode"><pre class="language-properties"><code><span class="token attr-name">driver</span><span class="token punctuation">=</span><span class="token attr-value">com.mysql.jdbc.Driver</span>
 <span class="token attr-name">url</span><span class="token punctuation">=</span><span class="token attr-value">jdbc:mysql://localhost:3306/mybatis?useSSL=false&amp;useUnicode=true&amp;characterEncoding=utf-8</span>
-<span class="token attr-name">username</span><span class="token punctuation">=</span><span
-                            class="token attr-value">root</span>
+<span class="token attr-name">username</span><span class="token punctuation">=</span><span class="token attr-value">root</span>
 <span class="token attr-name">password</span><span class="token punctuation">=</span><span class="token attr-value">123456</span>
-</code></pre>
-                    <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span
-                            class="line-number">2</span><br><span class="line-number">3</span><br><span
-                            class="line-number">4</span><br></div>
-                </div>
-                <p><code>mybatis-config.xml</code></p>
-                <p>可以通过<code>properties</code>标签引入<code>db.properties</code>配置文件，也可以在内部使用<code>property</code>标签设置变量，配置文件优先级更大
-                </p>
-                <div class="language-xml line-numbers-mode"><pre class="language-xml"><code><span
-                        class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span
-                        class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p><code>mybatis-config.xml</code></p> <p>可以通过<code>properties</code>标签引入<code>db.properties</code>配置文件，也可以在内部使用<code>property</code>标签设置变量，配置文件优先级更大</p> <div class="language-xml line-numbers-mode"><pre class="language-xml"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">&gt;</span></span>
 
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>properties</span> <span
-            class="token attr-name">resource</span><span class="token attr-value"><span
-            class="token punctuation attr-equals">=</span><span
-            class="token punctuation">&quot;</span>db.properties<span
-            class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span
-                class="token attr-name">name</span><span class="token attr-value"><span
-                class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>username<span
-                class="token punctuation">&quot;</span></span> <span class="token attr-name">value</span><span
-                class="token attr-value"><span class="token punctuation attr-equals">=</span><span
-                class="token punctuation">&quot;</span>root<span class="token punctuation">&quot;</span></span><span
-                class="token punctuation">/&gt;</span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span
-                class="token attr-name">name</span><span class="token attr-value"><span
-                class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>password<span
-                class="token punctuation">&quot;</span></span> <span class="token attr-name">value</span><span
-                class="token attr-value"><span class="token punctuation attr-equals">=</span><span
-                class="token punctuation">&quot;</span>111111<span class="token punctuation">&quot;</span></span><span
-                class="token punctuation">/&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>properties</span><span
-            class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>properties</span> <span class="token attr-name">resource</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>db.properties<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>username<span class="token punctuation">&quot;</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>root<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>password<span class="token punctuation">&quot;</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>111111<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>properties</span><span class="token punctuation">&gt;</span></span>
 
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>environments</span> <span
-            class="token attr-name">default</span><span class="token attr-value"><span
-            class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>development<span
-            class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
-        <span class="token tag"><span class="token tag"><span
-                class="token punctuation">&lt;</span>environment</span> <span class="token attr-name">id</span><span
-                class="token attr-value"><span class="token punctuation attr-equals">=</span><span
-                class="token punctuation">&quot;</span>development<span
-                class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>transactionManager</span> <span
-                    class="token attr-name">type</span><span class="token attr-value"><span
-                    class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>JDBC<span
-                    class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dataSource</span> <span
-                    class="token attr-name">type</span><span class="token attr-value"><span
-                    class="token punctuation attr-equals">=</span><span
-                    class="token punctuation">&quot;</span>POOLED<span
-                    class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
-                <span class="token tag"><span class="token tag"><span
-                        class="token punctuation">&lt;</span>property</span> <span
-                        class="token attr-name">name</span><span class="token attr-value"><span
-                        class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>driver<span
-                        class="token punctuation">&quot;</span></span> <span class="token attr-name">value</span><span
-                        class="token attr-value"><span class="token punctuation attr-equals">=</span><span
-                        class="token punctuation">&quot;</span>${driver}<span
-                        class="token punctuation">&quot;</span></span><span
-                        class="token punctuation">/&gt;</span></span>
-                <span class="token tag"><span class="token tag"><span
-                        class="token punctuation">&lt;</span>property</span> <span
-                        class="token attr-name">name</span><span class="token attr-value"><span
-                        class="token punctuation attr-equals">=</span><span
-                        class="token punctuation">&quot;</span>url<span class="token punctuation">&quot;</span></span>
-                          <span class="token attr-name">value</span><span class="token attr-value"><span
-                            class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>${url}<span
-                            class="token punctuation">&quot;</span></span><span
-                            class="token punctuation">/&gt;</span></span>
-                <span class="token tag"><span class="token tag"><span
-                        class="token punctuation">&lt;</span>property</span> <span
-                        class="token attr-name">name</span><span class="token attr-value"><span
-                        class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>username<span
-                        class="token punctuation">&quot;</span></span> <span class="token attr-name">value</span><span
-                        class="token attr-value"><span class="token punctuation attr-equals">=</span><span
-                        class="token punctuation">&quot;</span>${username}<span class="token punctuation">&quot;</span></span><span
-                        class="token punctuation">/&gt;</span></span>
-                <span class="token tag"><span class="token tag"><span
-                        class="token punctuation">&lt;</span>property</span> <span
-                        class="token attr-name">name</span><span class="token attr-value"><span
-                        class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>password<span
-                        class="token punctuation">&quot;</span></span> <span class="token attr-name">value</span><span
-                        class="token attr-value"><span class="token punctuation attr-equals">=</span><span
-                        class="token punctuation">&quot;</span>${password}<span class="token punctuation">&quot;</span></span><span
-                        class="token punctuation">/&gt;</span></span>
-            <span class="token tag"><span class="token tag"><span
-                    class="token punctuation">&lt;/</span>dataSource</span><span
-                    class="token punctuation">&gt;</span></span>
-        <span class="token tag"><span class="token tag"><span
-                class="token punctuation">&lt;/</span>environment</span><span
-                class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>environments</span><span
-            class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mappers</span><span
-            class="token punctuation">&gt;</span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mapper</span> <span
-                class="token attr-name">resource</span><span class="token attr-value"><span
-                class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>com/haer/dao/UserMapper.xml<span
-                class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mappers</span><span
-            class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span
-        class="token punctuation">&gt;</span></span>
-</code></pre>
-                    <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span
-                            class="line-number">2</span><br><span class="line-number">3</span><br><span
-                            class="line-number">4</span><br><span class="line-number">5</span><br><span
-                            class="line-number">6</span><br><span class="line-number">7</span><br><span
-                            class="line-number">8</span><br><span class="line-number">9</span><br><span
-                            class="line-number">10</span><br><span class="line-number">11</span><br><span
-                            class="line-number">12</span><br><span class="line-number">13</span><br><span
-                            class="line-number">14</span><br><span class="line-number">15</span><br><span
-                            class="line-number">16</span><br><span class="line-number">17</span><br><span
-                            class="line-number">18</span><br><span class="line-number">19</span><br><span
-                            class="line-number">20</span><br><span class="line-number">21</span><br><span
-                            class="line-number">22</span><br><span class="line-number">23</span><br></div>
-                </div>
-                <h2 id="类型别名-typealiases"><a href="#类型别名-typealiases" class="header-anchor">#</a> 类型别名（typeAliases）</h2>
-                <ul>
-                    <li><p>类型别名是为Java类型设置一个短的名字</p></li>
-                    <li><p>存在的意义仅在于用来减少类完全限定名的冗余</p></li>
-                </ul>
-                <div class="language-xml line-numbers-mode"><pre class="language-xml"><code><span
-                        class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>typeAliases</span><span
-                        class="token punctuation">&gt;</span></span>
-        <span class="token tag"><span class="token tag"><span
-                class="token punctuation">&lt;</span>typeAlias</span> <span class="token attr-name">type</span><span
-                class="token attr-value"><span class="token punctuation attr-equals">=</span><span
-                class="token punctuation">&quot;</span>com.haer.pojo.User<span
-                class="token punctuation">&quot;</span></span> <span class="token attr-name">alias</span><span
-                class="token attr-value"><span class="token punctuation attr-equals">=</span><span
-                class="token punctuation">&quot;</span>User<span class="token punctuation">&quot;</span></span><span
-                class="token punctuation">/&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>typeAliases</span><span
-        class="token punctuation">&gt;</span></span>
-</code></pre>
-                    <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span
-                            class="line-number">2</span><br><span class="line-number">3</span><br></div>
-                </div>
-                <p>也可以指定一个包名，Mybatis会在包名下面搜索需要的JavaBean，比如：</p>
-                <p>扫描实体类的包，他的默认别名就是这个类类名的首字母小写</p>
-                <div class="language-xml line-numbers-mode"><pre class="language-xml"><code><span
-                        class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>typeAliases</span><span
-                        class="token punctuation">&gt;</span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>package</span> <span
-                class="token attr-name">name</span><span class="token attr-value"><span
-                class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>com.haer.pojo<span
-                class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>typeAliases</span><span
-        class="token punctuation">&gt;</span></span>
-</code></pre>
-                    <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span
-                            class="line-number">2</span><br><span class="line-number">3</span><br></div>
-                </div>
-                <p>指定包名后不能自定义别名，可以使用注解</p>
-                <div class="language-java line-numbers-mode"><pre class="language-java"><code><span
-                        class="token annotation punctuation">@Alias</span><span class="token punctuation">(</span><span
-                        class="token string">&quot;user&quot;</span><span class="token punctuation">)</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span
-                            class="token class-name">User</span> <span class="token punctuation">{</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>environments</span> <span class="token attr-name">default</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>development<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>environment</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>development<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>transactionManager</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>JDBC<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dataSource</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>POOLED<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>driver<span class="token punctuation">&quot;</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>${driver}<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>url<span class="token punctuation">&quot;</span></span>
+                          <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>${url}<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>username<span class="token punctuation">&quot;</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>${username}<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>password<span class="token punctuation">&quot;</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>${password}<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dataSource</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>environment</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>environments</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mappers</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mapper</span> <span class="token attr-name">resource</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>com/haer/dao/UserMapper.xml<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mappers</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br></div></div><h2 id="类型别名-typealiases"><a href="#类型别名-typealiases" class="header-anchor">#</a> 类型别名（typeAliases）</h2> <ul><li><p>类型别名是为Java类型设置一个短的名字</p></li> <li><p>存在的意义仅在于用来减少类完全限定名的冗余</p></li></ul> <div class="language-xml line-numbers-mode"><pre class="language-xml"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>typeAliases</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>typeAlias</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>com.haer.pojo.User<span class="token punctuation">&quot;</span></span> <span class="token attr-name">alias</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>User<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>typeAliases</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>也可以指定一个包名，Mybatis会在包名下面搜索需要的JavaBean，比如：</p> <p>扫描实体类的包，他的默认别名就是这个类类名的首字母小写</p> <div class="language-xml line-numbers-mode"><pre class="language-xml"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>typeAliases</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>package</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>com.haer.pojo<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>typeAliases</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>指定包名后不能自定义别名，可以使用注解</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token annotation punctuation">@Alias</span><span class="token punctuation">(</span><span class="token string">&quot;user&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">User</span> <span class="token punctuation">{</span>
     
 <span class="token punctuation">}</span>
-</code></pre>
-                    <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span
-                            class="line-number">2</span><br><span class="line-number">3</span><br><span
-                            class="line-number">4</span><br></div>
-                </div>
-                <h2 id="设置-settings"><a href="#设置-settings" class="header-anchor">#</a> 设置（settings）</h2>
-                <p>这是 MyBatis 中极为重要的调整设置，它们会改变 MyBatis 的运行时行为。这里介绍三个后面可能需要使用的</p>
-                <table>
-                    <thead>
-                    <tr>
-                        <th>设置名</th>
-                        <th>描述</th>
-                        <th>有效值</th>
-                        <th>默认值</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>logImpl</td>
-                        <td>指定 MyBatis 所用日志的具体实现，未指定时将自动查找。</td>
-                        <td>SLF4J | LOG4J | LOG4J2 | JDK_LOGGING | COMMONS_LOGGING | STDOUT_LOGGING | NO_LOGGING</td>
-                        <td>未设置</td>
-                    </tr>
-                    <tr>
-                        <td>cacheEnabled</td>
-                        <td>全局性地开启或关闭所有映射器配置文件中已配置的任何缓存。</td>
-                        <td>true | false</td>
-                        <td>true</td>
-                    </tr>
-                    <tr>
-                        <td>lazyLoadingEnabled</td>
-                        <td>延迟加载的全局开关。当开启时，所有关联对象都会延迟加载。 特定关联关系中可通过设置 fetchType 属性来覆盖该项的开关状态。</td>
-                        <td>true | false</td>
-                        <td>false</td>
-                    </tr>
-                    </tbody>
-                </table>
-                <h2 id="映射器-mappers"><a href="#映射器-mappers" class="header-anchor">#</a> 映射器（mappers）</h2>
-                <p>MapperRegistry:注册绑定Mapper文件</p>
-                <p>方式一：</p>
-                <div class="language-xml line-numbers-mode"><pre class="language-xml"><code><span
-                        class="token tag"><span class="token tag"><span
-                        class="token punctuation">&lt;</span>mappers</span><span
-                        class="token punctuation">&gt;</span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mapper</span> <span
-                class="token attr-name">resource</span><span class="token attr-value"><span
-                class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>com/haer/dao/UserMapper.xml<span
-                class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mappers</span><span
-        class="token punctuation">&gt;</span></span>
-</code></pre>
-                    <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span
-                            class="line-number">2</span><br><span class="line-number">3</span><br></div>
-                </div>
-                <p>方式二：</p>
-                <div class="language-xml line-numbers-mode"><pre class="language-xml"><code><span
-                        class="token tag"><span class="token tag"><span
-                        class="token punctuation">&lt;</span>mappers</span><span
-                        class="token punctuation">&gt;</span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mapper</span> <span
-                class="token attr-name">class</span><span class="token attr-value"><span
-                class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>com.haer.dao.UserMapper<span
-                class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mappers</span><span
-        class="token punctuation">&gt;</span></span>
-</code></pre>
-                    <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span
-                            class="line-number">2</span><br><span class="line-number">3</span><br></div>
-                </div>
-                <p>方式三：</p>
-                <div class="language-xml line-numbers-mode"><pre class="language-xml"><code><span
-                        class="token tag"><span class="token tag"><span
-                        class="token punctuation">&lt;</span>mappers</span><span
-                        class="token punctuation">&gt;</span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mapper</span> <span
-                class="token attr-name">name</span><span class="token attr-value"><span
-                class="token punctuation attr-equals">=</span><span
-                class="token punctuation">&quot;</span>com.haer.dao<span
-                class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mappers</span><span
-        class="token punctuation">&gt;</span></span>
-</code></pre>
-                    <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span
-                            class="line-number">2</span><br><span class="line-number">3</span><br></div>
-                </div>
-                <div class="custom-block tip"><p class="custom-block-title">注意</p>
-                    <p>方式二和方式三：Dao和Mapper必须同名且在同一包下</p></div>
-                <h2 id="作用域-scope-和生命周期"><a href="#作用域-scope-和生命周期" class="header-anchor">#</a> 作用域（Scope）和生命周期</h2>
-                <p>不同作用域和生命周期类别是至关重要的，因为错误的使用会导致非常严重的<strong>并发问题</strong></p>
-                <p><img src="/assets/img/1.cf9ff07e.png" alt=""></p>
-                <p><strong>SqlSessionFactoryBuilder</strong></p>
-                <ul>
-                    <li>一旦创建了 SqlSessionFactory，就不再需要它了</li>
-                    <li>最佳作用域是方法作用域（也就是局部方法变量）</li>
-                </ul>
-                <p><strong>SqlSessionFactory</strong></p>
-                <ul>
-                    <li>可以理解为 数据库连接池</li>
-                    <li>SqlSessionFactory 一旦被创建就应该在应用的运行期间一直存在，没有任何理由丢弃它或重新创建另一个实例</li>
-                    <li>SqlSessionFactory 的最佳作用域是应用作用域</li>
-                    <li>最简单的就是使用<strong>单例模式</strong>或者静态单例模式</li>
-                </ul>
-                <p><strong>SqlSession</strong></p>
-                <ul>
-                    <li>连接到连接池的一个请求</li>
-                    <li>SqlSession 的实例不是线程安全的，因此是不能被共享的，所以它的最佳的作用域是请求或方法作用域</li>
-                    <li><strong>用完后需要关闭</strong>，否则占用资源</li>
-                </ul>
-                <p><img src="/assets/img/2.87f2e063.png" alt=""></p>
-                <p>这里面每一个Mapper，就代表一个具体业务</p></div>
-            <footer class="page-edit"><!---->
-                <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">8/24/2020, 12:51:09 PM</span>
-                </div>
-            </footer>
-            <div class="page-nav"><p class="inner"><span class="prev">
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h2 id="设置-settings"><a href="#设置-settings" class="header-anchor">#</a> 设置（settings）</h2> <p>这是 MyBatis 中极为重要的调整设置，它们会改变 MyBatis 的运行时行为。这里介绍三个后面可能需要使用的</p> <table><thead><tr><th>设置名</th> <th>描述</th> <th>有效值</th> <th>默认值</th></tr></thead> <tbody><tr><td>logImpl</td> <td>指定 MyBatis 所用日志的具体实现，未指定时将自动查找。</td> <td>SLF4J | LOG4J | LOG4J2 | JDK_LOGGING | COMMONS_LOGGING | STDOUT_LOGGING | NO_LOGGING</td> <td>未设置</td></tr> <tr><td>cacheEnabled</td> <td>全局性地开启或关闭所有映射器配置文件中已配置的任何缓存。</td> <td>true | false</td> <td>true</td></tr> <tr><td>lazyLoadingEnabled</td> <td>延迟加载的全局开关。当开启时，所有关联对象都会延迟加载。 特定关联关系中可通过设置 fetchType 属性来覆盖该项的开关状态。</td> <td>true | false</td> <td>false</td></tr></tbody></table> <h2 id="映射器-mappers"><a href="#映射器-mappers" class="header-anchor">#</a> 映射器（mappers）</h2> <p>MapperRegistry:注册绑定Mapper文件</p> <p>方式一：</p> <div class="language-xml line-numbers-mode"><pre class="language-xml"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mappers</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mapper</span> <span class="token attr-name">resource</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>com/haer/dao/UserMapper.xml<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mappers</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>方式二：</p> <div class="language-xml line-numbers-mode"><pre class="language-xml"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mappers</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mapper</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>com.haer.dao.UserMapper<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mappers</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>方式三：</p> <div class="language-xml line-numbers-mode"><pre class="language-xml"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mappers</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mapper</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>com.haer.dao<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mappers</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><div class="custom-block tip"><p class="custom-block-title">注意</p> <p>方式二和方式三：Dao和Mapper必须同名且在同一包下</p></div> <h2 id="作用域-scope-和生命周期"><a href="#作用域-scope-和生命周期" class="header-anchor">#</a> 作用域（Scope）和生命周期</h2> <p>不同作用域和生命周期类别是至关重要的，因为错误的使用会导致非常严重的<strong>并发问题</strong></p> <p><img src="/blog/assets/img/1.cf9ff07e.png" alt=""></p> <p><strong>SqlSessionFactoryBuilder</strong></p> <ul><li>一旦创建了 SqlSessionFactory，就不再需要它了</li> <li>最佳作用域是方法作用域（也就是局部方法变量）</li></ul> <p><strong>SqlSessionFactory</strong></p> <ul><li>可以理解为 数据库连接池</li> <li>SqlSessionFactory 一旦被创建就应该在应用的运行期间一直存在，没有任何理由丢弃它或重新创建另一个实例</li> <li>SqlSessionFactory 的最佳作用域是应用作用域</li> <li>最简单的就是使用<strong>单例模式</strong>或者静态单例模式</li></ul> <p><strong>SqlSession</strong></p> <ul><li>连接到连接池的一个请求</li> <li>SqlSession 的实例不是线程安全的，因此是不能被共享的，所以它的最佳的作用域是请求或方法作用域</li> <li><strong>用完后需要关闭</strong>，否则占用资源</li></ul> <p><img src="/blog/assets/img/2.87f2e063.png" alt=""></p> <p>这里面每一个Mapper，就代表一个具体业务</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">8/24/2020, 12:51:09 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
       ←
-      <a href="/learning/mybatis/helloWorld.html" class="prev">
+      <a href="/blog/learning/mybatis/helloWorld.html" class="prev">
         HelloWorld
-      </a></span> <span class="next"><a href="/learning/mybatis/resultMap.html">
+      </a></span> <span class="next"><a href="/blog/learning/mybatis/resultMap.html">
         ResultMap映射
       </a>
       →
-    </span></p></div>
-        </main>
-    </div>
-    <div class="global-ui"><!----></div>
-</div>
-<script src="/assets/js/app.6dee105b.js" defer></script>
-<script src="/assets/js/2.aa41c1d8.js" defer></script>
-<script src="/assets/js/15.99c10892.js" defer></script>
-</body>
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/blog/assets/js/app.9008dfc6.js" defer></script><script src="/blog/assets/js/2.aa41c1d8.js" defer></script><script src="/blog/assets/js/15.5b06556d.js" defer></script>
+  </body>
 </html>

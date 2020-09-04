@@ -1,784 +1,218 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>代理模式 | 哈儿博客</title>
     <meta name="generator" content="VuePress 1.5.4">
-    <link rel="icon" href="/img/logo.jpg">
-    <link rel="stylesheet" href="/css/base.css">
+    <link rel="icon" href="/blog/img/logo.jpg">
+    <link rel="stylesheet" href="/blog/css/base.css">
     <meta name="description" content="哈儿的学习博客">
-    <link rel="preload" href="/assets/css/0.styles.ddd314f9.css" as="style">
-    <link rel="preload" href="/assets/js/app.6dee105b.js" as="script">
-    <link rel="preload" href="/assets/js/2.aa41c1d8.js" as="script">
-    <link rel="preload" href="/assets/js/23.d409c523.js" as="script">
-    <link rel="prefetch" href="/assets/js/10.bdf0e11c.js">
-    <link rel="prefetch" href="/assets/js/11.8861593f.js">
-    <link rel="prefetch" href="/assets/js/12.761ad3f4.js">
-    <link rel="prefetch" href="/assets/js/13.68f258e2.js">
-    <link rel="prefetch" href="/assets/js/14.f2896015.js">
-    <link rel="prefetch" href="/assets/js/15.99c10892.js">
-    <link rel="prefetch" href="/assets/js/16.d4582f36.js">
-    <link rel="prefetch" href="/assets/js/17.14810765.js">
-    <link rel="prefetch" href="/assets/js/18.2a18556d.js">
-    <link rel="prefetch" href="/assets/js/19.4de0eb66.js">
-    <link rel="prefetch" href="/assets/js/20.0086f86c.js">
-    <link rel="prefetch" href="/assets/js/21.f16c6da5.js">
-    <link rel="prefetch" href="/assets/js/22.fe645c57.js">
-    <link rel="prefetch" href="/assets/js/24.55a8afa8.js">
-    <link rel="prefetch" href="/assets/js/25.f09353df.js">
-    <link rel="prefetch" href="/assets/js/26.98288320.js">
-    <link rel="prefetch" href="/assets/js/27.7bfef96f.js">
-    <link rel="prefetch" href="/assets/js/28.f29988fb.js">
-    <link rel="prefetch" href="/assets/js/29.57882d5d.js">
-    <link rel="prefetch" href="/assets/js/3.bbc7260b.js">
-    <link rel="prefetch" href="/assets/js/30.dffa19f7.js">
-    <link rel="prefetch" href="/assets/js/31.586b847b.js">
-    <link rel="prefetch" href="/assets/js/32.8325d4cd.js">
-    <link rel="prefetch" href="/assets/js/33.3c035a03.js">
-    <link rel="prefetch" href="/assets/js/34.424f911e.js">
-    <link rel="prefetch" href="/assets/js/35.a37713e6.js">
-    <link rel="prefetch" href="/assets/js/36.f9f1329a.js">
-    <link rel="prefetch" href="/assets/js/37.5f4c6182.js">
-    <link rel="prefetch" href="/assets/js/38.2a8cf1cf.js">
-    <link rel="prefetch" href="/assets/js/39.8f45efd2.js">
-    <link rel="prefetch" href="/assets/js/4.3a3e52ab.js">
-    <link rel="prefetch" href="/assets/js/40.32ae9afb.js">
-    <link rel="prefetch" href="/assets/js/41.5334f6b8.js">
-    <link rel="prefetch" href="/assets/js/42.18be8ae3.js">
-    <link rel="prefetch" href="/assets/js/43.638ee813.js">
-    <link rel="prefetch" href="/assets/js/44.adca917e.js">
-    <link rel="prefetch" href="/assets/js/45.94bbb398.js">
-    <link rel="prefetch" href="/assets/js/46.3d6b1cb2.js">
-    <link rel="prefetch" href="/assets/js/47.40f07088.js">
-    <link rel="prefetch" href="/assets/js/48.60e0ddc1.js">
-    <link rel="prefetch" href="/assets/js/49.df81aa51.js">
-    <link rel="prefetch" href="/assets/js/5.9e53bb29.js">
-    <link rel="prefetch" href="/assets/js/50.32c50c13.js">
-    <link rel="prefetch" href="/assets/js/51.b9de2d64.js">
-    <link rel="prefetch" href="/assets/js/52.d9bc370b.js">
-    <link rel="prefetch" href="/assets/js/53.07251660.js">
-    <link rel="prefetch" href="/assets/js/54.6add7e0d.js">
-    <link rel="prefetch" href="/assets/js/6.92a93642.js">
-    <link rel="prefetch" href="/assets/js/7.1134561d.js">
-    <link rel="prefetch" href="/assets/js/8.e7adf247.js">
-    <link rel="prefetch" href="/assets/js/9.a5d9b8be.js">
-    <link rel="stylesheet" href="/assets/css/0.styles.ddd314f9.css">
-</head>
-<body>
-<div id="app" data-server-rendered="true">
-    <div class="theme-container">
-        <header class="navbar">
-            <div class="sidebar-button">
-                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512"
-                     class="icon">
-                    <path fill="currentColor"
-                          d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path>
-                </svg>
-            </div>
-            <a href="/" class="home-link router-link-active"><!----> <span class="site-name">哈儿博客</span></a>
-            <div class="links">
-                <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value="">
-                    <!----></div>
-                <nav class="nav-links can-hide">
-                    <div class="nav-item">
-                        <div class="dropdown-wrapper">
-                            <button type="button" aria-label="框架学习" class="dropdown-title"><span
-                                    class="title">框架学习</span> <span class="arrow down"></span></button>
-                            <button type="button" aria-label="框架学习" class="mobile-dropdown-title"><span class="title">框架学习</span>
-                                <span class="arrow right"></span></button>
-                            <ul class="nav-dropdown" style="display:none;">
-                                <li class="dropdown-item"><h4>
-                                    后端
-                                </h4>
-                                    <ul class="dropdown-subitem-wrapper">
-                                        <li class="dropdown-subitem"><a href="/learning/mybatis/introduce.html"
-                                                                        class="nav-link">
-                                            Mybatis
-                                        </a></li>
-                                        <li class="dropdown-subitem"><a href="/learning/spring/introduction.html"
-                                                                        class="nav-link">
-                                            Spring
-                                        </a></li>
-                                        <li class="dropdown-subitem"><a href="/learning/springmvc/review.html"
-                                                                        class="nav-link">
-                                            SpringMVC
-                                        </a></li>
-                                        <li class="dropdown-subitem"><a href="/learning/springboot/introduction.html"
-                                                                        class="nav-link">
-                                            SpringBoot
-                                        </a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="nav-item">
-                        <div class="dropdown-wrapper">
-                            <button type="button" aria-label="基础学习" class="dropdown-title"><span
-                                    class="title">基础学习</span> <span class="arrow down"></span></button>
-                            <button type="button" aria-label="基础学习" class="mobile-dropdown-title"><span class="title">基础学习</span>
-                                <span class="arrow right"></span></button>
-                            <ul class="nav-dropdown" style="display:none;">
-                                <li class="dropdown-item"><h4>
-                                    后端
-                                </h4>
-                                    <ul class="dropdown-subitem-wrapper">
-                                        <li class="dropdown-subitem"><a href="/base/java/introduction/dataType.html"
-                                                                        class="nav-link">
-                                            JAVA
-                                        </a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="nav-item"><a href="/oneself/" class="nav-link">
-                        关于作者
-                    </a></div>
-                    <div class="nav-item"><a href="/friends/" class="nav-link">
-                        友链
-                    </a></div>
-                    <div class="nav-item"><a href="/tools/" class="nav-link">
-                        工具安装
-                    </a></div>
-                    <div class="nav-item">
-                        <div class="dropdown-wrapper">
-                            <button type="button" aria-label="工具箱" class="dropdown-title"><span class="title">工具箱</span>
-                                <span class="arrow down"></span></button>
-                            <button type="button" aria-label="工具箱" class="mobile-dropdown-title"><span
-                                    class="title">工具箱</span> <span class="arrow right"></span></button>
-                            <ul class="nav-dropdown" style="display:none;">
-                                <li class="dropdown-item"><h4>
-                                    通用
-                                </h4>
-                                    <ul class="dropdown-subitem-wrapper">
-                                        <li class="dropdown-subitem"><a href="https://www.processon.com/"
-                                                                        target="_blank" rel="noopener noreferrer"
-                                                                        class="nav-link external">
-                                            在线画图
-                                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px"
-                                                 viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
-                                                <path fill="currentColor"
-                                                      d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path>
-                                                <polygon fill="currentColor"
-                                                         points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon>
-                                            </svg>
-                                        </a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown-item"><h4>
-                                    学习
-                                </h4>
-                                    <ul class="dropdown-subitem-wrapper">
-                                        <li class="dropdown-subitem"><a href="https://regex101.com/" target="_blank"
-                                                                        rel="noopener noreferrer"
-                                                                        class="nav-link external">
-                                            在线正则
-                                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px"
-                                                 viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
-                                                <path fill="currentColor"
-                                                      d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path>
-                                                <polygon fill="currentColor"
-                                                         points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon>
-                                            </svg>
-                                        </a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </div> <!----></nav>
-            </div>
-        </header>
-        <div class="sidebar-mask"></div>
-        <aside class="sidebar">
-            <nav class="nav-links">
-                <div class="nav-item">
-                    <div class="dropdown-wrapper">
-                        <button type="button" aria-label="框架学习" class="dropdown-title"><span class="title">框架学习</span>
-                            <span class="arrow down"></span></button>
-                        <button type="button" aria-label="框架学习" class="mobile-dropdown-title"><span
-                                class="title">框架学习</span> <span class="arrow right"></span></button>
-                        <ul class="nav-dropdown" style="display:none;">
-                            <li class="dropdown-item"><h4>
-                                后端
-                            </h4>
-                                <ul class="dropdown-subitem-wrapper">
-                                    <li class="dropdown-subitem"><a href="/learning/mybatis/introduce.html"
-                                                                    class="nav-link">
-                                        Mybatis
-                                    </a></li>
-                                    <li class="dropdown-subitem"><a href="/learning/spring/introduction.html"
-                                                                    class="nav-link">
-                                        Spring
-                                    </a></li>
-                                    <li class="dropdown-subitem"><a href="/learning/springmvc/review.html"
-                                                                    class="nav-link">
-                                        SpringMVC
-                                    </a></li>
-                                    <li class="dropdown-subitem"><a href="/learning/springboot/introduction.html"
-                                                                    class="nav-link">
-                                        SpringBoot
-                                    </a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="nav-item">
-                    <div class="dropdown-wrapper">
-                        <button type="button" aria-label="基础学习" class="dropdown-title"><span class="title">基础学习</span>
-                            <span class="arrow down"></span></button>
-                        <button type="button" aria-label="基础学习" class="mobile-dropdown-title"><span
-                                class="title">基础学习</span> <span class="arrow right"></span></button>
-                        <ul class="nav-dropdown" style="display:none;">
-                            <li class="dropdown-item"><h4>
-                                后端
-                            </h4>
-                                <ul class="dropdown-subitem-wrapper">
-                                    <li class="dropdown-subitem"><a href="/base/java/introduction/dataType.html"
-                                                                    class="nav-link">
-                                        JAVA
-                                    </a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="nav-item"><a href="/oneself/" class="nav-link">
-                    关于作者
-                </a></div>
-                <div class="nav-item"><a href="/friends/" class="nav-link">
-                    友链
-                </a></div>
-                <div class="nav-item"><a href="/tools/" class="nav-link">
-                    工具安装
-                </a></div>
-                <div class="nav-item">
-                    <div class="dropdown-wrapper">
-                        <button type="button" aria-label="工具箱" class="dropdown-title"><span class="title">工具箱</span>
-                            <span class="arrow down"></span></button>
-                        <button type="button" aria-label="工具箱" class="mobile-dropdown-title"><span
-                                class="title">工具箱</span> <span class="arrow right"></span></button>
-                        <ul class="nav-dropdown" style="display:none;">
-                            <li class="dropdown-item"><h4>
-                                通用
-                            </h4>
-                                <ul class="dropdown-subitem-wrapper">
-                                    <li class="dropdown-subitem"><a href="https://www.processon.com/" target="_blank"
-                                                                    rel="noopener noreferrer" class="nav-link external">
-                                        在线画图
-                                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px"
-                                             viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
-                                            <path fill="currentColor"
-                                                  d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path>
-                                            <polygon fill="currentColor"
-                                                     points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon>
-                                        </svg>
-                                    </a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown-item"><h4>
-                                学习
-                            </h4>
-                                <ul class="dropdown-subitem-wrapper">
-                                    <li class="dropdown-subitem"><a href="https://regex101.com/" target="_blank"
-                                                                    rel="noopener noreferrer" class="nav-link external">
-                                        在线正则
-                                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px"
-                                             viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
-                                            <path fill="currentColor"
-                                                  d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path>
-                                            <polygon fill="currentColor"
-                                                     points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon>
-                                        </svg>
-                                    </a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div> <!----></nav>
-            <ul class="sidebar-links">
-                <li>
-                    <section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open">
-                        <span>Spring</span> <span class="arrow down"></span></p>
-                        <ul class="sidebar-links sidebar-group-items">
-                            <li><a href="/learning/spring/introduction.html" class="sidebar-link">简介</a></li>
-                            <li><a href="/learning/spring/ioc.html" class="sidebar-link">IOC理论推导</a></li>
-                            <li><a href="/learning/spring/helloSpring.html" class="sidebar-link">HelloSpring</a></li>
-                            <li><a href="/learning/spring/configuration.html" class="sidebar-link">Spring配置</a></li>
-                            <li><a href="/learning/spring/di.html" class="sidebar-link">依赖注入</a></li>
-                            <li><a href="/learning/spring/autoassemble.html" class="sidebar-link">Bean的自动装配</a></li>
-                            <li><a href="/learning/spring/annotations.html" class="sidebar-link">使用注解开发</a></li>
-                            <li><a href="/learning/spring/proxy.html" aria-current="page" class="active sidebar-link">代理模式</a>
-                                <ul class="sidebar-sub-headers">
-                                    <li class="sidebar-sub-header"><a href="/learning/spring/proxy.html#静态代理"
-                                                                      class="sidebar-link">静态代理</a></li>
-                                    <li class="sidebar-sub-header"><a href="/learning/spring/proxy.html#动态代理"
-                                                                      class="sidebar-link">动态代理</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="/learning/spring/aop.html" class="sidebar-link">AOP</a></li>
-                            <li><a href="/learning/spring/mybatis.html" class="sidebar-link">整合Mybatis</a></li>
-                            <li><a href="/learning/spring/transaction.html" class="sidebar-link">声明式事务</a></li>
-                        </ul>
-                    </section>
-                </li>
-            </ul>
-        </aside>
-        <main class="page">
-            <div class="theme-default-content content__default"><h1 id="代理模式"><a href="#代理模式"
-                                                                                 class="header-anchor">#</a> 代理模式</h1>
-                <p>为什么要学习代理模式？</p>
-                <p>因为这就是SpringAOP的底层</p>
-                <p>分为<strong>静态代理</strong>和<strong>动态代理</strong></p>
-                <p><img src="/assets/img/3.486b3d63.png" alt=""></p>
-                <h2 id="静态代理"><a href="#静态代理" class="header-anchor">#</a> 静态代理</h2>
-                <p>角色分析：</p>
-                <ul>
-                    <li>抽象角色：一般使用接口会抽象类解决：<strong>租房</strong></li>
-                    <li>真实角色：被代理的角色：<strong>房东</strong></li>
-                    <li>代理角色：代理真实对象，会在在这做一些附属操作：<strong>中介</strong></li>
-                    <li>客户：访问代理对象的人</li>
-                </ul>
-                <p>代码步骤：</p>
-                <p>接口：</p>
-                <div class="language-java line-numbers-mode"><pre class="language-java"><code><span
-                        class="token comment">//租房</span>
-<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">Rent</span> <span
-                            class="token punctuation">{</span>
-    <span class="token keyword">void</span> <span class="token function">rent</span><span
-                            class="token punctuation">(</span><span class="token punctuation">)</span><span
-                            class="token punctuation">;</span>
+    <link rel="preload" href="/blog/assets/css/0.styles.3d629ca3.css" as="style"><link rel="preload" href="/blog/assets/js/app.9008dfc6.js" as="script"><link rel="preload" href="/blog/assets/js/2.aa41c1d8.js" as="script"><link rel="preload" href="/blog/assets/js/23.dce63254.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.bdf0e11c.js"><link rel="prefetch" href="/blog/assets/js/11.bd919351.js"><link rel="prefetch" href="/blog/assets/js/12.d7a48bdb.js"><link rel="prefetch" href="/blog/assets/js/13.9ea92df7.js"><link rel="prefetch" href="/blog/assets/js/14.f2896015.js"><link rel="prefetch" href="/blog/assets/js/15.5b06556d.js"><link rel="prefetch" href="/blog/assets/js/16.d08f2416.js"><link rel="prefetch" href="/blog/assets/js/17.daa8ce37.js"><link rel="prefetch" href="/blog/assets/js/18.a2952e3a.js"><link rel="prefetch" href="/blog/assets/js/19.82d57f06.js"><link rel="prefetch" href="/blog/assets/js/20.ed1ba0b1.js"><link rel="prefetch" href="/blog/assets/js/21.3064d07a.js"><link rel="prefetch" href="/blog/assets/js/22.13a6594b.js"><link rel="prefetch" href="/blog/assets/js/24.55a8afa8.js"><link rel="prefetch" href="/blog/assets/js/25.f09353df.js"><link rel="prefetch" href="/blog/assets/js/26.1be39f1a.js"><link rel="prefetch" href="/blog/assets/js/27.554b1153.js"><link rel="prefetch" href="/blog/assets/js/28.8ac13a41.js"><link rel="prefetch" href="/blog/assets/js/29.8c30562d.js"><link rel="prefetch" href="/blog/assets/js/3.ef39fcfc.js"><link rel="prefetch" href="/blog/assets/js/30.0aa36030.js"><link rel="prefetch" href="/blog/assets/js/31.586b847b.js"><link rel="prefetch" href="/blog/assets/js/32.4074a7e1.js"><link rel="prefetch" href="/blog/assets/js/33.5866b58d.js"><link rel="prefetch" href="/blog/assets/js/34.424f911e.js"><link rel="prefetch" href="/blog/assets/js/35.776e4117.js"><link rel="prefetch" href="/blog/assets/js/36.06152a9b.js"><link rel="prefetch" href="/blog/assets/js/37.200d632f.js"><link rel="prefetch" href="/blog/assets/js/38.8bde3b53.js"><link rel="prefetch" href="/blog/assets/js/39.0cd294cb.js"><link rel="prefetch" href="/blog/assets/js/4.0bd42677.js"><link rel="prefetch" href="/blog/assets/js/40.464dc49c.js"><link rel="prefetch" href="/blog/assets/js/41.8995e9f9.js"><link rel="prefetch" href="/blog/assets/js/42.c9c620a9.js"><link rel="prefetch" href="/blog/assets/js/43.f65ade38.js"><link rel="prefetch" href="/blog/assets/js/44.491371ac.js"><link rel="prefetch" href="/blog/assets/js/45.bf1c5c0b.js"><link rel="prefetch" href="/blog/assets/js/46.8e0d18c7.js"><link rel="prefetch" href="/blog/assets/js/47.108449e9.js"><link rel="prefetch" href="/blog/assets/js/48.4132d66c.js"><link rel="prefetch" href="/blog/assets/js/49.4fe466ae.js"><link rel="prefetch" href="/blog/assets/js/5.3ab9cd8c.js"><link rel="prefetch" href="/blog/assets/js/50.32c50c13.js"><link rel="prefetch" href="/blog/assets/js/51.9cdaa827.js"><link rel="prefetch" href="/blog/assets/js/52.7ef136d9.js"><link rel="prefetch" href="/blog/assets/js/53.3d3e04c3.js"><link rel="prefetch" href="/blog/assets/js/54.6add7e0d.js"><link rel="prefetch" href="/blog/assets/js/6.bd50e40a.js"><link rel="prefetch" href="/blog/assets/js/7.1134561d.js"><link rel="prefetch" href="/blog/assets/js/8.02bb2c2e.js"><link rel="prefetch" href="/blog/assets/js/9.6f4d6ede.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.3d629ca3.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">哈儿博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="框架学习" class="dropdown-title"><span class="title">框架学习</span> <span class="arrow down"></span></button> <button type="button" aria-label="框架学习" class="mobile-dropdown-title"><span class="title">框架学习</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          后端
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/blog/learning/mybatis/introduce.html" class="nav-link">
+  Mybatis
+</a></li><li class="dropdown-subitem"><a href="/blog/learning/spring/introduction.html" class="nav-link">
+  Spring
+</a></li><li class="dropdown-subitem"><a href="/blog/learning/springmvc/review.html" class="nav-link">
+  SpringMVC
+</a></li><li class="dropdown-subitem"><a href="/blog/learning/springboot/introduction.html" class="nav-link">
+  SpringBoot
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基础学习" class="dropdown-title"><span class="title">基础学习</span> <span class="arrow down"></span></button> <button type="button" aria-label="基础学习" class="mobile-dropdown-title"><span class="title">基础学习</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          后端
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/blog/base/java/introduction/dataType.html" class="nav-link">
+  JAVA
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/blog/oneself/" class="nav-link">
+  关于作者
+</a></div><div class="nav-item"><a href="/blog/friends/" class="nav-link">
+  友链
+</a></div><div class="nav-item"><a href="/blog/tools/" class="nav-link">
+  工具安装
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工具箱" class="dropdown-title"><span class="title">工具箱</span> <span class="arrow down"></span></button> <button type="button" aria-label="工具箱" class="mobile-dropdown-title"><span class="title">工具箱</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          通用
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://www.processon.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  在线画图
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></li><li class="dropdown-item"><h4>
+          学习
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://regex101.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  在线正则
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="框架学习" class="dropdown-title"><span class="title">框架学习</span> <span class="arrow down"></span></button> <button type="button" aria-label="框架学习" class="mobile-dropdown-title"><span class="title">框架学习</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          后端
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/blog/learning/mybatis/introduce.html" class="nav-link">
+  Mybatis
+</a></li><li class="dropdown-subitem"><a href="/blog/learning/spring/introduction.html" class="nav-link">
+  Spring
+</a></li><li class="dropdown-subitem"><a href="/blog/learning/springmvc/review.html" class="nav-link">
+  SpringMVC
+</a></li><li class="dropdown-subitem"><a href="/blog/learning/springboot/introduction.html" class="nav-link">
+  SpringBoot
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基础学习" class="dropdown-title"><span class="title">基础学习</span> <span class="arrow down"></span></button> <button type="button" aria-label="基础学习" class="mobile-dropdown-title"><span class="title">基础学习</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          后端
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/blog/base/java/introduction/dataType.html" class="nav-link">
+  JAVA
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/blog/oneself/" class="nav-link">
+  关于作者
+</a></div><div class="nav-item"><a href="/blog/friends/" class="nav-link">
+  友链
+</a></div><div class="nav-item"><a href="/blog/tools/" class="nav-link">
+  工具安装
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工具箱" class="dropdown-title"><span class="title">工具箱</span> <span class="arrow down"></span></button> <button type="button" aria-label="工具箱" class="mobile-dropdown-title"><span class="title">工具箱</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          通用
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://www.processon.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  在线画图
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></li><li class="dropdown-item"><h4>
+          学习
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://regex101.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  在线正则
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Spring</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/learning/spring/introduction.html" class="sidebar-link">简介</a></li><li><a href="/blog/learning/spring/ioc.html" class="sidebar-link">IOC理论推导</a></li><li><a href="/blog/learning/spring/helloSpring.html" class="sidebar-link">HelloSpring</a></li><li><a href="/blog/learning/spring/configuration.html" class="sidebar-link">Spring配置</a></li><li><a href="/blog/learning/spring/di.html" class="sidebar-link">依赖注入</a></li><li><a href="/blog/learning/spring/autoassemble.html" class="sidebar-link">Bean的自动装配</a></li><li><a href="/blog/learning/spring/annotations.html" class="sidebar-link">使用注解开发</a></li><li><a href="/blog/learning/spring/proxy.html" aria-current="page" class="active sidebar-link">代理模式</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/learning/spring/proxy.html#静态代理" class="sidebar-link">静态代理</a></li><li class="sidebar-sub-header"><a href="/blog/learning/spring/proxy.html#动态代理" class="sidebar-link">动态代理</a></li></ul></li><li><a href="/blog/learning/spring/aop.html" class="sidebar-link">AOP</a></li><li><a href="/blog/learning/spring/mybatis.html" class="sidebar-link">整合Mybatis</a></li><li><a href="/blog/learning/spring/transaction.html" class="sidebar-link">声明式事务</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="代理模式"><a href="#代理模式" class="header-anchor">#</a> 代理模式</h1> <p>为什么要学习代理模式？</p> <p>因为这就是SpringAOP的底层</p> <p>分为<strong>静态代理</strong>和<strong>动态代理</strong></p> <p><img src="/blog/assets/img/3.486b3d63.png" alt=""></p> <h2 id="静态代理"><a href="#静态代理" class="header-anchor">#</a> 静态代理</h2> <p>角色分析：</p> <ul><li>抽象角色：一般使用接口会抽象类解决：<strong>租房</strong></li> <li>真实角色：被代理的角色：<strong>房东</strong></li> <li>代理角色：代理真实对象，会在在这做一些附属操作：<strong>中介</strong></li> <li>客户：访问代理对象的人</li></ul> <p>代码步骤：</p> <p>接口：</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token comment">//租房</span>
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">Rent</span> <span class="token punctuation">{</span>
+    <span class="token keyword">void</span> <span class="token function">rent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre>
-                    <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span
-                            class="line-number">2</span><br><span class="line-number">3</span><br><span
-                            class="line-number">4</span><br></div>
-                </div>
-                <p>真实角色</p>
-                <div class="language-java line-numbers-mode"><pre class="language-java"><code><span
-                        class="token comment">//房东</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span
-                            class="token class-name">Host</span> <span class="token keyword">implements</span> <span
-                            class="token class-name">Rent</span> <span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span
-                            class="token function">rent</span><span class="token punctuation">(</span><span
-                            class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span
-                            class="token punctuation">.</span><span class="token function">println</span><span
-                            class="token punctuation">(</span><span class="token string">&quot;房东要出租房子&quot;</span><span
-                            class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>真实角色</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token comment">//房东</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Host</span> <span class="token keyword">implements</span> <span class="token class-name">Rent</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">rent</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;房东要出租房子&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-</code></pre>
-                    <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span
-                            class="line-number">2</span><br><span class="line-number">3</span><br><span
-                            class="line-number">4</span><br><span class="line-number">5</span><br><span
-                            class="line-number">6</span><br></div>
-                </div>
-                <p>代理角色</p>
-                <div class="language-java line-numbers-mode"><pre class="language-java"><code><span
-                        class="token comment">//中介</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span
-                            class="token class-name">Proxy</span> <span class="token keyword">implements</span> <span
-                            class="token class-name">Rent</span><span class="token punctuation">{</span>
-    <span class="token keyword">private</span> <span class="token class-name">Host</span> host<span
-                            class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>代理角色</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token comment">//中介</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Proxy</span> <span class="token keyword">implements</span> <span class="token class-name">Rent</span><span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token class-name">Host</span> host<span class="token punctuation">;</span>
 
-    <span class="token keyword">public</span> <span class="token class-name">Proxy</span><span
-                            class="token punctuation">(</span><span class="token punctuation">)</span> <span
-                            class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token punctuation">}</span>
 
-    <span class="token keyword">public</span> <span class="token class-name">Proxy</span><span
-                            class="token punctuation">(</span><span class="token class-name">Host</span> host<span
-                            class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>host <span
-                            class="token operator">=</span> host<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span><span class="token class-name">Host</span> host<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>host <span class="token operator">=</span> host<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span
-                            class="token function">rent</span><span class="token punctuation">(</span><span
-                            class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token function">seeHouse</span><span class="token punctuation">(</span><span
-                            class="token punctuation">)</span><span class="token punctuation">;</span>
-        host<span class="token punctuation">.</span><span class="token function">rent</span><span
-                            class="token punctuation">(</span><span class="token punctuation">)</span><span
-                            class="token punctuation">;</span>
-        <span class="token function">contract</span><span class="token punctuation">(</span><span
-                            class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token function">fare</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span
-                            class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">rent</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">seeHouse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        host<span class="token punctuation">.</span><span class="token function">rent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">contract</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">fare</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
     <span class="token comment">//看房 </span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">seeHouse</span><span
-                            class="token punctuation">(</span><span class="token punctuation">)</span><span
-                            class="token punctuation">{</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span
-                            class="token punctuation">.</span><span class="token function">println</span><span
-                            class="token punctuation">(</span><span class="token string">&quot;中介带你看房&quot;</span><span
-                            class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">seeHouse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;中介带你看房&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
     <span class="token comment">//签合同</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">contract</span><span
-                            class="token punctuation">(</span><span class="token punctuation">)</span><span
-                            class="token punctuation">{</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span
-                            class="token punctuation">.</span><span class="token function">println</span><span
-                            class="token punctuation">(</span><span class="token string">&quot;中介和你签合同&quot;</span><span
-                            class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">contract</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;中介和你签合同&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
     <span class="token comment">//收中介费</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span
-                            class="token function">fare</span><span class="token punctuation">(</span><span
-                            class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span
-                            class="token punctuation">.</span><span class="token function">println</span><span
-                            class="token punctuation">(</span><span class="token string">&quot;收中介费&quot;</span><span
-                            class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">fare</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;收中介费&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
 <span class="token punctuation">}</span>
-</code></pre>
-                    <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span
-                            class="line-number">2</span><br><span class="line-number">3</span><br><span
-                            class="line-number">4</span><br><span class="line-number">5</span><br><span
-                            class="line-number">6</span><br><span class="line-number">7</span><br><span
-                            class="line-number">8</span><br><span class="line-number">9</span><br><span
-                            class="line-number">10</span><br><span class="line-number">11</span><br><span
-                            class="line-number">12</span><br><span class="line-number">13</span><br><span
-                            class="line-number">14</span><br><span class="line-number">15</span><br><span
-                            class="line-number">16</span><br><span class="line-number">17</span><br><span
-                            class="line-number">18</span><br><span class="line-number">19</span><br><span
-                            class="line-number">20</span><br><span class="line-number">21</span><br><span
-                            class="line-number">22</span><br><span class="line-number">23</span><br><span
-                            class="line-number">24</span><br><span class="line-number">25</span><br><span
-                            class="line-number">26</span><br><span class="line-number">27</span><br><span
-                            class="line-number">28</span><br><span class="line-number">29</span><br><span
-                            class="line-number">30</span><br><span class="line-number">31</span><br><span
-                            class="line-number">32</span><br><span class="line-number">33</span><br><span
-                            class="line-number">34</span><br></div>
-                </div>
-                <p>客户端访问代理角色</p>
-                <div class="language-java line-numbers-mode"><pre class="language-java"><code><span
-                        class="token comment">//客户</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span
-                            class="token class-name">Client</span> <span class="token punctuation">{</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br></div></div><p>客户端访问代理角色</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token comment">//客户</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Client</span> <span class="token punctuation">{</span>
     <span class="token comment">//不使用代理</span>
     <span class="token annotation punctuation">@Test</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span
-                            class="token function">test1</span><span class="token punctuation">(</span><span
-                            class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token class-name">Host</span> host <span class="token operator">=</span> <span
-                            class="token keyword">new</span> <span class="token class-name">Host</span><span
-                            class="token punctuation">(</span><span class="token punctuation">)</span><span
-                            class="token punctuation">;</span>
-        host<span class="token punctuation">.</span><span class="token function">rent</span><span
-                            class="token punctuation">(</span><span class="token punctuation">)</span><span
-                            class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token class-name">Host</span> host <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Host</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        host<span class="token punctuation">.</span><span class="token function">rent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
     <span class="token comment">//使用代理</span>
     <span class="token annotation punctuation">@Test</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span
-                            class="token function">test2</span><span class="token punctuation">(</span><span
-                            class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
         <span class="token comment">//房东要出租房子</span>
-        <span class="token class-name">Host</span> host <span class="token operator">=</span> <span
-                            class="token keyword">new</span> <span class="token class-name">Host</span><span
-                            class="token punctuation">(</span><span class="token punctuation">)</span><span
-                            class="token punctuation">;</span>
+        <span class="token class-name">Host</span> host <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Host</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token comment">//代理，中介帮房东租房，还会有些附属操作</span>
-        <span class="token class-name">Proxy</span> proxy <span class="token operator">=</span> <span
-                            class="token keyword">new</span> <span class="token class-name">Proxy</span><span
-                            class="token punctuation">(</span>host<span class="token punctuation">)</span><span
-                            class="token punctuation">;</span>
+        <span class="token class-name">Proxy</span> proxy <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span>host<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token comment">//你不用面对房东，直接找中介</span>
-        proxy<span class="token punctuation">.</span><span class="token function">rent</span><span
-                            class="token punctuation">(</span><span class="token punctuation">)</span><span
-                            class="token punctuation">;</span>
+        proxy<span class="token punctuation">.</span><span class="token function">rent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-</code></pre>
-                    <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span
-                            class="line-number">2</span><br><span class="line-number">3</span><br><span
-                            class="line-number">4</span><br><span class="line-number">5</span><br><span
-                            class="line-number">6</span><br><span class="line-number">7</span><br><span
-                            class="line-number">8</span><br><span class="line-number">9</span><br><span
-                            class="line-number">10</span><br><span class="line-number">11</span><br><span
-                            class="line-number">12</span><br><span class="line-number">13</span><br><span
-                            class="line-number">14</span><br><span class="line-number">15</span><br><span
-                            class="line-number">16</span><br><span class="line-number">17</span><br><span
-                            class="line-number">18</span><br><span class="line-number">19</span><br><span
-                            class="line-number">20</span><br></div>
-                </div>
-                <p>代理模式的好处：</p>
-                <ul>
-                    <li>可以使真实角色操作更加纯粹，不用去关注一些公共业务</li>
-                    <li>公共也就交给了代理角色,实现业务分工</li>
-                    <li>公共业务发生扩展时，方便集中管理，比如扩展日志，就相当于这里代理角色中介的看房子，签合同，收中介费等附属操作</li>
-                </ul>
-                <p>缺点：</p>
-                <ul>
-                    <li>一个真实角色就会产生一个代理角色，代码量翻倍</li>
-                </ul>
-                <h2 id="动态代理"><a href="#动态代理" class="header-anchor">#</a> 动态代理</h2>
-                <ul>
-                    <li>动态代理和静态代理角色一样</li>
-                    <li>动态代理的代理类时动态生成的，不是我们直接写好的</li>
-                    <li>动态代理分为俩大类：基于接口的动态代理、基于类的动态代理
-                        <ul>
-                            <li>基于接口--JDK动态代理【我们在这里使用这个】</li>
-                            <li>基于类：cglib</li>
-                            <li>java字节码：JAVAssist</li>
-                        </ul>
-                    </li>
-                </ul>
-                <p>了解俩个类：<code>Proxy</code> :代理<code>InvocationHandler</code>：调用代理处理程序</p>
-                <p><code>UserService</code></p>
-                <div class="language-java line-numbers-mode"><pre class="language-java"><code><span
-                        class="token comment">//抽象对象</span>
-<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">UserService</span> <span
-                            class="token punctuation">{</span>
-    <span class="token keyword">void</span> <span class="token function">add</span><span
-                            class="token punctuation">(</span><span class="token punctuation">)</span><span
-                            class="token punctuation">;</span>
-    <span class="token keyword">void</span> <span class="token function">delete</span><span
-                            class="token punctuation">(</span><span class="token punctuation">)</span><span
-                            class="token punctuation">;</span>
-    <span class="token keyword">void</span> <span class="token function">update</span><span
-                            class="token punctuation">(</span><span class="token punctuation">)</span><span
-                            class="token punctuation">;</span>
-    <span class="token keyword">void</span> <span class="token function">query</span><span
-                            class="token punctuation">(</span><span class="token punctuation">)</span><span
-                            class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><p>代理模式的好处：</p> <ul><li>可以使真实角色操作更加纯粹，不用去关注一些公共业务</li> <li>公共也就交给了代理角色,实现业务分工</li> <li>公共业务发生扩展时，方便集中管理，比如扩展日志，就相当于这里代理角色中介的看房子，签合同，收中介费等附属操作</li></ul> <p>缺点：</p> <ul><li>一个真实角色就会产生一个代理角色，代码量翻倍</li></ul> <h2 id="动态代理"><a href="#动态代理" class="header-anchor">#</a> 动态代理</h2> <ul><li>动态代理和静态代理角色一样</li> <li>动态代理的代理类时动态生成的，不是我们直接写好的</li> <li>动态代理分为俩大类：基于接口的动态代理、基于类的动态代理
+<ul><li>基于接口--JDK动态代理【我们在这里使用这个】</li> <li>基于类：cglib</li> <li>java字节码：JAVAssist</li></ul></li></ul> <p>了解俩个类：<code>Proxy</code> :代理<code>InvocationHandler</code>：调用代理处理程序</p> <p><code>UserService</code></p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token comment">//抽象对象</span>
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">UserService</span> <span class="token punctuation">{</span>
+    <span class="token keyword">void</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">void</span> <span class="token function">delete</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">void</span> <span class="token function">update</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">void</span> <span class="token function">query</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre>
-                    <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span
-                            class="line-number">2</span><br><span class="line-number">3</span><br><span
-                            class="line-number">4</span><br><span class="line-number">5</span><br><span
-                            class="line-number">6</span><br><span class="line-number">7</span><br></div>
-                </div>
-                <p><code>UserServiceImpl</code></p>
-                <div class="language-java line-numbers-mode"><pre class="language-java"><code><span
-                        class="token comment">//真实对象</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserServiceImpl</span> <span
-                            class="token keyword">implements</span> <span
-                            class="token class-name">UserService</span> <span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span
-                            class="token function">add</span><span class="token punctuation">(</span><span
-                            class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span
-                            class="token punctuation">.</span><span class="token function">println</span><span
-                            class="token punctuation">(</span><span class="token string">&quot;add&quot;</span><span
-                            class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p><code>UserServiceImpl</code></p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token comment">//真实对象</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserServiceImpl</span> <span class="token keyword">implements</span> <span class="token class-name">UserService</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;add&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">delete</span><span
-                            class="token punctuation">(</span><span class="token punctuation">)</span> <span
-                            class="token punctuation">{</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span
-                            class="token punctuation">.</span><span class="token function">println</span><span
-                            class="token punctuation">(</span><span class="token string">&quot;delete&quot;</span><span
-                            class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">delete</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;delete&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">update</span><span
-                            class="token punctuation">(</span><span class="token punctuation">)</span> <span
-                            class="token punctuation">{</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span
-                            class="token punctuation">.</span><span class="token function">println</span><span
-                            class="token punctuation">(</span><span class="token string">&quot;update&quot;</span><span
-                            class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">update</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;update&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span
-                            class="token function">query</span><span class="token punctuation">(</span><span
-                            class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span
-                            class="token punctuation">.</span><span class="token function">println</span><span
-                            class="token punctuation">(</span><span class="token string">&quot;query&quot;</span><span
-                            class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">query</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;query&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-</code></pre>
-                    <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span
-                            class="line-number">2</span><br><span class="line-number">3</span><br><span
-                            class="line-number">4</span><br><span class="line-number">5</span><br><span
-                            class="line-number">6</span><br><span class="line-number">7</span><br><span
-                            class="line-number">8</span><br><span class="line-number">9</span><br><span
-                            class="line-number">10</span><br><span class="line-number">11</span><br><span
-                            class="line-number">12</span><br><span class="line-number">13</span><br><span
-                            class="line-number">14</span><br><span class="line-number">15</span><br><span
-                            class="line-number">16</span><br><span class="line-number">17</span><br><span
-                            class="line-number">18</span><br></div>
-                </div>
-                <p><code>ProxyInvocationHandler</code></p>
-                <div class="language-java line-numbers-mode"><pre class="language-java"><code><span
-                        class="token comment">//会用这个类自动生成代理类</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ProxyInvocationHandler</span> <span
-                            class="token keyword">implements</span> <span
-                            class="token class-name">InvocationHandler</span> <span class="token punctuation">{</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><p><code>ProxyInvocationHandler</code></p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token comment">//会用这个类自动生成代理类</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ProxyInvocationHandler</span> <span class="token keyword">implements</span> <span class="token class-name">InvocationHandler</span> <span class="token punctuation">{</span>
 
     <span class="token comment">//被代理的接口</span>
-    <span class="token keyword">private</span> <span class="token class-name">Object</span> target<span
-                            class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">Object</span> target<span class="token punctuation">;</span>
 
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setTarget</span><span
-                            class="token punctuation">(</span><span class="token class-name">Object</span> target<span
-                            class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>target <span
-                            class="token operator">=</span> target<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setTarget</span><span class="token punctuation">(</span><span class="token class-name">Object</span> target<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>target <span class="token operator">=</span> target<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-    <span class="token keyword">public</span> <span class="token class-name">Object</span> <span class="token function">getProxy</span><span
-                            class="token punctuation">(</span><span class="token punctuation">)</span><span
-                            class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token class-name">Proxy</span><span
-                            class="token punctuation">.</span><span class="token function">newProxyInstance</span><span
-                            class="token punctuation">(</span><span class="token keyword">this</span><span
-                            class="token punctuation">.</span><span class="token function">getClass</span><span
-                            class="token punctuation">(</span><span class="token punctuation">)</span><span
-                            class="token punctuation">.</span><span class="token function">getClassLoader</span><span
-                            class="token punctuation">(</span><span class="token punctuation">)</span><span
-                            class="token punctuation">,</span> target<span class="token punctuation">.</span><span
-                            class="token function">getClass</span><span class="token punctuation">(</span><span
-                            class="token punctuation">)</span><span class="token punctuation">.</span><span
-                            class="token function">getInterfaces</span><span class="token punctuation">(</span><span
-                            class="token punctuation">)</span><span class="token punctuation">,</span> <span
-                            class="token keyword">this</span><span class="token punctuation">)</span><span
-                            class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token class-name">Object</span> <span class="token function">getProxy</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token class-name">Proxy</span><span class="token punctuation">.</span><span class="token function">newProxyInstance</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getClassLoader</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> target<span class="token punctuation">.</span><span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getInterfaces</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
     <span class="token punctuation">}</span>
 
     <span class="token comment">//处理代理实例，并返回结果</span>
-    <span class="token keyword">public</span> <span class="token class-name">Object</span> <span class="token function">invoke</span><span
-                            class="token punctuation">(</span><span class="token class-name">Object</span> proxy<span
-                            class="token punctuation">,</span> <span class="token class-name">Method</span> method<span
-                            class="token punctuation">,</span> <span class="token class-name">Object</span><span
-                            class="token punctuation">[</span><span class="token punctuation">]</span> args<span
-                            class="token punctuation">)</span> <span class="token keyword">throws</span> <span
-                            class="token class-name">Throwable</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token class-name">Object</span> <span class="token function">invoke</span><span class="token punctuation">(</span><span class="token class-name">Object</span> proxy<span class="token punctuation">,</span> <span class="token class-name">Method</span> method<span class="token punctuation">,</span> <span class="token class-name">Object</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Throwable</span> <span class="token punctuation">{</span>
         <span class="token comment">//动态代理的本质，就是使用反射机制实现的</span>
-        <span class="token function">log</span><span class="token punctuation">(</span>method<span
-                            class="token punctuation">.</span><span class="token function">getName</span><span
-                            class="token punctuation">(</span><span class="token punctuation">)</span><span
-                            class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">Object</span> result <span class="token operator">=</span> method<span
-                            class="token punctuation">.</span><span class="token function">invoke</span><span
-                            class="token punctuation">(</span>target<span class="token punctuation">,</span> args<span
-                            class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">log</span><span class="token punctuation">(</span>method<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Object</span> result <span class="token operator">=</span> method<span class="token punctuation">.</span><span class="token function">invoke</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">return</span> result<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span
-                            class="token function">log</span><span class="token punctuation">(</span><span
-                            class="token class-name">String</span> msg<span class="token punctuation">)</span><span
-                            class="token punctuation">{</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span
-                            class="token punctuation">.</span><span class="token function">println</span><span
-                            class="token punctuation">(</span><span class="token string">&quot;执行&quot;</span><span
-                            class="token operator">+</span>msg<span class="token operator">+</span><span
-                            class="token string">&quot;方法&quot;</span><span class="token punctuation">)</span><span
-                            class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">log</span><span class="token punctuation">(</span><span class="token class-name">String</span> msg<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;执行&quot;</span><span class="token operator">+</span>msg<span class="token operator">+</span><span class="token string">&quot;方法&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-</code></pre>
-                    <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span
-                            class="line-number">2</span><br><span class="line-number">3</span><br><span
-                            class="line-number">4</span><br><span class="line-number">5</span><br><span
-                            class="line-number">6</span><br><span class="line-number">7</span><br><span
-                            class="line-number">8</span><br><span class="line-number">9</span><br><span
-                            class="line-number">10</span><br><span class="line-number">11</span><br><span
-                            class="line-number">12</span><br><span class="line-number">13</span><br><span
-                            class="line-number">14</span><br><span class="line-number">15</span><br><span
-                            class="line-number">16</span><br><span class="line-number">17</span><br><span
-                            class="line-number">18</span><br><span class="line-number">19</span><br><span
-                            class="line-number">20</span><br><span class="line-number">21</span><br><span
-                            class="line-number">22</span><br><span class="line-number">23</span><br><span
-                            class="line-number">24</span><br><span class="line-number">25</span><br><span
-                            class="line-number">26</span><br><span class="line-number">27</span><br></div>
-                </div>
-                <p>测试</p>
-                <div class="language-java line-numbers-mode"><pre class="language-java"><code><span
-                        class="token keyword">public</span> <span class="token keyword">class</span> <span
-                        class="token class-name">Client</span> <span class="token punctuation">{</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br></div></div><p>测试</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Client</span> <span class="token punctuation">{</span>
 
     <span class="token annotation punctuation">@Test</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test01</span><span
-                            class="token punctuation">(</span><span class="token punctuation">)</span><span
-                            class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test01</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
         <span class="token comment">//真实角色</span>
-        <span class="token class-name">UserServiceImpl</span> userService <span class="token operator">=</span> <span
-                            class="token keyword">new</span> <span class="token class-name">UserServiceImpl</span><span
-                            class="token punctuation">(</span><span class="token punctuation">)</span><span
-                            class="token punctuation">;</span>
+        <span class="token class-name">UserServiceImpl</span> userService <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">UserServiceImpl</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
         <span class="token comment">//代理角色不存在</span>
-        <span class="token class-name">ProxyInvacationHandler</span> pih <span class="token operator">=</span> <span
-                            class="token keyword">new</span> <span
-                            class="token class-name">ProxyInvacationHandler</span><span
-                            class="token punctuation">(</span><span class="token punctuation">)</span><span
-                            class="token punctuation">;</span>
+        <span class="token class-name">ProxyInvacationHandler</span> pih <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ProxyInvacationHandler</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
         <span class="token comment">//设置要代理的对象</span>
-        pih<span class="token punctuation">.</span><span class="token function">setTarget</span><span
-                            class="token punctuation">(</span>userService<span class="token punctuation">)</span><span
-                            class="token punctuation">;</span>
+        pih<span class="token punctuation">.</span><span class="token function">setTarget</span><span class="token punctuation">(</span>userService<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
         <span class="token comment">//动态生成代理类</span>
-        <span class="token class-name">UserService</span> proxy <span class="token operator">=</span> <span
-                            class="token punctuation">(</span><span class="token class-name">UserService</span><span
-                            class="token punctuation">)</span> pih<span class="token punctuation">.</span><span
-                            class="token function">getProxy</span><span class="token punctuation">(</span><span
-                            class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">UserService</span> proxy <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">UserService</span><span class="token punctuation">)</span> pih<span class="token punctuation">.</span><span class="token function">getProxy</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        proxy<span class="token punctuation">.</span><span class="token function">add</span><span
-                            class="token punctuation">(</span><span class="token punctuation">)</span><span
-                            class="token punctuation">;</span>
+        proxy<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-</code></pre>
-                    <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span
-                            class="line-number">2</span><br><span class="line-number">3</span><br><span
-                            class="line-number">4</span><br><span class="line-number">5</span><br><span
-                            class="line-number">6</span><br><span class="line-number">7</span><br><span
-                            class="line-number">8</span><br><span class="line-number">9</span><br><span
-                            class="line-number">10</span><br><span class="line-number">11</span><br><span
-                            class="line-number">12</span><br><span class="line-number">13</span><br><span
-                            class="line-number">14</span><br><span class="line-number">15</span><br><span
-                            class="line-number">16</span><br><span class="line-number">17</span><br><span
-                            class="line-number">18</span><br><span class="line-number">19</span><br></div>
-                </div>
-                <p>动态代理的其他好处：</p>
-                <ul>
-                    <li>一个动态代理类代理的是一个接口，一般角色对应的一类业务</li>
-                    <li>一个动态代理类可以代理多个类，只要是实现了同一个接口即可</li>
-                </ul>
-            </div>
-            <footer class="page-edit"><!---->
-                <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">8/24/2020, 12:51:09 PM</span>
-                </div>
-            </footer>
-            <div class="page-nav"><p class="inner"><span class="prev">
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><p>动态代理的其他好处：</p> <ul><li>一个动态代理类代理的是一个接口，一般角色对应的一类业务</li> <li>一个动态代理类可以代理多个类，只要是实现了同一个接口即可</li></ul></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">8/24/2020, 12:51:09 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
       ←
-      <a href="/learning/spring/annotations.html" class="prev">
+      <a href="/blog/learning/spring/annotations.html" class="prev">
         使用注解开发
-      </a></span> <span class="next"><a href="/learning/spring/aop.html">
+      </a></span> <span class="next"><a href="/blog/learning/spring/aop.html">
         AOP
       </a>
       →
-    </span></p></div>
-        </main>
-    </div>
-    <div class="global-ui"><!----></div>
-</div>
-<script src="/assets/js/app.6dee105b.js" defer></script>
-<script src="/assets/js/2.aa41c1d8.js" defer></script>
-<script src="/assets/js/23.d409c523.js" defer></script>
-</body>
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/blog/assets/js/app.9008dfc6.js" defer></script><script src="/blog/assets/js/2.aa41c1d8.js" defer></script><script src="/blog/assets/js/23.dce63254.js" defer></script>
+  </body>
 </html>
