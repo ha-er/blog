@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>常用类 | 哈儿博客</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    <link rel="icon" href="/blog/img/logo.jpg">
+    <link rel="stylesheet" href="/blog/css/base.css">
+    <meta name="description" content="哈儿的学习博客">
+    <link rel="preload" href="/blog/assets/css/0.styles.3d629ca3.css" as="style">
+    <link rel="preload" href="/blog/assets/js/app.36981a7f.js" as="script">
+    <link rel="preload" href="/blog/assets/js/2.aa41c1d8.js" as="script">
+    <link rel="preload" href="/blog/assets/js/27.3b220e55.js" as="script">
+    <link rel="prefetch" href="/blog/assets/js/10.bdf0e11c.js">
+    <link rel="prefetch" href="/blog/assets/js/11.bd919351.js">
+    <link rel="prefetch" href="/blog/assets/js/12.d7a48bdb.js">
+    <link rel="prefetch" href="/blog/assets/js/13.9ea92df7.js">
+    <link rel="prefetch" href="/blog/assets/js/14.f2896015.js">
+    <link rel="prefetch" href="/blog/assets/js/15.4068780e.js">
+    <link rel="prefetch" href="/blog/assets/js/16.d08f2416.js">
+    <link rel="prefetch" href="/blog/assets/js/17.daa8ce37.js">
+    <link rel="prefetch" href="/blog/assets/js/18.a2952e3a.js">
+    <link rel="prefetch" href="/blog/assets/js/19.82d57f06.js">
+    <link rel="prefetch" href="/blog/assets/js/20.9060af38.js">
+    <link rel="prefetch" href="/blog/assets/js/21.743035df.js">
+    <link rel="prefetch" href="/blog/assets/js/22.718fb5ba.js">
+    <link rel="prefetch" href="/blog/assets/js/23.dce63254.js">
+    <link rel="prefetch" href="/blog/assets/js/24.55a8afa8.js">
+    <link rel="prefetch" href="/blog/assets/js/25.f09353df.js">
+    <link rel="prefetch" href="/blog/assets/js/26.8087ef1d.js">
+    <link rel="prefetch" href="/blog/assets/js/28.dd4d182b.js">
+    <link rel="prefetch" href="/blog/assets/js/29.57882d5d.js">
+    <link rel="prefetch" href="/blog/assets/js/3.ef39fcfc.js">
+    <link rel="prefetch" href="/blog/assets/js/30.12c152ad.js">
+    <link rel="prefetch" href="/blog/assets/js/31.caa6f6b6.js">
+    <link rel="prefetch" href="/blog/assets/js/32.70d2aa35.js">
+    <link rel="prefetch" href="/blog/assets/js/33.5866b58d.js">
+    <link rel="prefetch" href="/blog/assets/js/34.b850b277.js">
+    <link rel="prefetch" href="/blog/assets/js/35.11dc7d6e.js">
+    <link rel="prefetch" href="/blog/assets/js/36.06152a9b.js">
+    <link rel="prefetch" href="/blog/assets/js/37.17ddc308.js">
+    <link rel="prefetch" href="/blog/assets/js/38.6df175d1.js">
+    <link rel="prefetch" href="/blog/assets/js/39.7f30248b.js">
+    <link rel="prefetch" href="/blog/assets/js/4.0bd42677.js">
+    <link rel="prefetch" href="/blog/assets/js/40.aa8c9654.js">
+    <link rel="prefetch" href="/blog/assets/js/41.42a3b8b4.js">
+    <link rel="prefetch" href="/blog/assets/js/42.a6a984df.js">
+    <link rel="prefetch" href="/blog/assets/js/43.f65ade38.js">
+    <link rel="prefetch" href="/blog/assets/js/44.491371ac.js">
+    <link rel="prefetch" href="/blog/assets/js/45.bf1c5c0b.js">
+    <link rel="prefetch" href="/blog/assets/js/46.8e0d18c7.js">
+    <link rel="prefetch" href="/blog/assets/js/47.108449e9.js">
+    <link rel="prefetch" href="/blog/assets/js/48.4132d66c.js">
+    <link rel="prefetch" href="/blog/assets/js/49.4fe466ae.js">
+    <link rel="prefetch" href="/blog/assets/js/5.3ab9cd8c.js">
+    <link rel="prefetch" href="/blog/assets/js/50.32c50c13.js">
+    <link rel="prefetch" href="/blog/assets/js/51.9cdaa827.js">
+    <link rel="prefetch" href="/blog/assets/js/52.7ef136d9.js">
+    <link rel="prefetch" href="/blog/assets/js/53.3d3e04c3.js">
+    <link rel="prefetch" href="/blog/assets/js/54.6add7e0d.js">
+    <link rel="prefetch" href="/blog/assets/js/6.f5f81a8d.js">
+    <link rel="prefetch" href="/blog/assets/js/7.1134561d.js">
+    <link rel="prefetch" href="/blog/assets/js/8.02bb2c2e.js">
+    <link rel="prefetch" href="/blog/assets/js/9.6f4d6ede.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.3d629ca3.css">
+</head>
+<body>
+<div id="app" data-server-rendered="true">
+    <div class="theme-container">
+        <header class="navbar">
+            <div class="sidebar-button">
+                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512"
+                     class="icon">
+                    <path fill="currentColor"
+                          d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path>
+                </svg>
+            </div>
+            <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">哈儿博客</span></a>
+            <div class="links">
+                <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value="">
+                    <!----></div>
+                <nav class="nav-links can-hide">
+                    <div class="nav-item">
+                        <div class="dropdown-wrapper">
+                            <button type="button" aria-label="框架学习" class="dropdown-title"><span
+                                    class="title">框架学习</span> <span class="arrow down"></span></button>
+                            <button type="button" aria-label="框架学习" class="mobile-dropdown-title"><span class="title">框架学习</span>
+                                <span class="arrow right"></span></button>
+                            <ul class="nav-dropdown" style="display:none;">
+                                <li class="dropdown-item"><h4>
+                                    后端
+                                </h4>
+                                    <ul class="dropdown-subitem-wrapper">
+                                        <li class="dropdown-subitem"><a href="/blog/learning/mybatis/introduce.html"
+                                                                        class="nav-link">
+                                            Mybatis
+                                        </a></li>
+                                        <li class="dropdown-subitem"><a href="/blog/learning/spring/introduction.html"
+                                                                        class="nav-link">
+                                            Spring
+                                        </a></li>
+                                        <li class="dropdown-subitem"><a href="/blog/learning/springmvc/review.html"
+                                                                        class="nav-link">
+                                            SpringMVC
+                                        </a></li>
+                                        <li class="dropdown-subitem"><a
+                                                href="/blog/learning/springboot/introduction.html" class="nav-link">
+                                            SpringBoot
+                                        </a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="nav-item">
+                        <div class="dropdown-wrapper">
+                            <button type="button" aria-label="基础学习" class="dropdown-title"><span
+                                    class="title">基础学习</span> <span class="arrow down"></span></button>
+                            <button type="button" aria-label="基础学习" class="mobile-dropdown-title"><span class="title">基础学习</span>
+                                <span class="arrow right"></span></button>
+                            <ul class="nav-dropdown" style="display:none;">
+                                <li class="dropdown-item"><h4>
+                                    后端
+                                </h4>
+                                    <ul class="dropdown-subitem-wrapper">
+                                        <li class="dropdown-subitem"><a
+                                                href="/blog/base/java/introduction/dataType.html" class="nav-link">
+                                            JAVA
+                                        </a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="nav-item"><a href="/blog/oneself/" class="nav-link">
+                        关于作者
+                    </a></div>
+                    <div class="nav-item"><a href="/blog/friends/" class="nav-link">
+                        友链
+                    </a></div>
+                    <div class="nav-item"><a href="/blog/tools/" class="nav-link">
+                        工具安装
+                    </a></div>
+                    <div class="nav-item">
+                        <div class="dropdown-wrapper">
+                            <button type="button" aria-label="工具箱" class="dropdown-title"><span class="title">工具箱</span>
+                                <span class="arrow down"></span></button>
+                            <button type="button" aria-label="工具箱" class="mobile-dropdown-title"><span
+                                    class="title">工具箱</span> <span class="arrow right"></span></button>
+                            <ul class="nav-dropdown" style="display:none;">
+                                <li class="dropdown-item"><h4>
+                                    通用
+                                </h4>
+                                    <ul class="dropdown-subitem-wrapper">
+                                        <li class="dropdown-subitem"><a href="https://www.processon.com/"
+                                                                        target="_blank" rel="noopener noreferrer"
+                                                                        class="nav-link external">
+                                            在线画图
+                                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px"
+                                                 viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                                                <path fill="currentColor"
+                                                      d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path>
+                                                <polygon fill="currentColor"
+                                                         points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon>
+                                            </svg>
+                                        </a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-item"><h4>
+                                    学习
+                                </h4>
+                                    <ul class="dropdown-subitem-wrapper">
+                                        <li class="dropdown-subitem"><a href="https://regex101.com/" target="_blank"
+                                                                        rel="noopener noreferrer"
+                                                                        class="nav-link external">
+                                            在线正则
+                                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px"
+                                                 viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                                                <path fill="currentColor"
+                                                      d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path>
+                                                <polygon fill="currentColor"
+                                                         points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon>
+                                            </svg>
+                                        </a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div> <!----></nav>
+            </div>
+        </header>
+        <div class="sidebar-mask"></div>
+        <aside class="sidebar">
+            <nav class="nav-links">
+                <div class="nav-item">
+                    <div class="dropdown-wrapper">
+                        <button type="button" aria-label="框架学习" class="dropdown-title"><span class="title">框架学习</span>
+                            <span class="arrow down"></span></button>
+                        <button type="button" aria-label="框架学习" class="mobile-dropdown-title"><span
+                                class="title">框架学习</span> <span class="arrow right"></span></button>
+                        <ul class="nav-dropdown" style="display:none;">
+                            <li class="dropdown-item"><h4>
+                                后端
+                            </h4>
+                                <ul class="dropdown-subitem-wrapper">
+                                    <li class="dropdown-subitem"><a href="/blog/learning/mybatis/introduce.html"
+                                                                    class="nav-link">
+                                        Mybatis
+                                    </a></li>
+                                    <li class="dropdown-subitem"><a href="/blog/learning/spring/introduction.html"
+                                                                    class="nav-link">
+                                        Spring
+                                    </a></li>
+                                    <li class="dropdown-subitem"><a href="/blog/learning/springmvc/review.html"
+                                                                    class="nav-link">
+                                        SpringMVC
+                                    </a></li>
+                                    <li class="dropdown-subitem"><a href="/blog/learning/springboot/introduction.html"
+                                                                    class="nav-link">
+                                        SpringBoot
+                                    </a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <div class="dropdown-wrapper">
+                        <button type="button" aria-label="基础学习" class="dropdown-title"><span class="title">基础学习</span>
+                            <span class="arrow down"></span></button>
+                        <button type="button" aria-label="基础学习" class="mobile-dropdown-title"><span
+                                class="title">基础学习</span> <span class="arrow right"></span></button>
+                        <ul class="nav-dropdown" style="display:none;">
+                            <li class="dropdown-item"><h4>
+                                后端
+                            </h4>
+                                <ul class="dropdown-subitem-wrapper">
+                                    <li class="dropdown-subitem"><a href="/blog/base/java/introduction/dataType.html"
+                                                                    class="nav-link">
+                                        JAVA
+                                    </a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="nav-item"><a href="/blog/oneself/" class="nav-link">
+                    关于作者
+                </a></div>
+                <div class="nav-item"><a href="/blog/friends/" class="nav-link">
+                    友链
+                </a></div>
+                <div class="nav-item"><a href="/blog/tools/" class="nav-link">
+                    工具安装
+                </a></div>
+                <div class="nav-item">
+                    <div class="dropdown-wrapper">
+                        <button type="button" aria-label="工具箱" class="dropdown-title"><span class="title">工具箱</span>
+                            <span class="arrow down"></span></button>
+                        <button type="button" aria-label="工具箱" class="mobile-dropdown-title"><span
+                                class="title">工具箱</span> <span class="arrow right"></span></button>
+                        <ul class="nav-dropdown" style="display:none;">
+                            <li class="dropdown-item"><h4>
+                                通用
+                            </h4>
+                                <ul class="dropdown-subitem-wrapper">
+                                    <li class="dropdown-subitem"><a href="https://www.processon.com/" target="_blank"
+                                                                    rel="noopener noreferrer" class="nav-link external">
+                                        在线画图
+                                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px"
+                                             viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                                            <path fill="currentColor"
+                                                  d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path>
+                                            <polygon fill="currentColor"
+                                                     points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon>
+                                        </svg>
+                                    </a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-item"><h4>
+                                学习
+                            </h4>
+                                <ul class="dropdown-subitem-wrapper">
+                                    <li class="dropdown-subitem"><a href="https://regex101.com/" target="_blank"
+                                                                    rel="noopener noreferrer" class="nav-link external">
+                                        在线正则
+                                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px"
+                                             viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                                            <path fill="currentColor"
+                                                  d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path>
+                                            <polygon fill="currentColor"
+                                                     points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon>
+                                        </svg>
+                                    </a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div> <!----></nav>
+            <ul class="sidebar-links">
+                <li>
+                    <section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Java基础</span>
+                        <span class="arrow right"></span></p> <!----></section>
+                </li>
+                <li>
+                    <section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open">
+                        <span>Java进阶</span> <span class="arrow down"></span></p>
+                        <ul class="sidebar-links sidebar-group-items">
+                            <li><a href="/blog/base/java/advance/commonClass.html" aria-current="page"
+                                   class="active sidebar-link">常用类</a>
+                                <ul class="sidebar-sub-headers">
+                                    <li class="sidebar-sub-header"><a
+                                            href="/blog/base/java/advance/commonClass.html#string" class="sidebar-link">String</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="/blog/base/java/advance/arithmetic.html" class="sidebar-link">算法</a></li>
+                            <li><a href="/blog/base/java/advance/oop.html" class="sidebar-link">面向对象</a></li>
+                            <li><a href="/blog/base/java/advance/exception.html" class="sidebar-link">异常</a></li>
+                            <li><a href="/blog/base/java/advance/GUI.html" class="sidebar-link">GUI</a></li>
+                            <li><a href="/blog/base/java/advance/networkProgramming.html" class="sidebar-link">网络编程</a>
+                            </li>
+                            <li><a href="/blog/base/java/advance/reflect.html" class="sidebar-link">Java反射</a></li>
+                        </ul>
+                    </section>
+                </li>
+            </ul>
+        </aside>
+        <main class="page">
+            <div class="theme-default-content content__default"><h1 id="常用类"><a href="#常用类" class="header-anchor">#</a>
+                常用类</h1>
+                <h2 id="string"><a href="#string" class="header-anchor">#</a> String</h2>
+                <blockquote><p>了解String类</p></blockquote>
+                <p>简单看下String源码，发现String的构造方法都给这个变量<code>value[]</code>赋值，这时我们发现这个变量是使用<code>final</code>
+                    修饰的，说明是不可改变的。</p>
+                <div class="language-java line-numbers-mode"><pre class="language-java"><code><span
+                        class="token keyword">public</span> <span class="token keyword">final</span> <span
+                        class="token keyword">class</span> <span class="token class-name">String</span>
+    <span class="token keyword">implements</span> java<span class="token punctuation">.</span>io<span
+                            class="token punctuation">.</span><span class="token class-name">Serializable</span><span
+                            class="token punctuation">,</span> <span class="token class-name">Comparable</span><span
+                            class="token generics"><span class="token punctuation">&lt;</span><span
+                            class="token class-name">String</span><span
+                            class="token punctuation">&gt;</span></span><span class="token punctuation">,</span> <span
+                            class="token class-name">CharSequence</span> <span class="token punctuation">{</span>
+    <span class="token comment">/** The value is used for character storage. */</span>
+    <span class="token keyword">private</span> <span class="token keyword">final</span> <span
+                            class="token keyword">char</span> value<span class="token punctuation">[</span><span
+                            class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token comment">//....</span>
+<span class="token punctuation">}</span>
+</code></pre>
+                    <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span
+                            class="line-number">2</span><br><span class="line-number">3</span><br><span
+                            class="line-number">4</span><br><span class="line-number">5</span><br><span
+                            class="line-number">6</span><br></div>
+                </div>
+                <p>在开发环境中，字符串是需要经常访问的，所以在程序中使用了类似“缓存”的技术，Java中所有使用双引号括起来的
+                    字符串都会在“字符串常量池”中创建一份，在方法区中被存储。</p>
+                <p>所以当你使用<code>String s1 =
+                    &quot;haer&quot;;</code>时，是首先去字符串常量池寻找，如果有，就将s1指向<code>&quot;haer&quot;</code>，就不需要再去创建
+                    一个字符串了，如果没有的话，就会在字符串常量池中创建一份。</p>
+                <div class="language-java line-numbers-mode"><pre class="language-java"><code><span
+                        class="token keyword">public</span> <span class="token keyword">class</span> <span
+                        class="token class-name">StringTest01</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span
+                            class="token keyword">void</span> <span class="token function">main</span><span
+                            class="token punctuation">(</span><span class="token class-name">String</span><span
+                            class="token punctuation">[</span><span class="token punctuation">]</span> args<span
+                            class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">//创建一个&quot;haer&quot;字符串对象，该对象的内存地址，让变量s1保存</span>
+        <span class="token comment">//si只是一个引用，指向&quot;haer&quot;对象</span>
+        <span class="token class-name">String</span> s1 <span class="token operator">=</span> <span
+                            class="token string">&quot;haer&quot;</span><span class="token punctuation">;</span>
+        <span class="token comment">//si并没有使用final修饰，所以可以让s1重新指向&quot;sb&quot;字符串</span>
+        <span class="token comment">//但是&quot;haer&quot;,&quot;sb&quot;字符串本身是不可以改变的</span>
+        s1 <span class="token operator">=</span> <span class="token string">&quot;sb&quot;</span><span
+                            class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span
+                            class="token punctuation">.</span><span class="token function">println</span><span
+                            class="token punctuation">(</span>s1<span class="token punctuation">)</span><span
+                            class="token punctuation">;</span><span class="token comment">//sb</span>
+
+        <span class="token class-name">String</span> s2 <span class="token operator">=</span> <span
+                            class="token string">&quot;哈儿&quot;</span><span class="token punctuation">;</span><span
+                            class="token comment">//第一次创建，会在常量池中新建一个&quot;哈儿&quot;字符串对象,该对象不可变</span>
+        <span class="token class-name">String</span> s3 <span class="token operator">=</span> <span
+                            class="token string">&quot;哈儿&quot;</span><span class="token punctuation">;</span><span
+                            class="token comment">//第二次，就会直接从字符串常量池拿来用</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span
+                            class="token punctuation">.</span><span class="token function">println</span><span
+                            class="token punctuation">(</span>s2<span class="token operator">==</span>s3<span
+                            class="token punctuation">)</span><span class="token punctuation">;</span><span
+                            class="token comment">//true。s2的指向是和s3一致的</span>
+
+        <span class="token comment">//使用new 创建俩个对象</span>
+        <span class="token class-name">String</span> s4 <span class="token operator">=</span> <span
+                            class="token keyword">new</span> <span class="token class-name">String</span><span
+                            class="token punctuation">(</span><span class="token string">&quot;娇娇&quot;</span><span
+                            class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">String</span> s5 <span class="token operator">=</span> <span
+                            class="token keyword">new</span> <span class="token class-name">String</span><span
+                            class="token punctuation">(</span><span class="token string">&quot;娇娇&quot;</span><span
+                            class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span
+                            class="token punctuation">.</span><span class="token function">println</span><span
+                            class="token punctuation">(</span>s4<span class="token operator">==</span>s5<span
+                            class="token punctuation">)</span><span class="token punctuation">;</span><span
+                            class="token comment">//false</span>
+        <span class="token comment">//所以比较俩个字符串是否相等，必须使用字符串的equals方法</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span
+                            class="token punctuation">.</span><span class="token function">println</span><span
+                            class="token punctuation">(</span>s4<span class="token punctuation">.</span><span
+                            class="token function">equals</span><span class="token punctuation">(</span>s5<span
+                            class="token punctuation">)</span><span class="token punctuation">)</span><span
+                            class="token punctuation">;</span><span class="token comment">//true</span>
+        <span class="token comment">//本来Object类的equals方法是和==一样的，但是字符串重写了equals方法</span>
+        <span class="token comment">//所以是比较俩个字符串是否一样</span>
+        
+        <span class="token comment">//一下程序执行结束后，会在字符串常量池创建三个字符串对象</span>
+        <span class="token class-name">String</span> s6 <span class="token operator">=</span> <span
+                            class="token string">&quot;淼淼&quot;</span><span class="token punctuation">;</span>
+        <span class="token class-name">String</span> s7 <span class="token operator">=</span> <span
+                            class="token string">&quot;憨批&quot;</span><span class="token punctuation">;</span>
+        <span class="token class-name">String</span> s8 <span class="token operator">=</span> s6 <span
+                            class="token operator">+</span> s7<span class="token punctuation">;</span>
+        <span class="token comment">//因为字符串拼接会创建对象，所以在使用时要注意要频繁使用拼接操作，</span>
+        <span class="token comment">//会在字符串常量池中创建大量对象，给垃圾回收带来问题</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+                    <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span
+                            class="line-number">2</span><br><span class="line-number">3</span><br><span
+                            class="line-number">4</span><br><span class="line-number">5</span><br><span
+                            class="line-number">6</span><br><span class="line-number">7</span><br><span
+                            class="line-number">8</span><br><span class="line-number">9</span><br><span
+                            class="line-number">10</span><br><span class="line-number">11</span><br><span
+                            class="line-number">12</span><br><span class="line-number">13</span><br><span
+                            class="line-number">14</span><br><span class="line-number">15</span><br><span
+                            class="line-number">16</span><br><span class="line-number">17</span><br><span
+                            class="line-number">18</span><br><span class="line-number">19</span><br><span
+                            class="line-number">20</span><br><span class="line-number">21</span><br><span
+                            class="line-number">22</span><br><span class="line-number">23</span><br><span
+                            class="line-number">24</span><br><span class="line-number">25</span><br><span
+                            class="line-number">26</span><br><span class="line-number">27</span><br><span
+                            class="line-number">28</span><br><span class="line-number">29</span><br><span
+                            class="line-number">30</span><br><span class="line-number">31</span><br></div>
+                </div>
+                <p>比较俩种创建字符串对象的区别</p>
+                <ul>
+                    <li><p><code>String s1 = &quot;haer&quot;</code>只会在字符串常量池中寻找或创建一个字符串对象</p></li>
+                    <li><p><code>String s2 = new String(&quot;haer&quot;);</code>会在字符串常量池中寻找或创建字符串对象，还会在堆（heap）中再创建一个字符串对象，并且指向堆中的字符串对象
+                    </p></li>
+                </ul>
+                <p><strong>堆区内存是运行期分配，常量池是编译器分配的</strong></p>
+                <blockquote><p>创建String的常用方法</p></blockquote>
+                <div class="language-java line-numbers-mode"><pre class="language-java"><code><span
+                        class="token keyword">package</span> <span class="token namespace">com<span
+                        class="token punctuation">.</span>haer<span class="token punctuation">.</span>string</span><span
+                        class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">StringTest02</span> <span
+                            class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span
+                            class="token keyword">void</span> <span class="token function">main</span><span
+                            class="token punctuation">(</span><span class="token class-name">String</span><span
+                            class="token punctuation">[</span><span class="token punctuation">]</span> args<span
+                            class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">//1</span>
+        <span class="token class-name">String</span> s1 <span class="token operator">=</span> <span
+                            class="token string">&quot;haer&quot;</span><span class="token punctuation">;</span>
+        <span class="token comment">//2</span>
+        <span class="token class-name">String</span> s2 <span class="token operator">=</span> <span
+                            class="token keyword">new</span> <span class="token class-name">String</span><span
+                            class="token punctuation">(</span><span class="token string">&quot;haer&quot;</span><span
+                            class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//3</span>
+        <span class="token keyword">byte</span><span class="token punctuation">[</span><span
+                            class="token punctuation">]</span> bytes <span class="token operator">=</span> <span
+                            class="token punctuation">{</span><span class="token number">97</span><span
+                            class="token punctuation">,</span><span class="token number">98</span><span
+                            class="token punctuation">,</span><span class="token number">99</span><span
+                            class="token punctuation">,</span><span class="token number">100</span><span
+                            class="token punctuation">}</span><span class="token punctuation">;</span>
+        <span class="token class-name">String</span> s3 <span class="token operator">=</span> <span
+                            class="token keyword">new</span> <span class="token class-name">String</span><span
+                            class="token punctuation">(</span>bytes<span class="token punctuation">)</span><span
+                            class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span
+                            class="token punctuation">.</span><span class="token function">println</span><span
+                            class="token punctuation">(</span>s3<span class="token punctuation">)</span><span
+                            class="token punctuation">;</span><span class="token comment">//abcd,String已经重写了Object的toString方法</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span
+                            class="token punctuation">.</span><span class="token function">println</span><span
+                            class="token punctuation">(</span>s3<span class="token punctuation">.</span><span
+                            class="token function">toString</span><span class="token punctuation">(</span><span
+                            class="token punctuation">)</span><span class="token punctuation">)</span><span
+                            class="token punctuation">;</span><span class="token comment">//相当于</span>
+        <span class="token comment">//4：从下标为1的位置开始，输出长度为2的字符串</span>
+        <span class="token class-name">String</span> s4 <span class="token operator">=</span> <span
+                            class="token keyword">new</span> <span class="token class-name">String</span><span
+                            class="token punctuation">(</span>bytes<span class="token punctuation">,</span> <span
+                            class="token number">1</span><span class="token punctuation">,</span> <span
+                            class="token number">2</span><span class="token punctuation">)</span><span
+                            class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span
+                            class="token punctuation">.</span><span class="token function">println</span><span
+                            class="token punctuation">(</span>s4<span class="token punctuation">)</span><span
+                            class="token punctuation">;</span><span class="token comment">//bc</span>
+        <span class="token comment">//5</span>
+        <span class="token keyword">char</span><span class="token punctuation">[</span><span
+                            class="token punctuation">]</span> c1 <span class="token operator">=</span> <span
+                            class="token punctuation">{</span><span class="token string">'我'</span><span
+                            class="token punctuation">,</span><span class="token string">'是'</span><span
+                            class="token punctuation">,</span><span class="token string">'哈'</span><span
+                            class="token punctuation">,</span><span class="token string">'儿'</span><span
+                            class="token punctuation">}</span><span class="token punctuation">;</span>
+        <span class="token class-name">String</span> s5 <span class="token operator">=</span> <span
+                            class="token keyword">new</span> <span class="token class-name">String</span><span
+                            class="token punctuation">(</span>c1<span class="token punctuation">)</span><span
+                            class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span
+                            class="token punctuation">.</span><span class="token function">println</span><span
+                            class="token punctuation">(</span>s5<span class="token punctuation">)</span><span
+                            class="token punctuation">;</span><span class="token comment">//我是哈儿</span>
+        <span class="token comment">//6  从下标为2的位置开始，输出长度为2的字符串</span>
+        <span class="token class-name">String</span> s6 <span class="token operator">=</span> <span
+                            class="token keyword">new</span> <span class="token class-name">String</span><span
+                            class="token punctuation">(</span>c1<span class="token punctuation">,</span> <span
+                            class="token number">2</span><span class="token punctuation">,</span> <span
+                            class="token number">2</span><span class="token punctuation">)</span><span
+                            class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span
+                            class="token punctuation">.</span><span class="token function">println</span><span
+                            class="token punctuation">(</span>s6<span class="token punctuation">)</span><span
+                            class="token punctuation">;</span><span class="token comment">//哈儿</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+                    <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span
+                            class="line-number">2</span><br><span class="line-number">3</span><br><span
+                            class="line-number">4</span><br><span class="line-number">5</span><br><span
+                            class="line-number">6</span><br><span class="line-number">7</span><br><span
+                            class="line-number">8</span><br><span class="line-number">9</span><br><span
+                            class="line-number">10</span><br><span class="line-number">11</span><br><span
+                            class="line-number">12</span><br><span class="line-number">13</span><br><span
+                            class="line-number">14</span><br><span class="line-number">15</span><br><span
+                            class="line-number">16</span><br><span class="line-number">17</span><br><span
+                            class="line-number">18</span><br><span class="line-number">19</span><br><span
+                            class="line-number">20</span><br><span class="line-number">21</span><br><span
+                            class="line-number">22</span><br><span class="line-number">23</span><br><span
+                            class="line-number">24</span><br><span class="line-number">25</span><br></div>
+                </div>
+            </div>
+            <footer class="page-edit"><!---->
+                <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">9/4/2020, 2:41:09 PM</span>
+                </div>
+            </footer>
+            <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/base/java/introduction/array.html" class="prev">
+        数组
+      </a></span> <span class="next"><a href="/blog/base/java/advance/arithmetic.html">
+        算法
+      </a>
+      →
+    </span></p></div>
+        </main>
+    </div>
+    <div class="global-ui"><!----></div>
+</div>
+<script src="/blog/assets/js/app.36981a7f.js" defer></script>
+<script src="/blog/assets/js/2.aa41c1d8.js" defer></script>
+<script src="/blog/assets/js/27.3b220e55.js" defer></script>
+</body>
+</html>

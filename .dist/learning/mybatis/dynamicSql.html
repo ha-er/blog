@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>动态Sql | 哈儿博客</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    <link rel="icon" href="/blog/img/logo.jpg">
+    <link rel="stylesheet" href="/blog/css/base.css">
+    <meta name="description" content="哈儿的学习博客">
+    <link rel="preload" href="/blog/assets/css/0.styles.3d629ca3.css" as="style">
+    <link rel="preload" href="/blog/assets/js/app.36981a7f.js" as="script">
+    <link rel="preload" href="/blog/assets/js/2.aa41c1d8.js" as="script">
+    <link rel="preload" href="/blog/assets/js/38.6df175d1.js" as="script">
+    <link rel="prefetch" href="/blog/assets/js/10.bdf0e11c.js">
+    <link rel="prefetch" href="/blog/assets/js/11.bd919351.js">
+    <link rel="prefetch" href="/blog/assets/js/12.d7a48bdb.js">
+    <link rel="prefetch" href="/blog/assets/js/13.9ea92df7.js">
+    <link rel="prefetch" href="/blog/assets/js/14.f2896015.js">
+    <link rel="prefetch" href="/blog/assets/js/15.4068780e.js">
+    <link rel="prefetch" href="/blog/assets/js/16.d08f2416.js">
+    <link rel="prefetch" href="/blog/assets/js/17.daa8ce37.js">
+    <link rel="prefetch" href="/blog/assets/js/18.a2952e3a.js">
+    <link rel="prefetch" href="/blog/assets/js/19.82d57f06.js">
+    <link rel="prefetch" href="/blog/assets/js/20.9060af38.js">
+    <link rel="prefetch" href="/blog/assets/js/21.743035df.js">
+    <link rel="prefetch" href="/blog/assets/js/22.718fb5ba.js">
+    <link rel="prefetch" href="/blog/assets/js/23.dce63254.js">
+    <link rel="prefetch" href="/blog/assets/js/24.55a8afa8.js">
+    <link rel="prefetch" href="/blog/assets/js/25.f09353df.js">
+    <link rel="prefetch" href="/blog/assets/js/26.8087ef1d.js">
+    <link rel="prefetch" href="/blog/assets/js/27.3b220e55.js">
+    <link rel="prefetch" href="/blog/assets/js/28.dd4d182b.js">
+    <link rel="prefetch" href="/blog/assets/js/29.57882d5d.js">
+    <link rel="prefetch" href="/blog/assets/js/3.ef39fcfc.js">
+    <link rel="prefetch" href="/blog/assets/js/30.12c152ad.js">
+    <link rel="prefetch" href="/blog/assets/js/31.caa6f6b6.js">
+    <link rel="prefetch" href="/blog/assets/js/32.70d2aa35.js">
+    <link rel="prefetch" href="/blog/assets/js/33.5866b58d.js">
+    <link rel="prefetch" href="/blog/assets/js/34.b850b277.js">
+    <link rel="prefetch" href="/blog/assets/js/35.11dc7d6e.js">
+    <link rel="prefetch" href="/blog/assets/js/36.06152a9b.js">
+    <link rel="prefetch" href="/blog/assets/js/37.17ddc308.js">
+    <link rel="prefetch" href="/blog/assets/js/39.7f30248b.js">
+    <link rel="prefetch" href="/blog/assets/js/4.0bd42677.js">
+    <link rel="prefetch" href="/blog/assets/js/40.aa8c9654.js">
+    <link rel="prefetch" href="/blog/assets/js/41.42a3b8b4.js">
+    <link rel="prefetch" href="/blog/assets/js/42.a6a984df.js">
+    <link rel="prefetch" href="/blog/assets/js/43.f65ade38.js">
+    <link rel="prefetch" href="/blog/assets/js/44.491371ac.js">
+    <link rel="prefetch" href="/blog/assets/js/45.bf1c5c0b.js">
+    <link rel="prefetch" href="/blog/assets/js/46.8e0d18c7.js">
+    <link rel="prefetch" href="/blog/assets/js/47.108449e9.js">
+    <link rel="prefetch" href="/blog/assets/js/48.4132d66c.js">
+    <link rel="prefetch" href="/blog/assets/js/49.4fe466ae.js">
+    <link rel="prefetch" href="/blog/assets/js/5.3ab9cd8c.js">
+    <link rel="prefetch" href="/blog/assets/js/50.32c50c13.js">
+    <link rel="prefetch" href="/blog/assets/js/51.9cdaa827.js">
+    <link rel="prefetch" href="/blog/assets/js/52.7ef136d9.js">
+    <link rel="prefetch" href="/blog/assets/js/53.3d3e04c3.js">
+    <link rel="prefetch" href="/blog/assets/js/54.6add7e0d.js">
+    <link rel="prefetch" href="/blog/assets/js/6.f5f81a8d.js">
+    <link rel="prefetch" href="/blog/assets/js/7.1134561d.js">
+    <link rel="prefetch" href="/blog/assets/js/8.02bb2c2e.js">
+    <link rel="prefetch" href="/blog/assets/js/9.6f4d6ede.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.3d629ca3.css">
+</head>
+<body>
+<div id="app" data-server-rendered="true">
+    <div class="theme-container">
+        <header class="navbar">
+            <div class="sidebar-button">
+                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512"
+                     class="icon">
+                    <path fill="currentColor"
+                          d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path>
+                </svg>
+            </div>
+            <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">哈儿博客</span></a>
+            <div class="links">
+                <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value="">
+                    <!----></div>
+                <nav class="nav-links can-hide">
+                    <div class="nav-item">
+                        <div class="dropdown-wrapper">
+                            <button type="button" aria-label="框架学习" class="dropdown-title"><span
+                                    class="title">框架学习</span> <span class="arrow down"></span></button>
+                            <button type="button" aria-label="框架学习" class="mobile-dropdown-title"><span class="title">框架学习</span>
+                                <span class="arrow right"></span></button>
+                            <ul class="nav-dropdown" style="display:none;">
+                                <li class="dropdown-item"><h4>
+                                    后端
+                                </h4>
+                                    <ul class="dropdown-subitem-wrapper">
+                                        <li class="dropdown-subitem"><a href="/blog/learning/mybatis/introduce.html"
+                                                                        class="nav-link">
+                                            Mybatis
+                                        </a></li>
+                                        <li class="dropdown-subitem"><a href="/blog/learning/spring/introduction.html"
+                                                                        class="nav-link">
+                                            Spring
+                                        </a></li>
+                                        <li class="dropdown-subitem"><a href="/blog/learning/springmvc/review.html"
+                                                                        class="nav-link">
+                                            SpringMVC
+                                        </a></li>
+                                        <li class="dropdown-subitem"><a
+                                                href="/blog/learning/springboot/introduction.html" class="nav-link">
+                                            SpringBoot
+                                        </a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="nav-item">
+                        <div class="dropdown-wrapper">
+                            <button type="button" aria-label="基础学习" class="dropdown-title"><span
+                                    class="title">基础学习</span> <span class="arrow down"></span></button>
+                            <button type="button" aria-label="基础学习" class="mobile-dropdown-title"><span class="title">基础学习</span>
+                                <span class="arrow right"></span></button>
+                            <ul class="nav-dropdown" style="display:none;">
+                                <li class="dropdown-item"><h4>
+                                    后端
+                                </h4>
+                                    <ul class="dropdown-subitem-wrapper">
+                                        <li class="dropdown-subitem"><a
+                                                href="/blog/base/java/introduction/dataType.html" class="nav-link">
+                                            JAVA
+                                        </a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="nav-item"><a href="/blog/oneself/" class="nav-link">
+                        关于作者
+                    </a></div>
+                    <div class="nav-item"><a href="/blog/friends/" class="nav-link">
+                        友链
+                    </a></div>
+                    <div class="nav-item"><a href="/blog/tools/" class="nav-link">
+                        工具安装
+                    </a></div>
+                    <div class="nav-item">
+                        <div class="dropdown-wrapper">
+                            <button type="button" aria-label="工具箱" class="dropdown-title"><span class="title">工具箱</span>
+                                <span class="arrow down"></span></button>
+                            <button type="button" aria-label="工具箱" class="mobile-dropdown-title"><span
+                                    class="title">工具箱</span> <span class="arrow right"></span></button>
+                            <ul class="nav-dropdown" style="display:none;">
+                                <li class="dropdown-item"><h4>
+                                    通用
+                                </h4>
+                                    <ul class="dropdown-subitem-wrapper">
+                                        <li class="dropdown-subitem"><a href="https://www.processon.com/"
+                                                                        target="_blank" rel="noopener noreferrer"
+                                                                        class="nav-link external">
+                                            在线画图
+                                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px"
+                                                 viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                                                <path fill="currentColor"
+                                                      d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path>
+                                                <polygon fill="currentColor"
+                                                         points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon>
+                                            </svg>
+                                        </a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-item"><h4>
+                                    学习
+                                </h4>
+                                    <ul class="dropdown-subitem-wrapper">
+                                        <li class="dropdown-subitem"><a href="https://regex101.com/" target="_blank"
+                                                                        rel="noopener noreferrer"
+                                                                        class="nav-link external">
+                                            在线正则
+                                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px"
+                                                 viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                                                <path fill="currentColor"
+                                                      d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path>
+                                                <polygon fill="currentColor"
+                                                         points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon>
+                                            </svg>
+                                        </a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div> <!----></nav>
+            </div>
+        </header>
+        <div class="sidebar-mask"></div>
+        <aside class="sidebar">
+            <nav class="nav-links">
+                <div class="nav-item">
+                    <div class="dropdown-wrapper">
+                        <button type="button" aria-label="框架学习" class="dropdown-title"><span class="title">框架学习</span>
+                            <span class="arrow down"></span></button>
+                        <button type="button" aria-label="框架学习" class="mobile-dropdown-title"><span
+                                class="title">框架学习</span> <span class="arrow right"></span></button>
+                        <ul class="nav-dropdown" style="display:none;">
+                            <li class="dropdown-item"><h4>
+                                后端
+                            </h4>
+                                <ul class="dropdown-subitem-wrapper">
+                                    <li class="dropdown-subitem"><a href="/blog/learning/mybatis/introduce.html"
+                                                                    class="nav-link">
+                                        Mybatis
+                                    </a></li>
+                                    <li class="dropdown-subitem"><a href="/blog/learning/spring/introduction.html"
+                                                                    class="nav-link">
+                                        Spring
+                                    </a></li>
+                                    <li class="dropdown-subitem"><a href="/blog/learning/springmvc/review.html"
+                                                                    class="nav-link">
+                                        SpringMVC
+                                    </a></li>
+                                    <li class="dropdown-subitem"><a href="/blog/learning/springboot/introduction.html"
+                                                                    class="nav-link">
+                                        SpringBoot
+                                    </a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <div class="dropdown-wrapper">
+                        <button type="button" aria-label="基础学习" class="dropdown-title"><span class="title">基础学习</span>
+                            <span class="arrow down"></span></button>
+                        <button type="button" aria-label="基础学习" class="mobile-dropdown-title"><span
+                                class="title">基础学习</span> <span class="arrow right"></span></button>
+                        <ul class="nav-dropdown" style="display:none;">
+                            <li class="dropdown-item"><h4>
+                                后端
+                            </h4>
+                                <ul class="dropdown-subitem-wrapper">
+                                    <li class="dropdown-subitem"><a href="/blog/base/java/introduction/dataType.html"
+                                                                    class="nav-link">
+                                        JAVA
+                                    </a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="nav-item"><a href="/blog/oneself/" class="nav-link">
+                    关于作者
+                </a></div>
+                <div class="nav-item"><a href="/blog/friends/" class="nav-link">
+                    友链
+                </a></div>
+                <div class="nav-item"><a href="/blog/tools/" class="nav-link">
+                    工具安装
+                </a></div>
+                <div class="nav-item">
+                    <div class="dropdown-wrapper">
+                        <button type="button" aria-label="工具箱" class="dropdown-title"><span class="title">工具箱</span>
+                            <span class="arrow down"></span></button>
+                        <button type="button" aria-label="工具箱" class="mobile-dropdown-title"><span
+                                class="title">工具箱</span> <span class="arrow right"></span></button>
+                        <ul class="nav-dropdown" style="display:none;">
+                            <li class="dropdown-item"><h4>
+                                通用
+                            </h4>
+                                <ul class="dropdown-subitem-wrapper">
+                                    <li class="dropdown-subitem"><a href="https://www.processon.com/" target="_blank"
+                                                                    rel="noopener noreferrer" class="nav-link external">
+                                        在线画图
+                                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px"
+                                             viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                                            <path fill="currentColor"
+                                                  d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path>
+                                            <polygon fill="currentColor"
+                                                     points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon>
+                                        </svg>
+                                    </a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-item"><h4>
+                                学习
+                            </h4>
+                                <ul class="dropdown-subitem-wrapper">
+                                    <li class="dropdown-subitem"><a href="https://regex101.com/" target="_blank"
+                                                                    rel="noopener noreferrer" class="nav-link external">
+                                        在线正则
+                                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px"
+                                             viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                                            <path fill="currentColor"
+                                                  d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path>
+                                            <polygon fill="currentColor"
+                                                     points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon>
+                                        </svg>
+                                    </a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div> <!----></nav>
+            <ul class="sidebar-links">
+                <li>
+                    <section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open">
+                        <span>Mybatis</span> <span class="arrow down"></span></p>
+                        <ul class="sidebar-links sidebar-group-items">
+                            <li><a href="/blog/learning/mybatis/introduce.html" class="sidebar-link">简介</a></li>
+                            <li><a href="/blog/learning/mybatis/helloWorld.html" class="sidebar-link">HelloWorld</a>
+                            </li>
+                            <li><a href="/blog/learning/mybatis/configuration.html" class="sidebar-link">配置解析</a></li>
+                            <li><a href="/blog/learning/mybatis/resultMap.html" class="sidebar-link">ResultMap映射</a>
+                            </li>
+                            <li><a href="/blog/learning/mybatis/log.html" class="sidebar-link">日志</a></li>
+                            <li><a href="/blog/learning/mybatis/paging.html" class="sidebar-link">分页</a></li>
+                            <li><a href="/blog/learning/mybatis/annotation.html" class="sidebar-link">注解开发</a></li>
+                            <li><a href="/blog/learning/mybatis/dynamicSql.html" aria-current="page"
+                                   class="active sidebar-link">动态Sql</a>
+                                <ul class="sidebar-sub-headers">
+                                    <li class="sidebar-sub-header"><a href="/blog/learning/mybatis/dynamicSql.html#if"
+                                                                      class="sidebar-link">IF</a></li>
+                                    <li class="sidebar-sub-header"><a
+                                            href="/blog/learning/mybatis/dynamicSql.html#choose、when、otherwise"
+                                            class="sidebar-link">choose、when、otherwise</a></li>
+                                    <li class="sidebar-sub-header"><a
+                                            href="/blog/learning/mybatis/dynamicSql.html#trim、where、set"
+                                            class="sidebar-link">trim、where、set</a></li>
+                                    <li class="sidebar-sub-header"><a
+                                            href="/blog/learning/mybatis/dynamicSql.html#foreach" class="sidebar-link">foreach</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="/blog/learning/mybatis/cache.html" class="sidebar-link">缓存</a></li>
+                        </ul>
+                    </section>
+                </li>
+            </ul>
+        </aside>
+        <main class="page">
+            <div class="theme-default-content content__default"><h1 id="动态sql"><a href="#动态sql"
+                                                                                  class="header-anchor">#</a> 动态Sql</h1>
+                <h2 id="if"><a href="#if" class="header-anchor">#</a> IF</h2>
+                <p>条件满足标签内的sql才会生效</p>
+                <div class="language-xml line-numbers-mode"><pre class="language-xml"><code><span
+                        class="token tag"><span class="token tag"><span
+                        class="token punctuation">&lt;</span>if</span> <span class="token attr-name">test</span><span
+                        class="token attr-value"><span class="token punctuation attr-equals">=</span><span
+                        class="token punctuation">&quot;</span>title != null<span
+                        class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    AND title like #{title}
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>if</span><span
+        class="token punctuation">&gt;</span></span>
+</code></pre>
+                    <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span
+                            class="line-number">2</span><br><span class="line-number">3</span><br></div>
+                </div>
+                <h2 id="choose、when、otherwise"><a href="#choose、when、otherwise" class="header-anchor">#</a>
+                    choose、when、otherwise</h2>
+                <p>类似于switch case语句，满足了一个条件，后面的都不会执行，都不满足执行otherwise</p>
+                <div class="language-xml line-numbers-mode"><pre class="language-xml"><code><span
+                        class="token tag"><span class="token tag"><span
+                        class="token punctuation">&lt;</span>choose</span><span
+                        class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>when</span> <span
+            class="token attr-name">test</span><span class="token attr-value"><span
+            class="token punctuation attr-equals">=</span><span
+            class="token punctuation">&quot;</span>title != null<span
+            class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      AND title like #{title}
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>when</span><span
+            class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>when</span> <span
+            class="token attr-name">test</span><span class="token attr-value"><span
+            class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>author != null and author.name != null<span
+            class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      AND author_name like #{author.name}
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>when</span><span
+            class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>otherwise</span><span
+            class="token punctuation">&gt;</span></span>
+      AND featured = 1
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>otherwise</span><span
+            class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>choose</span><span
+        class="token punctuation">&gt;</span></span>
+</code></pre>
+                    <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span
+                            class="line-number">2</span><br><span class="line-number">3</span><br><span
+                            class="line-number">4</span><br><span class="line-number">5</span><br><span
+                            class="line-number">6</span><br><span class="line-number">7</span><br><span
+                            class="line-number">8</span><br><span class="line-number">9</span><br><span
+                            class="line-number">10</span><br><span class="line-number">11</span><br></div>
+                </div>
+                <h2 id="trim、where、set"><a href="#trim、where、set" class="header-anchor">#</a> trim、where、set</h2>
+                <ul>
+                    <li>
+                        <code>where</code>标签只会在子元素返回任何内容的情况下才插入<code>WHERE</code>子句。而且，若子句的开头为<code>AND</code>或<code>OR</code>，where元素也会将它们去除。
+                    </li>
+                </ul>
+                <div class="language-xml line-numbers-mode"><pre class="language-xml"><code><span
+                        class="token tag"><span class="token tag"><span
+                        class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span
+                        class="token attr-value"><span class="token punctuation attr-equals">=</span><span
+                        class="token punctuation">&quot;</span>findActiveBlogLike<span
+                        class="token punctuation">&quot;</span></span>
+     <span class="token attr-name">resultType</span><span class="token attr-value"><span
+                            class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>Blog<span
+                            class="token punctuation">&quot;</span></span><span
+                            class="token punctuation">&gt;</span></span>
+  SELECT * FROM BLOG
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>where</span><span
+          class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>if</span> <span
+            class="token attr-name">test</span><span class="token attr-value"><span
+            class="token punctuation attr-equals">=</span><span
+            class="token punctuation">&quot;</span>state != null<span
+            class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+         state = #{state}
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>if</span><span
+            class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>if</span> <span
+            class="token attr-name">test</span><span class="token attr-value"><span
+            class="token punctuation attr-equals">=</span><span
+            class="token punctuation">&quot;</span>title != null<span
+            class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        AND title like #{title}
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>if</span><span
+            class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>if</span> <span
+            class="token attr-name">test</span><span class="token attr-value"><span
+            class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>author != null and author.name != null<span
+            class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        AND author_name like #{author.name}
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>if</span><span
+            class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>where</span><span
+          class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span
+        class="token punctuation">&gt;</span></span>
+</code></pre>
+                    <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span
+                            class="line-number">2</span><br><span class="line-number">3</span><br><span
+                            class="line-number">4</span><br><span class="line-number">5</span><br><span
+                            class="line-number">6</span><br><span class="line-number">7</span><br><span
+                            class="line-number">8</span><br><span class="line-number">9</span><br><span
+                            class="line-number">10</span><br><span class="line-number">11</span><br><span
+                            class="line-number">12</span><br><span class="line-number">13</span><br><span
+                            class="line-number">14</span><br><span class="line-number">15</span><br></div>
+                </div>
+                <p>等价于</p>
+                <div class="language-xml line-numbers-mode"><pre class="language-xml"><code><span
+                        class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>trim</span> <span
+                        class="token attr-name">prefix</span><span class="token attr-value"><span
+                        class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>WHERE<span
+                        class="token punctuation">&quot;</span></span> <span
+                        class="token attr-name">prefixOverrides</span><span class="token attr-value"><span
+                        class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>AND |OR <span
+                        class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  ...
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>trim</span><span
+        class="token punctuation">&gt;</span></span>
+</code></pre>
+                    <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span
+                            class="line-number">2</span><br><span class="line-number">3</span><br></div>
+                </div>
+                <ul>
+                    <li><code>set</code>元素会动态地在行首插入<code>SET</code>关键字，并会删掉额外的逗号</li>
+                </ul>
+                <div class="language-xml line-numbers-mode"><pre class="language-xml"><code><span
+                        class="token tag"><span class="token tag"><span
+                        class="token punctuation">&lt;</span>update</span> <span class="token attr-name">id</span><span
+                        class="token attr-value"><span class="token punctuation attr-equals">=</span><span
+                        class="token punctuation">&quot;</span>updateAuthorIfNecessary<span class="token punctuation">&quot;</span></span><span
+                        class="token punctuation">&gt;</span></span>
+  update Author
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>set</span><span
+            class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>if</span> <span
+              class="token attr-name">test</span><span class="token attr-value"><span
+              class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>username != null<span
+              class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>username=#{username},<span
+                            class="token tag"><span class="token tag"><span
+                            class="token punctuation">&lt;/</span>if</span><span
+                            class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>if</span> <span
+              class="token attr-name">test</span><span class="token attr-value"><span
+              class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>password != null<span
+              class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>password=#{password},<span
+                            class="token tag"><span class="token tag"><span
+                            class="token punctuation">&lt;/</span>if</span><span
+                            class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>if</span> <span
+              class="token attr-name">test</span><span class="token attr-value"><span
+              class="token punctuation attr-equals">=</span><span
+              class="token punctuation">&quot;</span>email != null<span
+              class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>email=#{email},<span
+                            class="token tag"><span class="token tag"><span
+                            class="token punctuation">&lt;/</span>if</span><span
+                            class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>if</span> <span
+              class="token attr-name">test</span><span class="token attr-value"><span
+              class="token punctuation attr-equals">=</span><span
+              class="token punctuation">&quot;</span>bio != null<span
+              class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>bio=#{bio}<span
+                            class="token tag"><span class="token tag"><span
+                            class="token punctuation">&lt;/</span>if</span><span
+                            class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>set</span><span
+            class="token punctuation">&gt;</span></span>
+  where id=#{id}
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>update</span><span
+        class="token punctuation">&gt;</span></span>
+</code></pre>
+                    <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span
+                            class="line-number">2</span><br><span class="line-number">3</span><br><span
+                            class="line-number">4</span><br><span class="line-number">5</span><br><span
+                            class="line-number">6</span><br><span class="line-number">7</span><br><span
+                            class="line-number">8</span><br><span class="line-number">9</span><br><span
+                            class="line-number">10</span><br></div>
+                </div>
+                <p>等价于</p>
+                <div class="language-xml line-numbers-mode"><pre class="language-xml"><code><span
+                        class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>trim</span> <span
+                        class="token attr-name">prefix</span><span class="token attr-value"><span
+                        class="token punctuation attr-equals">=</span><span
+                        class="token punctuation">&quot;</span>SET<span
+                        class="token punctuation">&quot;</span></span> <span
+                        class="token attr-name">suffixOverrides</span><span class="token attr-value"><span
+                        class="token punctuation attr-equals">=</span><span
+                        class="token punctuation">&quot;</span>,<span
+                        class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  ...
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>trim</span><span
+        class="token punctuation">&gt;</span></span>
+</code></pre>
+                    <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span
+                            class="line-number">2</span><br><span class="line-number">3</span><br></div>
+                </div>
+                <h2 id="foreach"><a href="#foreach" class="header-anchor">#</a> foreach</h2>
+                <p>动态SQL的另一个常见使用场景是对集合进行遍历（尤其是在构建IN条件语句的时候）</p>
+                <div class="language-xml line-numbers-mode"><pre class="language-xml"><code><span
+                        class="token tag"><span class="token tag"><span
+                        class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span
+                        class="token attr-value"><span class="token punctuation attr-equals">=</span><span
+                        class="token punctuation">&quot;</span>selectPostIn<span class="token punctuation">&quot;</span></span> <span
+                        class="token attr-name">resultType</span><span class="token attr-value"><span
+                        class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>domain.blog.Post<span
+                        class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  SELECT *
+  FROM POST P
+  WHERE ID in
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>foreach</span> <span
+          class="token attr-name">item</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span
+          class="token punctuation">&quot;</span>item<span class="token punctuation">&quot;</span></span> <span
+          class="token attr-name">index</span><span class="token attr-value"><span
+          class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>index<span
+          class="token punctuation">&quot;</span></span> <span class="token attr-name">collection</span><span
+          class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>list<span
+          class="token punctuation">&quot;</span></span>
+      <span class="token attr-name">open</span><span class="token attr-value"><span
+              class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>(<span
+              class="token punctuation">&quot;</span></span> <span class="token attr-name">separator</span><span
+              class="token attr-value"><span class="token punctuation attr-equals">=</span><span
+              class="token punctuation">&quot;</span>,<span class="token punctuation">&quot;</span></span> <span
+              class="token attr-name">close</span><span class="token attr-value"><span
+              class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>)<span
+              class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        #{item}
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>foreach</span><span
+          class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span
+        class="token punctuation">&gt;</span></span>
+</code></pre>
+                    <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span
+                            class="line-number">2</span><br><span class="line-number">3</span><br><span
+                            class="line-number">4</span><br><span class="line-number">5</span><br><span
+                            class="line-number">6</span><br><span class="line-number">7</span><br><span
+                            class="line-number">8</span><br><span class="line-number">9</span><br></div>
+                </div>
+                <p>它允许你指定一个集合，声明可以在元素体内使用的集合项（item）和索引（index）变量。它也允许你指定开头与结尾的字符串以及集合项迭代之间的分隔符。</p>
+                <div class="custom-block tip"><p class="custom-block-title">TIP</p>
+                    <p>你可以将任何可迭代对象（如 List、Set 等）、Map对象或者数组对象作为集合参数传递给foreach。当使用可迭代对象或者数组时，index是当前迭代的序号，
+                        item的值是本次迭代获取到的元素。当使用Map对象（或者 Map.Entry 对象的集合）时，index 是键，item 是值。</p></div>
+            </div>
+            <footer class="page-edit"><!---->
+                <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">8/24/2020, 12:51:09 PM</span>
+                </div>
+            </footer>
+            <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/learning/mybatis/annotation.html" class="prev">
+        注解开发
+      </a></span> <span class="next"><a href="/blog/learning/mybatis/cache.html">
+        缓存
+      </a>
+      →
+    </span></p></div>
+        </main>
+    </div>
+    <div class="global-ui"><!----></div>
+</div>
+<script src="/blog/assets/js/app.36981a7f.js" defer></script>
+<script src="/blog/assets/js/2.aa41c1d8.js" defer></script>
+<script src="/blog/assets/js/38.6df175d1.js" defer></script>
+</body>
+</html>
