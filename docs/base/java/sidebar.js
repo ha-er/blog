@@ -15,6 +15,7 @@ module.exports = [
         title: 'Java进阶',
         collapsable: true,
         children: [
+            '/base/java/advance/commonClass',
             '/base/java/advance/arithmetic',
             '/base/java/advance/oop',
             '/base/java/advance/exception',
